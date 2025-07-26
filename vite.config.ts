@@ -1,25 +1,25 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
-import { componentTagger } from "lovable-tagger";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import path from 'path';
+import { componentTagger } from 'lovable-tagger';
 
-// ✅ IMPORTANT: base must be at the top level
+											   
 export default defineConfig(({ mode }) => ({
-  base: "/jb-egg-incubator-main/",
+  base: '/', // ✅ Use '/' for local and custom domain
 
-  server: mode === "development" ? {
-    host: "::",
+  server: {
+    host: '::',
     port: 8080,
-  } : undefined,
+  },
 
   plugins: [
     react(),
-    ...(mode === "development" ? [componentTagger()] : []),
+    ...(mode === 'development' ? [componentTagger()] : []),
   ],
 
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
   },
 }));
