@@ -55,7 +55,7 @@ const isValidPayload = (payload) => {
   );
 };
 
-app.post("/api/incubator-enquiry", async (req, res) => {
+app.post("https://jb-egg-incubator-main.onrender.com/api/incubator-enquiry", async (req, res) => {
   try {
     if (!hasAllEnvVars) {
       return res.status(500).json({
