@@ -2,7 +2,6 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import nodemailer from "nodemailer";
-import JB_LOGO from "@/assets/JB_LOGO-removebg-preview.webp";
 
 dotenv.config();
 
@@ -253,14 +252,7 @@ Generated on: ${new Date().toLocaleString()}
   </table>
 </div>
 
-      `,
-      attachments: [
-        {
-        filename: "jb-logo.webp",
-        path: JB_LOGO,
-        cid: "jbLogo",
-        },
-        ],
+      `
     });
 
     return res.status(200).json({
