@@ -36,10 +36,6 @@ const incubatorOptions = [
   "JBW100",
   "JBST100",
   "JBIN100A",
-  "JB-12 Egg Incubator",
-  "JB-24 Egg Incubator",
-  "JB-48 Egg Incubator",
-  "JB-96 Egg Incubator",
   "Custom Requirement",
 ];
 

@@ -38,9 +38,8 @@ const MainTitle = ({ onOrderNowClick }: MainTitleProps) => {
           <button
             className="text-white font-bold px-4 py-2 rounded shadow-lg hover:shadow-xl bg-red-600 hover:bg-red-700 transition-colors"
             style={{ borderRadius: "8px" }}
-            onClick={() => {
-              window.location.href = "/jb-egg-incubator-order";
-            }}
+            onClick={() => navigate("/jb-egg-incubator-order")}
+
           >
             <span role="img" aria-label="Order" className="mr-2">🛒</span>Order Now
           </button>
