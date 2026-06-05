@@ -5,7 +5,8 @@ import { componentTagger } from 'lovable-tagger';
 
 											   
 export default defineConfig(({ mode }) => ({
-  base: '/', // ✅ Use '/' for local and custom domain
+base :"/jb-egg-incubator-main/",
+  //base: '/', // ✅ Use '/' for local and custom domain
 
   server: {
     host: '::',
