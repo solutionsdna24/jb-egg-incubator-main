@@ -6,6 +6,7 @@ import jbLogoPreview from "@/assets/JB_LOGO-removebg-preview.webp";
 import orderNowButton from "@/assets/order-now-button.webp";
 import phoneIcon from "@/assets/phone-icon.webp";
 import { Phone, Truck, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface HeaderProps {
   onOrderNowClick?: () => void;

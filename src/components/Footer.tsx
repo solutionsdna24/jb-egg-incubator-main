@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -46,15 +47,27 @@ const Footer = () => {
             </div>
           </div>
           {/* Quick Links */}
-          <div>
-            <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="/" className="text-gray-300 hover:text-blue-400 transition-colors">Home</a></li>
-              <li><a href="/products" className="text-gray-300 hover:text-blue-400 transition-colors">Products</a></li>
-              <li><a href="/details" className="text-gray-300 hover:text-blue-400 transition-colors">Details</a></li>
-              <li><a href="/jb-egg-incubator-order" className="text-gray-300 hover:text-blue-400 transition-colors">Order Enquiry</a></li>
-              <li><a href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</a></li>
-            </ul>
+          <div className="space-y-2">
+          <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
+          <ul className="space-y-2">
+          <Link to="/">Home</Link>
+          </ul>
+          <ul className="space-y-2">
+          <Link to="/products">Products</Link>
+          </ul>
+          <ul className="space-y-2">
+          <Link to="/details">About Us</Link>
+          </ul>
+          
+          <ul className="space-y-2">
+          <Link to="/jb-egg-incubator-order">Order Enquiry</Link>
+          </ul>
+          <ul className="space-y-2">
+          <Link to="/contact" >Contact</Link>
+          </ul>
+         
+           
+           
           </div>
         </div>
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">

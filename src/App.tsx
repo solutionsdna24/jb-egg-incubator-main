@@ -9,6 +9,8 @@ import Details from "./pages/Details";
 import Contact from "./pages/Contact";
 import JbEggIncubatorOrder from "./pages/JbEggIncubatorOrder";
 import NotFound from "./pages/NotFound";
+import {ScrollToTop} from "./pages/ScrollToTop";
+
 
 const queryClient = new QueryClient();
 
@@ -18,6 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/egg-incubators" element={<Index />} />
