@@ -1,20 +1,18 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import redIncubator from "@/assets/red-incubator-original.png";
-import woodIncubator from "@/assets/wood-incubator-original.png";
-import interiorIncubator from "@/assets/interior-incubator.png";
-import compactIncubator from "@/assets/compact-incubator-original.png";
-import jbLogo from "@/assets/jb-logo.png";
-import eggsTray from "@/assets/eggs-tray.jpg";
-import parcelBox from "@/assets/parcel-box.jpg";
-import chickHatched from "@/assets/chicks-hatched.jpg";
+import redIncubator from "@/assets/red-incubator-original.webp";
+import woodIncubator from "@/assets/wood-incubator-original.webp";
+import interiorIncubator from "@/assets/interior-incubator.webp";
+import compactIncubator from "@/assets/compact-incubator-original.webp";
+import jbLogo from "@/assets/jb-logo.webp";
+import eggsTray from "@/assets/eggs-tray.webp";
+import parcelBox from "@/assets/parcel-box.webp";
+import chickHatched from "@/assets/chicks-hatched.webp";
 
 
 
 
-const GallerySection = ({ onOrderNowClick }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  
+const GallerySection = () => {
   const galleryItems = [
     { image: jbLogo, title: "JB Egg Incubator Brand" },
     { image: redIncubator, title: "Professional Incubator" },
@@ -26,37 +24,7 @@ const GallerySection = ({ onOrderNowClick }) => {
     { image: chickHatched, title: "Chicks Hatched in Incubator" },
   ];
 
-  const itemsPerView = 4;
-  const maxIndex = Math.max(0, galleryItems.length - itemsPerView);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => Math.max(prev - 1, 0));
-  };
-
   const scrollRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    if (!scrollRef.current) return;
-    if (isHovered) return;
-    const interval = setInterval(() => {
-      if (scrollRef.current) {
-        scrollRef.current.scrollLeft += 3; // slow scroll
-        // Loop back to start if at end
-        if (
-          scrollRef.current.scrollLeft + scrollRef.current.offsetWidth >=
-          scrollRef.current.scrollWidth
-        ) {
-          scrollRef.current.scrollLeft = 1;
-        }
-      }
-    }, 50);
-    return () => clearInterval(interval);
-  }, [isHovered]);
 
   const scrollBy = (amount) => {
     if (scrollRef.current) {
@@ -69,7 +37,7 @@ const GallerySection = ({ onOrderNowClick }) => {
   const scrollAmount = imageWidth * 5;
 
   return (
-    <section className="pt-4 pb-0 px-4 bg-gray-50 mb-0">
+    <section id="gallery" className="pt-4 pb-0 px-4 bg-gray-50 mb-0">
       <div className="container mx-auto relative">
         {/* Buttons before gallery */}
         <div className="text-center mb-8">
@@ -89,17 +57,17 @@ const GallerySection = ({ onOrderNowClick }) => {
           </button>
           <div
             ref={scrollRef}
-            className="overflow-x-auto pb-4 scrollbar-hide"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            className="overflow-x-auto pb-4 scrollbar-hide scroll-smooth"
           >
             <div className="flex gap-6 min-w-max">
               {galleryItems.map((item, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col items-center min-w-[220px] max-w-xs">
-                  <img 
-                    src={item.image} 
+                  <img
+                    src={item.image}
                     alt={item.title}
                     className="w-full h-40 sm:h-56 object-cover rounded-t-lg"
+                    loading={index < 2 ? "eager" : "lazy"}
+                    decoding="async"
                   />
                   <div className="p-4 w-full text-center">
                     <h3 className="font-semibold text-gray-600 text-base">{item.title}</h3>

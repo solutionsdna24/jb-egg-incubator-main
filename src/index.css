@@ -117,7 +117,25 @@ All colors MUST be HSL.
 
   body, html {
     @apply bg-background text-foreground;
-    font-family: 'Playfair Display', serif;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply min-h-screen bg-slate-50;
+  }
+
+  .page-hero {
+    @apply bg-gradient-to-b from-white to-slate-100 py-12 px-4 text-center border-b border-slate-200;
+  }
+
+  .page-hero-title {
+    @apply text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight;
+  }
+
+  .page-hero-subtitle {
+    @apply text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed;
   }
 }
 
@@ -128,4 +146,15 @@ All colors MUST be HSL.
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

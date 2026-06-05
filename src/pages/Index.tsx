@@ -1,48 +1,45 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import MainTitle from "@/components/MainTitle";
+import SeoIntroSection from "@/components/SeoIntroSection";
 import GallerySection from "@/components/GallerySection";
-import ProductsSection from "@/components/ProductsSection";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [showOrderForm, setShowOrderForm] = useState(false);
   const handleOrderNowClick = () => setShowOrderForm(true);
   return (
-    <div className="min-h-screen bg-gray-100 pt-0">
+    <div className="page-shell pt-0">
       <Header onOrderNowClick={handleOrderNowClick} />
-      <MainTitle onOrderNowClick={handleOrderNowClick} />
-      <GallerySection onOrderNowClick={handleOrderNowClick} />
-      <div id="products">
-        <ProductsSection />
-      </div>
-      <Footer />
-      {showOrderForm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-          <div className="bg-white rounded-lg shadow-lg max-w-2xl w-full relative pt-12 pb-8 px-4 z-50 overflow-y-auto max-h-[90vh]">
-            <button
-              className="absolute top-4 right-4 bg-blue-600 text-white border-2 border-white rounded-full w-12 h-12 flex items-center justify-center text-3xl font-bold shadow-lg z-50 focus:outline-none hover:bg-red-600 hover:text-white transition-colors"
-              onClick={() => setShowOrderForm(false)}
-              aria-label="Close"
-            >
-              ×
-            </button>
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSfN9z4X80WO-V_qXBl8mHs8ObkZMK4ko4o5xWkMXLK7znPC8w/viewform?embedded=true"
-              width="100%"
-              height="1557"
-              frameBorder="0"
-              marginHeight={0}
-              marginWidth={0}
-              title="Order Now Form"
-              className="w-full rounded"
-              style={{ minHeight: 600 }}
-            >
-              Loading…
-            </iframe>
+      <main id="home">
+        <MainTitle onOrderNowClick={handleOrderNowClick} />
+        <SeoIntroSection />
+        <GallerySection />
+        <section className="bg-white py-12 px-4 border-y border-slate-200">
+          <div className="container mx-auto max-w-5xl text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Explore Our Pages</h2>
+            <p className="text-slate-600 text-lg mb-8">
+              Use the menu to browse details, compare products, and contact us for quick order help.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <Link to="/products" className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Products</h3>
+                <p className="text-slate-600">View all incubator models with features and pricing.</p>
+              </Link>
+              <Link to="/details" className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Details</h3>
+                <p className="text-slate-600">Learn benefits, quality, and setup details.</p>
+              </Link>
+              <Link to="/contact" className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Contact</h3>
+                <p className="text-slate-600">Call, email, or send your inquiry form online.</p>
+              </Link>
+            </div>
           </div>
-        </div>
-      )}
+        </section>
+        <Footer />
+      </main>     
     </div>
   );
 };

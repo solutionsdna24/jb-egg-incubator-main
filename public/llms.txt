@@ -1,0 +1,29 @@
+# JB Egg Incubator
+
+> JB Egg Incubator builds manual and automatic poultry incubators for Indian farmers, focused on reliable temperature control, durable components, and high hatch success.
+
+JB Egg Incubator is based in Lakhandur, Bhandara, Maharashtra. We supply incubators across India with phone support, warranty coverage, and guidance for model selection.
+
+## H1
+
+JB EGG INCUBATOR
+
+## Main pages
+
+- [Home](https://www.jbincubators.in/): Main landing page with overview and quick navigation.
+- [Products](https://www.jbincubators.in/products): JBW100, JBST100, and JBIN100A incubator models with pricing.
+- [Details](https://www.jbincubators.in/details): Product benefits, company details, and gallery information.
+- [Contact](https://www.jbincubators.in/contact): Phone numbers, email, and inquiry form details.
+
+## Products
+
+- JBW100: Manual control incubator for 100 eggs.
+- JBST100: Semi-automatic incubator with digital hygrometer and thermometer.
+- JBIN100A: Fully automatic incubator with digital monitor and auto rotation.
+
+## Contact
+
+- Phone: +91 8767189437
+- Phone: +91 8803625410
+- Email: jbincubator5@gmail.com
+- Location: Lakhandur, Bhandara, Maharashtra 441803, India

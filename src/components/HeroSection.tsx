@@ -20,7 +20,7 @@ const HeroSection = () => {
         <div className="text-sm md:text-base text-blue-600 font-medium mt-1">Hatch Success with JB Incubators</div>
       </div>
       <h1 
-        className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4 relative inline-block px-6 py-2 rounded-lg"
+        className="text-2xl md:text-6xl font-extrabold text-gray-900 mb-4 relative inline-block px-6 py-2 rounded-lg"
         style={{
           background: "linear-gradient(90deg, #f8fafc 80%, #e0e7ef 100%)",
           boxShadow: "0 2px 16px 0 rgba(0,0,0,0.04)",

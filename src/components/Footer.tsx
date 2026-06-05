@@ -8,8 +8,20 @@ const Footer = () => {
           {/* About */}
           <div id="about">
             <h3 className="text-2xl font-bold mb-4 text-blue-400">JB INCUBATOR</h3>
-            <p className="text-gray-300 mb-4">Leading manufacturer of precision incubator controllers, providing reliable solutions for successful egg hatching worldwide.</p>
-            <p className="text-gray-300">Trusted by professionals for over a decade.</p>
+            <p className="text-gray-300 mb-4">
+              Leading manufacturer of precision incubator controllers, providing reliable solutions
+              for successful egg hatching across India. We design incubators for stable temperature,
+              practical operation, and long-term durability in real farm conditions.
+            </p>
+            <p className="text-gray-300 mb-4">
+              Trusted by poultry farmers and hatchery operators for consistent performance, product
+              guidance, and responsive support before and after purchase.
+            </p>
+            <p className="text-gray-300">
+              <a href="/products" className="text-blue-300 hover:text-blue-200 underline">
+                Browse incubator models
+              </a>
+            </p>
           </div>
           {/* Contact Us */}
           <div id="contact">
@@ -23,10 +35,10 @@ const Footer = () => {
                 <Phone className="w-5 h-5 mr-3 text-blue-400" />
                 <span className="text-gray-300">+91 8803625410</span>
               </a>
-              <div className="flex items-center">
+              <a href="mailto:jbincubator5@gmail.com" className="flex items-center hover:text-blue-400 transition-colors">
                 <Mail className="w-5 h-5 mr-3 text-blue-400" />
                 <span className="text-gray-300">jbincubator5@gmail.com</span>
-              </div>
+              </a>
               <div className="flex items-center">
                 <MapPin className="w-5 h-5 mr-3 text-blue-400" />
                 <span className="text-gray-300">Lakhandur, Bhandara, Maharashtra 441803</span>
@@ -37,11 +49,12 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-300 hover:text-blue-400 transition-colors">Home</a></li>
-              <li><a href="#products" className="text-gray-300 hover:text-blue-400 transition-colors">Products</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-blue-400 transition-colors">About</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</a></li>
-              <li><a href="#support" className="text-gray-300 hover:text-blue-400 transition-colors">Support</a></li>
+              <li><a href="/" className="text-gray-300 hover:text-blue-400 transition-colors">Home</a></li>
+              <li><a href="/products" className="text-gray-300 hover:text-blue-400 transition-colors">Products</a></li>
+              <li><a href="/details" className="text-gray-300 hover:text-blue-400 transition-colors">Details</a></li>
+              <li><a href="/jb-egg-incubator-order" className="text-gray-300 hover:text-blue-400 transition-colors">Order Enquiry</a></li>
+              <li><a href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors">Contact</a></li>
+              <li><a href="/llms.txt" className="text-gray-300 hover:text-blue-400 transition-colors">LLMs.txt</a></li>
             </ul>
           </div>
         </div>
@@ -49,6 +62,30 @@ const Footer = () => {
           <p className="text-gray-400">© 2024 JB INCUBATOR. All rights reserved. | Built with precision and care.</p>
         </div>
       </div>
+      <a
+  href="https://wa.me/918767189437?text=Hi%JB%Egg%Incubator%Team,%I%want%to%order%an%egg%incubator%machine.%Please%share%details."
+  title="WhatsApp"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-4 right-4 z-[9999] flex flex-col items-center"
+>
+  {/* WhatsApp Circle Button */}
+  <div className="transition-transform duration-300 hover:scale-110">
+  <img 
+      src="/whatsapp.png"
+      alt="WhatsApp"
+      className="w-13 h-20 rounded-full"
+    />
+  </div>
+
+  {/* Mobile Friendly Text */}
+   <span
+    className="mt-1 text-[12px] font-semibold text-white bg-green-600 
+               px-2 py-[2px] rounded-md shadow text-center whitespace-nowrap"
+  >
+    Chat on WhatsApp
+  </span>
+</a>
     </footer>
   );
 };

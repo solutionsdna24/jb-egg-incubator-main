@@ -1,27 +1,10 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import jbw100 from "@/assets/jbw100.png";
-import jbst100 from "@/assets/jbst100.png";
-import jbin100a from "@/assets/jbin100a.png";
-import { Settings, Eye, Egg, Zap } from "lucide-react";
-
-const GOOGLE_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSfN9z4X80WO-V_qXBl8mHs8ObkZMK4ko4o5xWkMXLK7znPC8w/formResponse";
+import jbw100 from "@/assets/jbw100.webp";
+import jbst100 from "@/assets/jbst100.webp";
+import jbin100a from "@/assets/jbin100a.webp";
 
 const ProductsSection = () => {
-  const [showOrderForm, setShowOrderForm] = useState(false);
-  const [showGoogleForm, setShowGoogleForm] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState("");
-  const [form, setForm] = useState({
-    email: "",
-    name: "",
-    phone: "",
-    address: "",
-    model: "",
-    quantity: "",
-    note: ""
-  });
-  const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+
 
   const products = [
     {
@@ -95,56 +78,37 @@ const ProductsSection = () => {
       ]
     }
   ];
-
-  // Google Form field names (entry.xxxxx...)
-  const FIELD_EMAIL = "entry.1045781291";
-  const FIELD_NAME = "entry.2005620554";
-  const FIELD_PHONE = "entry.1166974658";
-  const FIELD_ADDRESS = "entry.1065046570";
-  const FIELD_MODEL = "entry.839337160";
-  const FIELD_QUANTITY = "entry.839337162";
-  const FIELD_NOTE = "entry.839337161";
-
-  const handleOrderClick = (productName) => {
-    setSelectedProduct(productName);
-    setShowOrderForm(true);
-    setForm({
-      email: "",
-      name: "",
-      phone: "",
-      address: "",
-      model: productName,
-      quantity: "",
-      note: ""
-    });
-    setSubmitted(false);
-  };
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setShowGoogleForm(true);
-  };
-
   return (
     <>
-      <section id="products" className="pt-0 pb-20 bg-gray-50" data-lov-id="src\components\ProductsSection.tsx:133:4">
+      <section id="products" className="pt-4 pb-20 bg-slate-50" data-lov-id="src\components\ProductsSection.tsx:133:4">
         <div className="container mx-auto px-4">
           <div className="text-center mb-6">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Egg Incubators</h2>
-            <p className="text-base text-gray-600 max-w-3xl mx-auto" style={{ fontFamily: 'Microsoft YaHei UI Light, Microsoft YaHei, Arial, sans-serif' }}>
-              Reliable Egg Incubators with High Hatch Rates<br />
-              From Manual to Fully Automatic Models – Built for Precision, Durability, and Success.
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">Our Egg Incubators</h2>
+            <p className="text-base text-slate-600 max-w-3xl mx-auto mb-3" style={{ fontFamily: 'Microsoft YaHei UI Light, Microsoft YaHei, Arial, sans-serif' }}>
+              Reliable Egg Incubators with High Hatch Rates. From manual to fully automatic models,
+              JB incubators are built for precision, durability, and successful hatching in daily farm use.
+            </p>
+            <p className="text-base text-slate-600 max-w-3xl mx-auto">
+              Compare{" "}
+              <a href="#product-JBW100" className="text-blue-700 underline hover:text-blue-900">JBW100</a>,{" "}
+              <a href="#product-JBST100" className="text-blue-700 underline hover:text-blue-900">JBST100</a>, and{" "}
+              <a href="#product-JBIN100A" className="text-blue-700 underline hover:text-blue-900">JBIN100A</a>{" "}
+              below, then{" "}
+              <a href="/egg-incubators#contact" className="text-blue-700 underline hover:text-blue-900">
+                contact us
+              </a>{" "}
+              or call{" "}
+              <a href="tel:+918767189437" className="text-blue-700 underline hover:text-blue-900">
+                +91 8767189437
+              </a>{" "}
+              to place your order.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
-              <div key={product.id} className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+              <div id={`product-${product.id}`} key={product.id} className="bg-white rounded-xl border border-slate-200 shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 <div className="relative">
-                  <img src={product.image} alt={product.name} className="w-full h-64 object-cover" />
+                  <img src={product.image} alt={product.name} className="w-full h-64 object-cover" loading="lazy" decoding="async" />
                   <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     {product.name}
                   </div>
@@ -191,21 +155,19 @@ const ProductsSection = () => {
                   </div>
                   {/* Footer buttons from hero section */}
                   <div className="flex justify-center gap-4 mt-6">
-                    <button 
-                      className="text-white font-bold px-4 py-2 rounded transition-colors shadow-lg hover:shadow-xl"
-                      style={{ backgroundColor: '#e63946', borderRadius: '8px' }}
-                      onMouseOver={e => e.currentTarget.style.backgroundColor = '#c92a34'}
-                      onMouseOut={e => e.currentTarget.style.backgroundColor = '#e63946'}
-                      onClick={() => handleOrderClick(product.name)}
+                    <button
+                      className="text-white font-bold px-4 py-2 rounded transition-colors shadow-lg hover:shadow-xl bg-red-600 hover:bg-red-700"
+                      style={{ borderRadius: "8px" }}
+                      onClick={() => {
+                        window.location.href = "/jb-egg-incubator-order";
+                      }}
                     >
                       <span role="img" aria-label="Order" className="mr-2">🛒</span>Order Now
                     </button>
-                    <a 
-                      href="tel:+918767189437" 
-                      className="text-white font-bold px-4 py-2 rounded transition-colors"
-                      style={{ backgroundColor: '#1d3557', borderRadius: '8px' }}
-                      onMouseOver={e => e.currentTarget.style.backgroundColor = '#163049'}
-                      onMouseOut={e => e.currentTarget.style.backgroundColor = '#1d3557'}
+                    <a
+                      href="tel:+918767189437"
+                      className="text-white font-bold px-4 py-2 rounded transition-colors bg-blue-900 hover:bg-blue-950"
+                      style={{ borderRadius: "8px" }}
                     >
                       <span role="img" aria-label="Call" className="mr-2">📞</span>Call Now
                     </a>
@@ -216,32 +178,7 @@ const ProductsSection = () => {
           </div>
         </div>
       </section>
-      {showOrderForm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-          <div className="bg-white rounded-lg shadow-lg max-w-2xl w-full relative pt-12 pb-8 px-4 z-50 overflow-y-auto max-h-[90vh]">
-            <button
-              className="absolute top-4 right-4 bg-blue-600 text-white border-2 border-white rounded-full w-12 h-12 flex items-center justify-center text-3xl font-bold shadow-lg z-50 focus:outline-none hover:bg-red-600 hover:text-white transition-colors"
-              onClick={() => setShowOrderForm(false)}
-              aria-label="Close"
-            >
-              ×
-            </button>
-            <iframe
-              src="https://docs.google.com/forms/d/e/1FAIpQLSfN9z4X80WO-V_qXBl8mHs8ObkZMK4ko4o5xWkMXLK7znPC8w/viewform?embedded=true"
-              width="100%"
-              height="1557"
-              frameBorder="0"
-              marginHeight={0}
-              marginWidth={0}
-              title="Order Now Form"
-              className="w-full rounded"
-              style={{ minHeight: 600 }}
-            >
-              Loading…
-            </iframe>
-          </div>
-        </div>
-      )}
+
     </>
   );
 };
