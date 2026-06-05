@@ -13,7 +13,8 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     proxy: {
       "/api": {
-        target: "http://localhost:5000",
+       // target: "http://localhost:5000",
+        target: "https://jb-egg-incubator-main.onrender.com",
         changeOrigin: true,
       },
     },

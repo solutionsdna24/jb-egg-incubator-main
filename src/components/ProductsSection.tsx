@@ -2,6 +2,7 @@ import { useState } from "react";
 import jbw100 from "@/assets/jbw100.webp";
 import jbst100 from "@/assets/jbst100.webp";
 import jbin100a from "@/assets/jbin100a.webp";
+import { Link } from "react-router-dom";
 
 const ProductsSection = () => {
 
@@ -90,17 +91,17 @@ const ProductsSection = () => {
             </p>
             <p className="text-base text-slate-600 max-w-3xl mx-auto">
               Compare{" "}
-              <a href="#product-JBW100" className="text-blue-700 underline hover:text-blue-900">JBW100</a>,{" "}
-              <a href="#product-JBST100" className="text-blue-700 underline hover:text-blue-900">JBST100</a>, and{" "}
-              <a href="#product-JBIN100A" className="text-blue-700 underline hover:text-blue-900">JBIN100A</a>{" "}
+              <Link to="/products" className="text-blue-700 underline hover:text-blue-900">JBW100</Link>,{" "}
+              <Link to="/products" className="text-blue-700 underline hover:text-blue-900">JBST100</Link>, and{" "}
+              <Link to="/products" className="text-blue-700 underline hover:text-blue-900">JBIN100A</Link>{" "}
               below, then{" "}
-              <a href="/egg-incubators#contact" className="text-blue-700 underline hover:text-blue-900">
+              <Link to="/contact" className="text-blue-700 underline hover:text-blue-900">
                 contact us
-              </a>{" "}
+              </Link>{" "}
               or call{" "}
-              <a href="tel:+918767189437" className="text-blue-700 underline hover:text-blue-900">
+              <Link to="tel:+918767189437" className="text-blue-700 underline hover:text-blue-900">
                 +91 8767189437
-              </a>{" "}
+              </Link>{" "}
               to place your order.
             </p>
           </div>

@@ -2,6 +2,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import nodemailer from "nodemailer";
+import JB_LOGO from "@/assets/JB_LOGO-removebg-preview.webp";
 
 dotenv.config();
 
@@ -164,7 +165,7 @@ Generated on: ${new Date().toLocaleString()}
 <tr>
   <td style="background:linear-gradient(135deg,#0f4c81,#1f7ae0);padding:30px;text-align:center;"
    style={{
-          backgroundImage: cid:jbLogo}} >
+        backgroundImage: cid:jbLogo}} >
   <img
       src="cid:jbLogo"
       alt="JB Egg Incubator"
@@ -256,7 +257,7 @@ Generated on: ${new Date().toLocaleString()}
       attachments: [
         {
         filename: "jb-logo.webp",
-        path: "./src/assets/JB_LOGO-removebg-preview.webp",
+        path: JB_LOGO,
         cid: "jbLogo",
         },
         ],
