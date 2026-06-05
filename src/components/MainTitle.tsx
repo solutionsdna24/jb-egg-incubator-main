@@ -1,5 +1,6 @@
 import { Phone, Truck, Shield } from "lucide-react";
 import chickBackground from "@/assets/chick-background.webp";
+import { Link } from "react-router-dom";
 
 interface MainTitleProps {
   onOrderNowClick?: () => void;
@@ -35,14 +36,17 @@ const MainTitle = ({ onOrderNowClick }: MainTitleProps) => {
           who need consistent hatch results.
         </p>
         <div className="flex justify-center mb-6 space-x-4">
+        <Link to="/jb-egg-incubator-order">
+
           <button
             className="text-white font-bold px-4 py-2 rounded shadow-lg hover:shadow-xl bg-red-600 hover:bg-red-700 transition-colors"
             style={{ borderRadius: "8px" }}
-            onClick={() => navigate("/jb-egg-incubator-order")}
+          
 
           >
             <span role="img" aria-label="Order" className="mr-2">🛒</span>Order Now
           </button>
+          </Link>
           <a
             href="tel:+918767189437"
             className="text-white font-bold px-4 py-2 rounded bg-blue-900 hover:bg-blue-950 transition-colors"
