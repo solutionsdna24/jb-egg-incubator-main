@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const SeoIntroSection = () => {
   return (
     <section
@@ -17,13 +18,12 @@ const SeoIntroSection = () => {
         <p className="text-gray-700 mb-4 leading-relaxed">
           Whether you need a budget-friendly manual incubator or a fully automatic model with
           digital monitoring, JB offers options for different capacity needs. Explore our{" "}
-          <a href="/products" className="text-blue-700 underline hover:text-blue-900">
-            egg incubator products
-          </a>
+          <Link to="/products"  className="text-blue-700 underline hover:text-blue-900"> egg incubator products </Link>
+         
           , or{" "}
-          <a href="/contact" className="text-blue-700 underline hover:text-blue-900">
-            contact our team
-          </a>{" "}
+          <Link to="/contact"  className="text-blue-700 underline hover:text-blue-900"> contact our team </Link>
+         
+         
           for model selection support.
         </p>
         <p className="text-gray-700 mb-6 leading-relaxed">
@@ -33,21 +33,21 @@ const SeoIntroSection = () => {
           customer support and warranty coverage.
         </p>
         <nav aria-label="Related page sections" className="flex flex-wrap gap-4 text-sm font-medium">
-          <a href="/" className="text-blue-700 underline hover:text-blue-900">
+          <Link to="/" className="text-blue-700 underline hover:text-blue-900">
             Home
-          </a>
-          <a href="/products" className="text-blue-700 underline hover:text-blue-900">
+          </Link>
+          <Link to="/products"  className="text-blue-700 underline hover:text-blue-900">
             Products
-          </a>
-          <a href="/details" className="text-blue-700 underline hover:text-blue-900">
+          </Link>
+          <Link to="/details" className="text-blue-700 underline hover:text-blue-900">
             Details
-          </a>
-          <a href="/contact" className="text-blue-700 underline hover:text-blue-900">
+          </Link>
+          <Link to="/contact" className="text-blue-700 underline hover:text-blue-900">
             Contact
-          </a>
-          <a href="tel:+918767189437" className="text-blue-700 underline hover:text-blue-900">
+          </Link>
+          <Link to="tel:+918767189437" className="text-blue-700 underline hover:text-blue-900">
             Call +91 8767189437
-          </a>
+          </Link>
         </nav>
       </div>
     </section>

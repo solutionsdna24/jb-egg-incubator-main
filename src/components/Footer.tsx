@@ -19,27 +19,27 @@ const Footer = () => {
               guidance, and responsive support before and after purchase.
             </p>
             <p className="text-gray-300">
-              <a href="/products" className="text-blue-300 hover:text-blue-200 underline">
+              <Link to="/products" className="text-blue-300 hover:text-blue-200 underline">
                 Browse incubator models
-              </a>
+              </Link>
             </p>
           </div>
           {/* Contact Us */}
           <div id="contact">
             <h4 className="text-xl font-semibold mb-4">Contact Us</h4>
             <div className="space-y-3">
-              <a href="tel:+918767189437" className="flex items-center hover:text-blue-400 transition-colors">
+              <Link to="tel:+918767189437" className="flex items-center hover:text-blue-400 transition-colors">
                 <Phone className="w-5 h-5 mr-3 text-blue-400" />
                 <span className="text-gray-300">+91 8767189437</span>
-              </a>
-              <a href="tel:+918803625410" className="flex items-center hover:text-blue-400 transition-colors">
+              </Link>
+              <Link to="tel:+918803625410" className="flex items-center hover:text-blue-400 transition-colors">
                 <Phone className="w-5 h-5 mr-3 text-blue-400" />
                 <span className="text-gray-300">+91 8803625410</span>
-              </a>
-              <a href="mailto:jbincubator5@gmail.com" className="flex items-center hover:text-blue-400 transition-colors">
+              </Link>
+              <Link to="mailto:jbincubator5@gmail.com" className="flex items-center hover:text-blue-400 transition-colors">
                 <Mail className="w-5 h-5 mr-3 text-blue-400" />
                 <span className="text-gray-300">jbincubator5@gmail.com</span>
-              </a>
+              </Link>
               <div className="flex items-center">
                 <MapPin className="w-5 h-5 mr-3 text-blue-400" />
                 <span className="text-gray-300">Lakhandur, Bhandara, Maharashtra 441803</span>
