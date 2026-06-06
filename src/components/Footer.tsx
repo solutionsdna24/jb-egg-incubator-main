@@ -1,6 +1,8 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-
+const message = encodeURIComponent(
+  "Hi JB Egg Incubator Team, I want to order an egg incubator machine. Please share details."
+);
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-12">
@@ -75,7 +77,7 @@ const Footer = () => {
         </div>
       </div>
       <a
-  href="https://wa.me/918767189437?text=Hi%JB%Egg%Incubator%Team,%I%want%to%order%an%egg%incubator%machine.%Please%share%details."
+  href={`https://wa.me/918767189437?text=${message}`}
   title="WhatsApp"
   target="_blank"
   rel="noopener noreferrer"

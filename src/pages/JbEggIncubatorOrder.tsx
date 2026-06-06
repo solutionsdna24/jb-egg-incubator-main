@@ -138,7 +138,7 @@ const JbEggIncubatorOrder = () => {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch("/api/incubator-enquiry", {
+      const response = await fetch("https://jb-egg-incubator-main.onrender.com/api/incubator-enquiry", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
