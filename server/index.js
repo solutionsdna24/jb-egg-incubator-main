@@ -27,17 +27,21 @@ if (!hasAllEnvVars) {
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
-  tls: {
-    rejectUnauthorized: false,
-  },
+  connectionTimeout: 30000,
+  greetingTimeout: 30000,
+  socketTimeout: 30000,
 });
 
+transporter.verify()
+  .then(() => console.log("SMTP Ready"))
+  .catch(err => console.error("SMTP Error:", err));
+  
 const isValidPayload = (payload) => {
   const fullName = String(payload.fullName || "").trim();
   const email = String(payload.email || "").trim();
