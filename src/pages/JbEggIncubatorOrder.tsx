@@ -138,29 +138,24 @@ const JbEggIncubatorOrder = () => {
 
     setIsSubmitting(true);
     try {
-      
-
-      const response = await fetch(
-        "https://formsubmit.co/ajax/ashvinimule5@gmail.com",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            _subject: "New JB Egg Incubator Order Enquiry",
-            _template: "table",
-            FullName: formData.fullName,
-            Email: formData.email,
-            Mobile: formData.mobileNumber,
-            Address: formData.shippingAddress,
-            Model: formData.incubatorModel,
-            Quantity: formData.quantity,
-            Notes: formData.notes,
-          }),
-        }
-      );
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "d12fbcaf-2983-43c2-ac22-1f3b436d12d4",
+    
+          subject: "New JB Egg Incubator Order Enquiry",
+    
+          fullName: formData.fullName,
+          email: formData.email,
+          mobileNumber: formData.mobileNumber,
+          shippingAddress: formData.shippingAddress,
+          incubatorModel: formData.incubatorModel,
+          quantity: formData.quantity,
+          notes: formData.notes,
+        }),      });
 
       if (!response.ok) {
         const responseData = (await response.json().catch(() => null)) as
@@ -198,45 +193,12 @@ const JbEggIncubatorOrder = () => {
 
         <section className="px-4 py-10 sm:py-14">
           <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8">
-            <form    action="https://formsubmit.co/ashvinimule5@gmail.com"
-  method="POST" onSubmit={handleSubmit} className="space-y-5" noValidate>
+            <form onSubmit={handleSubmit} className="space-y-5" noValidate>
               <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                 <div className="md:col-span-2">
                   <label htmlFor="fullName" className="mb-2 block text-sm font-semibold text-slate-800">
                     Full Name <span aria-hidden="true" className="text-red-600">*</span>
                   </label>
-                  <input
-    type="hidden"
-    name="_subject"
-    value="New JB Egg Incubator Order Enquiry"
-  />
-
-  <input
-    type="hidden"
-    name="_template"
-    value="table"
-  />
-
-  <input
-    type="hidden"
-    name="_captcha"
-    value="false"
-  />
-
-  {/* Your existing fields */}
-  <input
-    type="text"
-    name="fullName"
-    placeholder="Full Name"
-    required
-  />
-
-  <input
-    type="email"
-    name="email"
-    placeholder="Email"
-    required
-  />
                   <input
                     id="fullName"
                     name="fullName"
