@@ -138,13 +138,27 @@ const JbEggIncubatorOrder = () => {
 
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://jb-egg-incubator-main.onrender.com/api/incubator-enquiry", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://formsubmit.co/ajax/ashvinimule5@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            _subject: "New JB Egg Incubator Order Enquiry",
+            _template: "table",
+            FullName: formData.fullName,
+            Email: formData.email,
+            Mobile: formData.mobileNumber,
+            Address: formData.shippingAddress,
+            Model: formData.incubatorModel,
+            Quantity: formData.quantity,
+            Notes: formData.notes,
+          }),
+        }
+      );
 
       if (!response.ok) {
         const responseData = (await response.json().catch(() => null)) as

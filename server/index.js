@@ -1,13 +1,14 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
-import nodemailer from "nodemailer";
+//import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 dotenv.config();
 
 const app = express();
 const port = process.env.API_PORT || 5000;
-
+const resend = new Resend(process.env.RESEND_API_KEY);
 app.use(cors());
 app.use(express.json());
 
@@ -160,7 +161,7 @@ Generated on: ${new Date().toLocaleString()}
 
 `
 
-    await transporter.sendMail({
+await resend.emails.send({
       from: process.env.SMTP_USER,
       to: process.env.ENQUIRY_TO_EMAIL,
       subject: "New JB Egg Incubator Order Enquiry",
