@@ -13,6 +13,7 @@ interface EnquiryFormData {
   notes: string;
 }
 
+
 interface EnquiryFormErrors {
   fullName?: string;
   email?: string;
@@ -29,8 +30,7 @@ const initialFormData: EnquiryFormData = {
   shippingAddress: "",
   incubatorModel: "",
   quantity: "1",
-  notes: "",
-};
+  notes: "I am interested in purchasing an egg incubator. Please contact me with pricing and delivery details."};
 
 const incubatorOptions = [
   "JBW100",
@@ -138,6 +138,16 @@ const JbEggIncubatorOrder = () => {
 
     setIsSubmitting(true);
     try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbxSx2PqFeV7otUjXCdccZaO6nQXm9Ui-wTMCeB1LJKCPJhaDt88FuCb6GmhUVWOjTJBBQ/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
@@ -201,7 +211,7 @@ const JbEggIncubatorOrder = () => {
                   </label>
                   <input
                     id="fullName"
-                    name="fullName"
+                    name="full Name"
                     type="text"
                     className={fieldClassName}
                     value={formData.fullName}
