@@ -138,6 +138,8 @@ const JbEggIncubatorOrder = () => {
 
     setIsSubmitting(true);
     try {
+      
+
       const response = await fetch(
         "https://formsubmit.co/ajax/ashvinimule5@gmail.com",
         {
@@ -196,12 +198,45 @@ const JbEggIncubatorOrder = () => {
 
         <section className="px-4 py-10 sm:py-14">
           <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8">
-            <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+            <form    action="https://formsubmit.co/ashvinimule5@gmail.com"
+  method="POST" onSubmit={handleSubmit} className="space-y-5" noValidate>
               <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                 <div className="md:col-span-2">
                   <label htmlFor="fullName" className="mb-2 block text-sm font-semibold text-slate-800">
                     Full Name <span aria-hidden="true" className="text-red-600">*</span>
                   </label>
+                  <input
+    type="hidden"
+    name="_subject"
+    value="New JB Egg Incubator Order Enquiry"
+  />
+
+  <input
+    type="hidden"
+    name="_template"
+    value="table"
+  />
+
+  <input
+    type="hidden"
+    name="_captcha"
+    value="false"
+  />
+
+  {/* Your existing fields */}
+  <input
+    type="text"
+    name="fullName"
+    placeholder="Full Name"
+    required
+  />
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Email"
+    required
+  />
                   <input
                     id="fullName"
                     name="fullName"
