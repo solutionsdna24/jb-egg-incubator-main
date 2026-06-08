@@ -142,9 +142,8 @@ const JbEggIncubatorOrder = () => {
         "https://script.google.com/macros/s/AKfycbxSx2PqFeV7otUjXCdccZaO6nQXm9Ui-wTMCeB1LJKCPJhaDt88FuCb6GmhUVWOjTJBBQ/exec",
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          mode: "no-cors",
+        
           body: JSON.stringify(formData),
         }
       );
