@@ -35,7 +35,7 @@ const initialFormData: EnquiryFormData = {
 const incubatorOptions = [
   "JBW100",
   "JBST100",
-  "JBIN100A",
+  "JBI80M",
   "Custom Requirement",
 ];
 

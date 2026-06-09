@@ -2,6 +2,8 @@ import { useState } from "react";
 import jbw100 from "@/assets/jbw100.webp";
 import jbst100 from "@/assets/jbst100.webp";
 import jbin100a from "@/assets/jbin100a.webp";
+import jbi80m from "@/assets/jbi80m.webp";
+
 import { Link } from "react-router-dom";
 
 const ProductsSection = () => {
@@ -54,18 +56,18 @@ const ProductsSection = () => {
       ]
     },
     {
-      id: "JBIN100A",
-      name: "JBIN100A",
-      price: "₹ 9,499.00",
-      image: jbin100a,
+      id: "JBI80M",
+      name: "JBI80M",
+      price: "₹ 10,499.00",
+      image: jbi80m,
       features: {
         control: "Auto Control",
         monitoring: "Digital Monitor",
-        capacity: "120 eggs",
+        capacity: "80 eggs",
         power: "120 Watt"
       },
       keyFeatures: [
-        "Fiber Body Material",
+        "Metal Body Material",
         "High quality controller with automatic rotation",
         "Dual Fan cooling system",
         "2 bulbs heating system",
@@ -93,7 +95,7 @@ const ProductsSection = () => {
               Compare{" "}
               <Link to="/products" className="text-blue-700 underline hover:text-blue-900">JBW100</Link>,{" "}
               <Link to="/products" className="text-blue-700 underline hover:text-blue-900">JBST100</Link>, and{" "}
-              <Link to="/products" className="text-blue-700 underline hover:text-blue-900">JBIN100A</Link>{" "}
+              <Link to="/products" className="text-blue-700 underline hover:text-blue-900">JBI80M</Link>{" "}
               below, then{" "}
               <Link to="/contact" className="text-blue-700 underline hover:text-blue-900">
                 contact us

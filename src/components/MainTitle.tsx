@@ -1,14 +1,34 @@
 import { Phone, Truck, Shield } from "lucide-react";
 import chickBackground from "@/assets/chick-background.webp";
 import { Link } from "react-router-dom";
+import { useState,useEffect } from "react";
 
 interface MainTitleProps {
   onOrderNowClick?: () => void;
 }
 
+const MARQUEE_TEXT = [
+  "🔥 Limited Stock Available – Order Today!",
+  "⚡ Selling Fast! Secure Your JB Egg Incubator Now.",
+  "🚚 Ready Stock Available – Delivery Across India.",
+  "🐣 High Hatch Rate • Trusted by Poultry Farmers.",
+  "📞 Contact Us Today for Orders & Enquiries.",
+];
+
+
 const MainTitle = ({ onOrderNowClick }: MainTitleProps) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % MARQUEE_TEXT.length);
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative text-center py-12 px-4 overflow-hidden" aria-labelledby="main-page-heading">
+    <section className="relative text-center py-1 px-4 overflow-hidden" aria-labelledby="main-page-heading">
       <div
         role="img"
         data-aid="BACKGROUND_IMAGE_RENDERED"
@@ -23,6 +43,13 @@ const MainTitle = ({ onOrderNowClick }: MainTitleProps) => {
           opacity: 1,
         }}  
       />
+      
+      <div className="relative overflow-hidden bg-green-850 py-3">
+ 
+  <div className="bg-green-850 py-8 text-center text-white font-medium text-xl">
+  {MARQUEE_TEXT[currentIndex]}
+</div>
+</div>
       <div className="relative z-10">
         <h1 id="main-page-heading" className="text-4xl md:text-6xl font-bold text-white mb-6 font-playfair">
           JB EGG INCUBATOR

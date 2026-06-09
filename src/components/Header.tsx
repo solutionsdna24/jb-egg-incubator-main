@@ -7,6 +7,21 @@ import orderNowButton from "@/assets/order-now-button.webp";
 import phoneIcon from "@/assets/phone-icon.webp";
 import { Phone, Truck, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Languages } from "lucide-react";
+const toggleLanguage = () => {
+  const currentLang = localStorage.getItem("site-lang") || "en";
+  const newLang = currentLang === "en" ? "mr" : "en";
+
+  const select = document.querySelector(
+    ".goog-te-combo"
+  ) as HTMLSelectElement | null;
+
+  if (select) {
+    select.value = newLang;
+    select.dispatchEvent(new Event("change"));
+    localStorage.setItem("site-lang", newLang);
+  }
+};
 
 interface HeaderProps {
   onOrderNowClick?: () => void;
@@ -53,7 +68,14 @@ const Header = ({ onOrderNowClick }: HeaderProps) => {
             <a href="tel:+918767189437" className="ml-3 flex items-center" aria-label="Call Now">
               <img src={phoneIcon} alt="Call Now" className="h-10 w-10 object-contain" loading="lazy" decoding="async" />
             </a>
+            <button
+  onClick={toggleLanguage} 
+  className="ml-3 flex items-center text-3xl justify-center h-12 w-12 rounded-full border border-gray-300 bg-white shadow-sm hover:bg-gray-100"
+>
+  🌐 
+</button><span className="font-small">EN / मराठी</span>
           </div>
+
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center gap-6 text-xl md:text-lg" aria-label="Primary navigation">

@@ -14,6 +14,7 @@ const Index = () => {
       <Header onOrderNowClick={handleOrderNowClick} />
       <main id="home">
         <MainTitle onOrderNowClick={handleOrderNowClick} />
+        
         <SeoIntroSection />
         <GallerySection />
         <section className="bg-white py-12 px-4 border-y border-slate-200">
