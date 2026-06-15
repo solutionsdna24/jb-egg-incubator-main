@@ -4,6 +4,8 @@ import { lazy, Suspense, useState, useEffect } from "react";
 import HeroVideoBackground from "@/components/HeroVideoBackground";
 import BrandLogo from "@/components/BrandLogo";
 import { FEATURED_VIDEO_ID, CHANNEL_VIDEOS } from "@/lib/youtube";
+import chicksHatched from "@/assets/chicks-hatched.webp";
+import chickBackground from "@/assets/chick-background.webp";
 
 const YouTubeModal = lazy(() => import("@/components/YouTubeModal"));
 
@@ -36,15 +38,13 @@ const MainTitle = () => {
         <HeroVideoBackground />
 
         <div className="relative z-10 w-full max-w-4xl mx-auto min-w-0">
-          <div className="rounded-xl sm:rounded-2xl border border-white/60 bg-white/95 backdrop-blur-sm shadow-2xl px-4 py-6 sm:px-8 sm:py-10 lg:px-10 lg:py-12 w-full min-w-0">
-            <div className="mb-4 sm:mb-6 flex justify-center">
-              <div className="rounded-lg sm:rounded-xl bg-white border-2 border-stone-100 p-3 sm:p-5 shadow-sm max-w-full">
-                <BrandLogo size="hero" linked={false} showTagline align="left" />
-              </div>
+          <div className="px-4 py-6 sm:px-8 sm:py-10 lg:px-10 lg:py-12 w-full min-w-0">
+            <div className="mb-5 sm:mb-6 flex justify-center w-full">
+              <BrandLogo size="hero" linked={false} showTagline align="center" className="w-full max-w-[460px]" />
             </div>
 
             <div className="mb-4 sm:mb-5 px-1">
-              <span className="inline-flex max-w-full items-center justify-center gap-1.5 sm:gap-2 bg-slate-800 text-white text-[11px] leading-snug sm:text-sm font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm text-balance">
+              <span className="inline-flex max-w-full items-center justify-center gap-1.5 sm:gap-2 bg-yellow-500 text-white text-[11px] leading-snug sm:text-sm font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm text-balance">
                 <Star className="h-3 w-3 sm:h-3.5 sm:w-3.5 fill-white shrink-0" aria-hidden="true" />
                 {MARQUEE_TEXT[currentIndex]}
               </span>
@@ -52,18 +52,48 @@ const MainTitle = () => {
 
             <h1
               id="main-page-heading"
-              className="text-[1.35rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-stone-900 mb-2 sm:mb-3 tracking-tight text-balance px-0.5"
+              className="text-[1.35rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 tracking-tight text-balance px-0.5"
             >
               Egg Incubator Manufacturer in India — Trusted by 1,000+ Farmers
             </h1>
-            <p className="text-sm sm:text-lg md:text-xl font-semibold text-slate-700 mb-3 sm:mb-4 leading-snug text-balance px-0.5">
+            <p className="text-sm sm:text-lg md:text-xl font-semibold text-white mb-3 sm:mb-4 leading-snug text-balance px-0.5">
               Automatic egg incubator machines & commercial poultry incubators from ₹2,700
             </p>
-            <p className="text-sm sm:text-base md:text-lg text-stone-700 max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed text-pretty px-0.5">
-              JB is among the best egg incubator companies in India — a poultry incubator supplier
-              based in Maharashtra with manual & automatic egg hatching machines, 85–90% hatch rates,
-              pan-India delivery, and expert phone support on every order.
-            </p>
+            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl max-w-2xl mx-auto mb-6 sm:mb-8 border border-emerald-200/80 shadow-inner">
+              <img
+                src={chickBackground}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 h-full w-full object-cover object-center scale-105 opacity-50"
+                loading="eager"
+                decoding="async"
+              />
+              <img
+                src={chicksHatched}
+                alt=""
+                aria-hidden="true"
+                className="absolute -bottom-2 -left-4 w-28 sm:w-36 opacity-35 object-contain pointer-events-none sm:opacity-45"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                src={chicksHatched}
+                alt=""
+                aria-hidden="true"
+                className="absolute -bottom-2 -right-4 w-28 sm:w-36 opacity-35 object-contain pointer-events-none scale-x-[-1] sm:opacity-45 hidden sm:block"
+                loading="lazy"
+                decoding="async"
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-emerald-50/95 via-white/92 to-emerald-50/95"
+                aria-hidden="true"
+              />
+              <p className="relative z-10 text-sm sm:text-base md:text-lg text-stone-800 font-medium max-w-2xl mx-auto leading-relaxed text-pretty px-4 py-5 sm:px-6 sm:py-6">
+                JB is among the best egg incubator companies in India — a poultry incubator supplier
+                based in Maharashtra with manual & automatic egg hatching machines, 85–90% hatch rates,
+                pan-India delivery, and expert phone support on every order.
+              </p>
+            </div>
 
             <div className="flex flex-col md:flex-row flex-wrap justify-center items-stretch md:items-center gap-2.5 sm:gap-3 md:gap-4 mb-5 sm:mb-6 w-full max-w-xl md:max-w-none mx-auto">
               <Link

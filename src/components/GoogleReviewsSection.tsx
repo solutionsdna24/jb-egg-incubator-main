@@ -2,7 +2,7 @@ import { Star, ExternalLink } from "lucide-react";
 import { googleReviews, GOOGLE_REVIEWS_URL, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/lib/reviews";
 
 const StarRow = ({ rating }: { rating: number }) => (
-  <div className="flex gap-0.5" aria-label={`${rating} out of 5 stars`}>
+  <span className="inline-flex gap-0.5" role="img" aria-label={`${rating} out of 5 stars`}>
     {[1, 2, 3, 4, 5].map((i) => (
       <Star
         key={i}
@@ -10,7 +10,7 @@ const StarRow = ({ rating }: { rating: number }) => (
         aria-hidden="true"
       />
     ))}
-  </div>
+  </span>
 );
 
 const GoogleReviewsSection = () => (

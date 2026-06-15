@@ -207,7 +207,7 @@ html {
   }
 
   .section-eyebrow {
-    @apply text-xs sm:text-sm font-medium uppercase tracking-widest text-emerald-700 mb-2;
+    @apply text-xs sm:text-sm font-semibold uppercase tracking-widest text-emerald-900 mb-2;
   }
 
   .section-title {
@@ -235,7 +235,7 @@ html {
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center border border-emerald-600 text-emerald-700 hover:bg-emerald-50 font-medium px-5 py-3 rounded-xl transition-colors;
+    @apply inline-flex items-center justify-center border border-emerald-700 text-emerald-900 hover:bg-emerald-50 font-medium px-5 py-3 rounded-xl transition-colors;
   }
 }
 

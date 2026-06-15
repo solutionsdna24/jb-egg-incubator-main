@@ -38,29 +38,30 @@ const LanguageToggle = ({
       ? "border-white/30 bg-white/10"
       : "border-stone-200 bg-white shadow-sm";
   const active =
-    variant === "dark" ? "bg-white text-slate-800" : "bg-slate-800 text-white shadow-sm";
+    variant === "dark" ? "bg-white text-slate-900" : "bg-slate-800 text-white shadow-sm";
   const inactive =
     variant === "dark"
-      ? "text-white/90 hover:bg-white/20"
-      : "text-stone-600 hover:text-slate-800 hover:bg-stone-100";
+      ? "text-white hover:bg-white/20"
+      : "text-stone-700 hover:text-slate-900 hover:bg-stone-100";
 
   return (
     <div
       className={`inline-flex items-center rounded-full border p-0.5 ${shell} ${className}`}
-      role="group"
+      role="radiogroup"
       aria-label="Choose language"
     >
-      <Globe className="h-3.5 w-3.5 text-stone-400 ml-2 mr-1 shrink-0 hidden sm:block" aria-hidden="true" />
+      <Globe className="h-3.5 w-3.5 text-stone-500 ml-2 mr-1 shrink-0 hidden sm:block" aria-hidden="true" />
       {(["en", "mr"] as const).map((code) => (
         <button
           key={code}
           type="button"
+          role="radio"
           disabled={busy}
           onClick={() => setLanguage(code)}
           className={`px-2.5 sm:px-3 py-1.5 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 disabled:opacity-60 ${
             lang === code ? active : inactive
           }`}
-          aria-pressed={lang === code}
+          aria-checked={lang === code}
         >
           {code === "en" ? "English" : "मराठी"}
         </button>

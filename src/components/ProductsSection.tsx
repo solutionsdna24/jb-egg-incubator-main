@@ -73,9 +73,9 @@ const ProductsSection = () => (
               </div>
 
               <div className="mb-6 flex-1">
-                <h4 className="font-semibold text-slate-800 mb-3 text-sm uppercase tracking-wide">
+                <p className="font-semibold text-stone-900 mb-3 text-sm uppercase tracking-wide">
                   Key Features
-                </h4>
+                </p>
                 <ul className="space-y-2">
                   {product.keyFeatures.map((feature) => (
                     <li key={feature} className="text-sm text-slate-600 flex items-start gap-2">

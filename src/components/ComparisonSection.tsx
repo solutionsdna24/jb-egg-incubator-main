@@ -51,9 +51,15 @@ const ComparisonSection = () => (
                     <td key={p.id} className="p-4 text-center text-slate-600">
                       {isYesNo ? (
                         value === "Yes" ? (
-                          <Check className="h-5 w-5 text-green-600 mx-auto" aria-label="Yes" />
+                          <span className="inline-flex items-center justify-center">
+                            <Check className="h-5 w-5 text-green-700" aria-hidden="true" />
+                            <span className="sr-only">Yes</span>
+                          </span>
                         ) : (
-                          <X className="h-5 w-5 text-slate-300 mx-auto" aria-label="No" />
+                          <span className="inline-flex items-center justify-center">
+                            <X className="h-5 w-5 text-stone-400" aria-hidden="true" />
+                            <span className="sr-only">No</span>
+                          </span>
                         )
                       ) : (
                         value

@@ -71,6 +71,7 @@ const Header = () => {
             <button
               type="button"
               onClick={() => goToSection("videos")}
+              aria-label="Watch incubator videos"
               className="inline-flex items-center gap-2 rounded-lg border border-stone-200 px-3 py-2 text-sm font-semibold text-stone-700 hover:border-emerald-300 hover:text-emerald-700 transition-colors"
             >
               <Play className="h-4 w-4 text-red-600" aria-hidden="true" />

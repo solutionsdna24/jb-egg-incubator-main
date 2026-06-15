@@ -77,10 +77,11 @@ const BlogSection = () => {
                 <p className="text-sm text-stone-600 leading-relaxed flex-1 mb-4">{post.excerpt}</p>
                 <Link
                   to={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-1 text-sm font-bold text-emerald-700 hover:text-emerald-800"
+                  className="inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-900"
+                  aria-label={`Read more: ${post.title}`}
                 >
                   Read more
-                  <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
                 </Link>
               </div>
             </article>

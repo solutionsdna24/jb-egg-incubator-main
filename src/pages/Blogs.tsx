@@ -78,10 +78,11 @@ const Blogs = () => (
                   <p className="text-stone-600 leading-relaxed mb-4 flex-1">{post.excerpt}</p>
                   <Link
                     to={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-1 text-sm font-bold text-emerald-700 hover:text-emerald-800"
+                    className="inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-900"
+                    aria-label={`Read article: ${post.title}`}
                   >
                     Read article
-                    <ArrowRight className="h-3.5 w-3.5" />
+                    <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                   </Link>
                 </div>
               </article>
