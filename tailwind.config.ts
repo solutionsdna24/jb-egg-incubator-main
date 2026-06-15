@@ -18,10 +18,6 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				montserrat: ['Montserrat', 'sans-serif'],
-				playfair: ['Playfair Display', 'serif'],
-			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -38,9 +34,6 @@ export default {
 				},
 				success: 'hsl(var(--success))',
 				warning: 'hsl(var(--warning))',
-				'flipkart-blue': 'hsl(var(--flipkart-blue))',
-				'flipkart-orange': 'hsl(var(--flipkart-orange))',
-				'flipkart-yellow': 'hsl(var(--flipkart-yellow))',
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'

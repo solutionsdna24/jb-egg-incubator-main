@@ -1,7 +1,11 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import PromoBar from "@/components/PromoBar";
+import SeoHead from "@/components/SeoHead";
+import { whatsAppUrl } from "@/lib/social";
+import { FormEvent, useMemo, useState } from "react";
 import { toast } from "sonner";
+import { Phone, MessageCircle, Truck, Shield, Zap } from "lucide-react";
 
 interface EnquiryFormData {
   fullName: string;
@@ -44,36 +48,9 @@ const JbEggIncubatorOrder = () => {
   const [errors, setErrors] = useState<EnquiryFormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    const previousTitle = document.title;
-    const previousDescription = document
-      .querySelector('meta[name="description"]')
-      ?.getAttribute("content");
-
-    document.title = "JB Egg Incubator Order Enquiry | JB Incubators";
-
-    let descriptionMetaTag = document.querySelector('meta[name="description"]');
-    if (!descriptionMetaTag) {
-      descriptionMetaTag = document.createElement("meta");
-      descriptionMetaTag.setAttribute("name", "description");
-      document.head.appendChild(descriptionMetaTag);
-    }
-    descriptionMetaTag.setAttribute(
-      "content",
-      "Submit your JB Egg Incubator order enquiry with model, quantity, and shipping details. Our team will contact you shortly.",
-    );
-
-    return () => {
-      document.title = previousTitle;
-      if (previousDescription) {
-        descriptionMetaTag?.setAttribute("content", previousDescription);
-      }
-    };
-  }, []);
-
   const fieldClassName = useMemo(
     () =>
-      "w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition duration-200 placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100",
+      "w-full rounded-xl border border-stone-200 bg-white px-4 py-3 text-stone-800 outline-none transition duration-200 placeholder:text-stone-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100",
     [],
   );
 
@@ -186,26 +163,60 @@ const JbEggIncubatorOrder = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="page-shell">
+      <SeoHead page="order" />
       <Header />
+      <PromoBar />
       <main>
-        <section className="bg-gradient-to-br from-blue-700 via-blue-600 to-indigo-600 px-4 py-16 text-white">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+        <section className="relative overflow-hidden px-4 py-14 sm:py-16 text-center">
+          <div className="absolute inset-0 hero-grid opacity-60" aria-hidden="true" />
+          <div className="absolute inset-0 bg-gradient-to-b from-emerald-50/80 via-white to-stone-50 z-0" aria-hidden="true" />
+          <div className="hero-blob top-0 right-[15%] h-40 w-40 bg-emerald-200/50 animate-blob z-0" aria-hidden="true" />
+          <div className="hero-blob bottom-0 left-[10%] h-48 w-48 bg-orange-200/40 animate-blob animation-delay-300 z-0" aria-hidden="true" />
+
+          <div className="relative z-10 mx-auto max-w-4xl animate-fade-in-up">
+            <span className="inline-block text-xs font-medium uppercase tracking-widest text-orange-600 mb-3">
+              Limited Stock · Selling Fast
+            </span>
+            <h1 className="text-3xl font-semibold leading-tight text-stone-800 sm:text-4xl md:text-5xl">
               JB Egg Incubator Order Enquiry
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-sm text-blue-100 sm:text-base">
-              Submit your requirement and our team will contact you shortly.
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-stone-600 sm:text-base">
+              Submit your requirement — our team responds quickly with pricing, stock status & delivery details.
             </p>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              <a href="tel:+918767189437" className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-2 text-sm text-stone-700 hover:border-emerald-200 transition-colors">
+                <Phone className="h-4 w-4 text-emerald-600" aria-hidden="true" />
+                Call Now
+              </a>
+              <a href={whatsAppUrl()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm text-emerald-700 hover:bg-emerald-100 transition-colors">
+                <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                WhatsApp Order
+              </a>
+            </div>
           </div>
         </section>
 
-        <section className="px-4 py-10 sm:py-14">
-          <div className="mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8">
+        <section className="px-4 pb-12 sm:pb-16">
+          <div className="mx-auto max-w-3xl">
+            <div className="grid grid-cols-3 gap-3 mb-6 animate-fade-in-up animation-delay-200">
+              {[
+                { icon: Zap, text: "From ₹2,700" },
+                { icon: Truck, text: "Pan-India" },
+                { icon: Shield, text: "1 Yr Warranty" },
+              ].map(({ icon: Icon, text }) => (
+                <div key={text} className="flex flex-col items-center gap-1 rounded-xl border border-stone-200 bg-white py-3 px-2 text-center text-xs sm:text-sm text-stone-600">
+                  <Icon className="h-4 w-4 text-emerald-600" aria-hidden="true" />
+                  {text}
+                </div>
+              ))}
+            </div>
+
+            <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm sm:p-8 animate-fade-in-up animation-delay-300">
             <form onSubmit={handleSubmit} className="space-y-5" noValidate>
               <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                 <div className="md:col-span-2">
-                  <label htmlFor="fullName" className="mb-2 block text-sm font-semibold text-slate-800">
+                  <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-stone-800">
                     Full Name <span aria-hidden="true" className="text-red-600">*</span>
                   </label>
                   <input
@@ -228,7 +239,7 @@ const JbEggIncubatorOrder = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="mb-2 block text-sm font-semibold text-slate-800">
+                  <label htmlFor="email" className="mb-2 block text-sm font-medium text-stone-800">
                     Email Address <span aria-hidden="true" className="text-red-600">*</span>
                   </label>
                   <input
@@ -251,7 +262,7 @@ const JbEggIncubatorOrder = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="mobileNumber" className="mb-2 block text-sm font-semibold text-slate-800">
+                  <label htmlFor="mobileNumber" className="mb-2 block text-sm font-medium text-stone-800">
                     Mobile Number <span aria-hidden="true" className="text-red-600">*</span>
                   </label>
                   <input
@@ -277,7 +288,7 @@ const JbEggIncubatorOrder = () => {
                 <div className="md:col-span-2">
                   <label
                     htmlFor="shippingAddress"
-                    className="mb-2 block text-sm font-semibold text-slate-800"
+                    className="mb-2 block text-sm font-medium text-stone-800"
                   >
                     Shipping Address <span aria-hidden="true" className="text-red-600">*</span>
                   </label>
@@ -302,7 +313,7 @@ const JbEggIncubatorOrder = () => {
                 <div>
                   <label
                     htmlFor="incubatorModel"
-                    className="mb-2 block text-sm font-semibold text-slate-800"
+                    className="mb-2 block text-sm font-medium text-stone-800"
                   >
                     Select Incubator Model <span aria-hidden="true" className="text-red-600">*</span>
                   </label>
@@ -330,7 +341,7 @@ const JbEggIncubatorOrder = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="quantity" className="mb-2 block text-sm font-semibold text-slate-800">
+                  <label htmlFor="quantity" className="mb-2 block text-sm font-medium text-stone-800">
                     Quantity <span aria-hidden="true" className="text-red-600">*</span>
                   </label>
                   <input
@@ -353,7 +364,7 @@ const JbEggIncubatorOrder = () => {
                 </div>
 
                 <div className="md:col-span-2">
-                  <label htmlFor="notes" className="mb-2 block text-sm font-semibold text-slate-800">
+                  <label htmlFor="notes" className="mb-2 block text-sm font-medium text-stone-800">
                     Additional Notes / Message
                   </label>
                   <textarea
@@ -370,15 +381,16 @@ const JbEggIncubatorOrder = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex w-full items-center justify-center rounded-xl bg-blue-700 px-6 py-3 text-base font-semibold text-white shadow-sm transition duration-200 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-200 disabled:cursor-not-allowed disabled:opacity-70"
+                className="btn-accent w-full py-3.5 text-base disabled:cursor-not-allowed disabled:opacity-70 hover:scale-[1.01] transition-transform"
               >
-                {isSubmitting ? "Submitting Enquiry..." : "Submit Enquiry"}
+                {isSubmitting ? "Submitting Enquiry..." : "Submit Order Enquiry"}
               </button>
 
-              <p className="text-center text-xs text-slate-500">
+              <p className="text-center text-xs text-stone-500">
                 By submitting this form, you agree to be contacted by the JB Incubator team.
               </p>
             </form>
+            </div>
           </div>
         </section>
       </main>

@@ -1,72 +1,60 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter , Route, Routes } from "react-router-dom";
-import { useEffect } from "react";
-
-import Index from "./pages/Index";
-import Products from "./pages/Products";
-import Details from "./pages/Details";
-import Contact from "./pages/Contact";
-import JbEggIncubatorOrder from "./pages/JbEggIncubatorOrder";
-import NotFound from "./pages/NotFound";
+import { lazy, Suspense, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Toaster } from "@/components/ui/sonner";
 import { ScrollToTop } from "./pages/ScrollToTop";
+import { hideGoogleTranslateBanner, startImageProtection } from "@/lib/googleTranslate";
 
-const queryClient = new QueryClient();
+const Index = lazy(() => import("./pages/Index"));
+const Products = lazy(() => import("./pages/Products"));
+const Details = lazy(() => import("./pages/Details"));
+const Contact = lazy(() => import("./pages/Contact"));
+const JbEggIncubatorOrder = lazy(() => import("./pages/JbEggIncubatorOrder"));
+const Blogs = lazy(() => import("./pages/Blogs"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const WhatsAppFloat = lazy(() => import("@/components/WhatsAppFloat"));
+
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-slate-50" aria-label="Loading page">
+    <div className="h-10 w-10 animate-spin rounded-full border-4 border-emerald-600 border-t-transparent" />
+  </div>
+);
 
 const App = () => {
   useEffect(() => {
-    const removeGoogleBanner = () => {
-      document.body.style.top = "0px";
-  
-      const iframe = document.querySelector(
-        "iframe.goog-te-banner-frame"
-      ) as HTMLElement | null;
-  
-      if (iframe) {
-        iframe.style.display = "none";
-      }
-  
-      const banner = document.querySelector(
-        ".goog-te-banner-frame"
-      ) as HTMLElement | null;
-  
-      if (banner) {
-        banner.style.display = "none";
-      }
+    hideGoogleTranslateBanner();
+    const bannerObserver = new MutationObserver(hideGoogleTranslateBanner);
+    bannerObserver.observe(document.body, { childList: true, subtree: true });
+    const stopImageProtection = startImageProtection();
+    return () => {
+      bannerObserver.disconnect();
+      stopImageProtection();
     };
-  
-    removeGoogleBanner();
-  
-    const interval = setInterval(removeGoogleBanner, 500);
-  
-    return () => clearInterval(interval);
   }, []);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <HashRouter >
-          <ScrollToTop />
-
+    <>
+      <Toaster />
+      <BrowserRouter>
+        <ScrollToTop />
+        <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/egg-incubators" element={<Index />} />
             <Route path="/products" element={<Products />} />
             <Route path="/details" element={<Details />} />
             <Route path="/contact" element={<Contact />} />
-            <Route
-              path="/jb-egg-incubator-order"
-              element={<JbEggIncubatorOrder />}
-            />
+            <Route path="/jb-egg-incubator-order" element={<JbEggIncubatorOrder />} />
+            <Route path="/blog" element={<Blogs />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </HashRouter >
-      </TooltipProvider>
-    </QueryClientProvider>
+        </Suspense>
+        <Suspense fallback={null}>
+          <WhatsAppFloat />
+        </Suspense>
+      </BrowserRouter>
+    </>
   );
 };
 

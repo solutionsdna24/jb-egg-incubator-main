@@ -1,0 +1,218 @@
+import {
+  Thermometer,
+  Droplets,
+  RotateCcw,
+  Shield,
+  Truck,
+  Headphones,
+  IndianRupee,
+  Award,
+  Zap,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
+
+export const stats = [
+  { value: "85%+", label: "Average Hatch Rate" },
+  { value: "1000+", label: "Happy Farmers" },
+  { value: "Pan-India", label: "Delivery Network" },
+  { value: "1 Year", label: "Warranty Support" },
+];
+
+export const features: { icon: LucideIcon; title: string; description: string }[] = [
+  {
+    icon: Thermometer,
+    title: "Precise Temperature Control",
+    description:
+      "Digital controllers maintain stable heat between 37.5°C–37.8°C — the ideal range for chicken, duck, and quail eggs.",
+  },
+  {
+    icon: Droplets,
+    title: "Humidity Management",
+    description:
+      "Built-in hygrometers and ventilation fans help you maintain 50–65% humidity for healthy embryo development.",
+  },
+  {
+    icon: RotateCcw,
+    title: "Automatic Egg Turning",
+    description:
+      "JBI80M models rotate eggs automatically, reducing manual work and improving hatch consistency every cycle.",
+  },
+  {
+    icon: Shield,
+    title: "Durable Build Quality",
+    description:
+      "Thermocol, fiber, and metal body options built for daily farm use with branded heating elements and adapters.",
+  },
+  {
+    icon: Truck,
+    title: "Fast Pan-India Shipping",
+    description:
+      "Ready stock available with secure packaging. We deliver incubators across Maharashtra and all Indian states.",
+  },
+  {
+    icon: Headphones,
+    title: "Expert After-Sales Support",
+    description:
+      "Call our team for setup guidance, troubleshooting, spare parts, and warranty assistance after your purchase.",
+  },
+];
+
+export const whyChoose = [
+  {
+    icon: IndianRupee,
+    title: "Affordable Pricing",
+    description: "Quality incubators starting at ₹2,700 — designed for small farmers and growing poultry businesses.",
+  },
+  {
+    icon: Award,
+    title: "Proven Hatch Results",
+    description: "Farmers report 80–85%+ hatch rates with proper setup, training, and our reliable controller systems.",
+  },
+  {
+    icon: Zap,
+    title: "Energy Efficient",
+    description: "All models run on just 120W power — low electricity cost for 18–21 day incubation cycles.",
+  },
+  {
+    icon: Users,
+    title: "Trusted by Farmers",
+    description: "JB Incubators are used by backyard poultry keepers, hatcheries, and commercial farms across India.",
+  },
+];
+
+export const howItWorks = [
+  {
+    step: "01",
+    title: "Choose Your Model",
+    description: "Compare JBW100, JBST100, and JBI80M based on your budget, egg capacity, and automation needs.",
+  },
+  {
+    step: "02",
+    title: "Place Your Order",
+    description: "Call us, submit the online enquiry form, or message on WhatsApp with your model and quantity.",
+  },
+  {
+    step: "03",
+    title: "Receive & Set Up",
+    description: "We ship securely packed units with setup instructions. Our team guides you through first-time operation.",
+  },
+  {
+    step: "04",
+    title: "Hatch with Confidence",
+    description: "Maintain temperature and humidity, monitor progress, and enjoy healthy chicks with JB incubators.",
+  },
+];
+
+export const faqs = [
+  {
+    question: "Is JB an egg incubator manufacturer in India?",
+    answer:
+      "Yes. JB Egg Incubator is an egg incubator manufacturer in India based in Lakhandur, Bhandara, Maharashtra. We build manual, semi-automatic, and automatic egg incubator machines for poultry farmers nationwide.",
+  },
+  {
+    question: "What is the egg hatching machine price in India?",
+    answer:
+      "JB egg hatching machine price starts from ₹2,700 for the JBW100 model. JBST100 and JBI80M automatic egg incubator machines are priced higher based on capacity and features. Call +91 8767189437 for the latest egg hatching machine price and ready stock.",
+  },
+  {
+    question: "Do you supply commercial egg incubators?",
+    answer:
+      "Yes. JB is a poultry incubator supplier for commercial egg incubator setups — village hatcheries, growing farms, and repeat hatch cycles. JBI80M is our fully automatic commercial egg incubator with auto egg turning and digital controls.",
+  },
+  {
+    question: "Can I buy an egg incubator in Maharashtra?",
+    answer:
+      "Yes. JB manufactures egg incubators in Maharashtra and delivers across the state — Nagpur, Pune, Mumbai, Wardha, and all districts. We also ship pan-India from our Bhandara facility with phone support in Marathi and English.",
+  },
+  {
+    question: "Which JB incubator is best for beginners?",
+    answer:
+      "JBW100 is ideal for beginners and small farms. It is affordable, easy to operate manually, and holds up to 100 eggs with an 80%+ hatch rate when used correctly.",
+  },
+  {
+    question: "What is the difference between JBW100, JBST100, and JBI80M?",
+    answer:
+      "JBW100 is manual with thermocol body. JBST100 adds digital hygrometer and fiber body. JBI80M is fully automatic with metal body, auto egg rotation, and digital monitoring.",
+  },
+  {
+    question: "Do you deliver across India?",
+    answer:
+      "Yes. We deliver JB Egg Incubators across India with secure packaging. Contact us for delivery timelines and shipping charges for your location.",
+  },
+  {
+    question: "What warranty do JB incubators come with?",
+    answer:
+      "Controllers and adapters carry a 6-month warranty. The incubator unit includes 1 year support. Our team assists with repairs and replacement guidance.",
+  },
+  {
+    question: "What power supply is required?",
+    answer:
+      "All models operate on standard 220V AC power at 120 Watts. A stable power connection is recommended; JBI80M includes fuse and battery backup features.",
+  },
+  {
+    question: "How do I place an order?",
+    answer:
+      "Call +91 8767189437, fill the order enquiry form on our website, or message us on WhatsApp. Share your model, quantity, and delivery address.",
+  },
+];
+
+export const companyHighlights = [
+  "Manufactured in Maharashtra with quality-tested components",
+  "Models for 80 to 100 egg capacity per cycle",
+  "Manual, semi-automatic, and fully automatic options",
+  "Training and setup support for first-time users",
+  "Spare parts and controller replacement assistance",
+  "Suitable for chicken, duck, quail, and other poultry eggs",
+];
+
+export const farmerStories = [
+  {
+    name: "Ramesh Patil",
+    location: "Nagpur, Maharashtra",
+    result: "90% hatch rate",
+    quote:
+      "I bought the JB 100-egg incubator for my backyard poultry farm. Temperature stays stable, chicks come out healthy, and my first batch gave nearly 90% results. Best decision for my small farm.",
+    model: "JBST100",
+  },
+  {
+    name: "Suresh Khandare",
+    location: "Bhandara District",
+    result: "85%+ consistent hatches",
+    quote:
+      "We run a village hatchery and needed a reliable machine at a fair price. JB incubator runs on low power, is easy to clean, and their team helped us on WhatsApp during setup.",
+    model: "JBW100",
+  },
+  {
+    name: "Priya Deshmukh",
+    location: "Wardha, Maharashtra",
+    result: "50–100 eggs per cycle",
+    quote:
+      "As a woman entrepreneur starting a poultry unit, I wanted something simple and affordable. JB's 50–100 egg models fit my budget and the hatch quality keeps my customers coming back.",
+    model: "JBI80M",
+  },
+];
+
+export const poultryFarmBlocks = [
+  {
+    title: "Start Your Poultry Farm the Smart Way",
+    text: "Whether you have 50 hens or plan a 100-egg hatchery, JB gives you the right incubator size. No need to buy oversized machines — start small, grow fast, and upgrade when your farm expands.",
+  },
+  {
+    title: "Healthy Eggs → Healthy Chicks",
+    text: "Success starts with clean eggs, steady 37.5°C heat, and proper humidity. JB incubators are built for Indian climate and 220V power — so your eggs get the same care every 18–21 day cycle.",
+  },
+  {
+    title: "From Farm to Customer — We Support You",
+    text: "Order by phone, WhatsApp, or our online form. We pack securely, ship pan-India, and guide you through your first hatch. Spare parts and warranty support keep your farm running year-round.",
+  },
+];
+
+export const eggFacts = [
+  { label: "Ideal Temperature", value: "37.5°C – 37.8°C" },
+  { label: "Humidity Range", value: "50% – 70%" },
+  { label: "Chicken Hatch Cycle", value: "18 – 21 Days" },
+  { label: "Power Usage", value: "120W Only" },
+  { label: "Starting Price", value: "₹2,700" },
+  { label: "Egg Capacity", value: "50 – 100 Eggs" },
+];

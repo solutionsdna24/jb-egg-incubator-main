@@ -1,34 +1,32 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
+import SeoHead from "@/components/SeoHead";
 
 const NotFound = () => {
   const location = useLocation();
 
-  useEffect(() => {
-    document.title = "Page Not Found | JB Egg Incubator";
-  }, [location.pathname]);
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
+      <SeoHead page="notFound" />
       <main className="text-center max-w-xl">
-        <h1 className="text-4xl font-bold mb-4 text-gray-900">Page Not Found</h1>
-        <p className="text-xl text-gray-600 mb-6">
-          The page <span className="font-mono text-sm">{location.pathname}</span> could not be found.
-          Return to JB Egg Incubator to explore products, gallery photos, and contact details.
+        <p className="text-6xl font-bold text-blue-700 mb-2">404</p>
+        <h1 className="text-2xl sm:text-4xl font-bold mb-4 text-slate-900">Page Not Found</h1>
+        <p className="text-base sm:text-xl text-slate-600 mb-6">
+          The page <span className="font-mono text-sm bg-slate-100 px-2 py-1 rounded">{location.pathname}</span> could
+          not be found. Return to JB Egg Incubator to explore products and contact details.
         </p>
         <nav aria-label="Helpful links" className="flex flex-wrap justify-center gap-4 text-blue-700">
-          <a href="/" className="underline hover:text-blue-900">
+          <Link to="/" className="underline hover:text-blue-900">
             Home
-          </a>
-          <a href="/products" className="underline hover:text-blue-900">
+          </Link>
+          <Link to="/products" className="underline hover:text-blue-900">
             Products
-          </a>
-          <a href="/details" className="underline hover:text-blue-900">
+          </Link>
+          <Link to="/details" className="underline hover:text-blue-900">
             Details
-          </a>
-          <a href="/contact" className="underline hover:text-blue-900">
+          </Link>
+          <Link to="/contact" className="underline hover:text-blue-900">
             Contact
-          </a>
+          </Link>
         </nav>
       </main>
     </div>

@@ -1,57 +1,98 @@
 import { Link } from "react-router-dom";
-const SeoIntroSection = () => {
-  return (
-    <section
-      id="about-jb-incubators"
-      className="bg-white py-12 px-4"
-      aria-labelledby="about-jb-heading"
-    >
-      <div className="container mx-auto max-w-4xl">
-        <h2 id="about-jb-heading" className="text-3xl font-bold text-gray-800 mb-4">
-          About JB Egg Incubator
+import { ArrowRight, Egg, MapPin, Clock } from "lucide-react";
+
+const SeoIntroSection = () => (
+  <section
+    id="about-jb-incubators"
+    className="section-padding bg-white"
+    aria-labelledby="about-jb-heading"
+  >
+    <div className="container mx-auto max-w-6xl px-4">
+      <div className="flex flex-col items-center text-center mb-12">
+        <p className="section-eyebrow">About JB</p>
+        <h2 id="about-jb-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-900 tracking-tight mb-4">
+          Best Egg Incubator Company in India — Built in Maharashtra
         </h2>
-        <p className="text-gray-700 mb-4 leading-relaxed">
-          JB Egg Incubator manufactures reliable poultry incubators for farmers across India.
-          Our models are designed for stable temperature control, practical daily use, and
-          consistent hatch performance in both small farms and growing poultry businesses.
+        <p className="text-base sm:text-lg text-stone-700 max-w-3xl leading-relaxed">
+          JB is an <strong>egg incubator manufacturer in India</strong> and trusted{" "}
+          <strong>poultry incubator supplier</strong> from <strong>Lakhandur, Bhandara, Maharashtra</strong>.
+          Whether you need a budget manual unit or a <strong>commercial egg incubator</strong> with
+          automatic controls, we offer clear <strong>egg hatching machine price</strong> tiers and
+          honest support for Indian farms.
         </p>
-        <p className="text-gray-700 mb-4 leading-relaxed">
-          Whether you need a budget-friendly manual incubator or a fully automatic model with
-          digital monitoring, JB offers options for different capacity needs. Explore our{" "}
-          <Link to="/products"  className="text-blue-700 underline hover:text-blue-900"> egg incubator products </Link>
-         
-          , or{" "}
-          <Link to="/contact"  className="text-blue-700 underline hover:text-blue-900"> contact our team </Link>
-         
-         
-          for model selection support.
-        </p>
-        <p className="text-gray-700 mb-6 leading-relaxed">
-          Popular models include JBW100 for manual operation, JBST100 with improved monitoring,
-          and JBIN100A for automatic egg turning and advanced control. All units are built with
-          durable materials, energy-efficient heating, and dependable components backed by
-          customer support and warranty coverage.
-        </p>
-        <nav aria-label="Related page sections" className="flex flex-wrap gap-4 text-sm font-medium">
-          <Link to="/" className="text-blue-700 underline hover:text-blue-900">
-            Home
-          </Link>
-          <Link to="/products"  className="text-blue-700 underline hover:text-blue-900">
-            Products
-          </Link>
-          <Link to="/details" className="text-blue-700 underline hover:text-blue-900">
-            Details
-          </Link>
-          <Link to="/contact" className="text-blue-700 underline hover:text-blue-900">
-            Contact
-          </Link>
-          <Link to="tel:+918767189437" className="text-blue-700 underline hover:text-blue-900">
-            Call +91 8767189437
-          </Link>
-        </nav>
       </div>
-    </section>
-  );
-};
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {[
+          {
+            icon: Egg,
+            title: "50–100 Eggs Per Cycle",
+            text: "Pick the right size for your farm — no need to overpay for capacity you don't use yet.",
+          },
+          {
+            icon: MapPin,
+            title: "Egg Incubator in Maharashtra",
+            text: "Factory in Bhandara with fast delivery across Maharashtra and all India — local Marathi support available.",
+          },
+          {
+            icon: Clock,
+            title: "21-Day Hatch Cycle",
+            text: "Stable heat & humidity for chicken eggs. Duck and quail farmers also use JB with great results.",
+          },
+        ].map(({ icon: Icon, title, text }) => (
+          <article
+            key={title}
+            className="rounded-2xl border-2 border-stone-200 bg-stone-50 p-6 text-center hover:border-emerald-300 transition-colors"
+          >
+            <div className="icon-circle mx-auto mb-4">
+              <Icon className="h-6 w-6 text-emerald-700" aria-hidden="true" />
+            </div>
+            <h3 className="text-lg font-bold text-stone-900 mb-2">{title}</h3>
+            <p className="text-base text-stone-700 leading-relaxed">{text}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className="rounded-2xl border-2 border-emerald-100 bg-emerald-50/50 p-6 sm:p-10 max-w-4xl mx-auto">
+        <h3 className="text-xl font-bold text-stone-900 mb-4">Automatic Egg Incubator Machine — Pick Your Model</h3>
+        <ul className="space-y-4 text-base text-stone-800 leading-relaxed mb-6">
+          <li>
+            <strong className="text-emerald-800">JBW100 (from ₹2,700)</strong> — Best for beginners.
+            Manual control, thermocol body, up to 100 eggs. Simple and affordable.
+          </li>
+          <li>
+            <strong className="text-emerald-800">JBST100</strong> — Most popular. Fiber body + digital
+            hygrometer for better humidity control and stronger build.
+          </li>
+          <li>
+            <strong className="text-emerald-800">JBI80M</strong> — Premium automatic. Metal body, auto egg
+            turning, digital monitor — for serious hatcheries.
+          </li>
+        </ul>
+        <p className="text-base text-stone-700 leading-relaxed mb-6">
+          All models use just <strong>120W power</strong>, include setup guidance, and ship across India.
+          Watch real customer videos on our{" "}
+          <Link to="/" onClick={(e) => { e.preventDefault(); document.getElementById("videos")?.scrollIntoView({ behavior: "smooth" }); }} className="text-emerald-700 font-bold hover:underline">
+            YouTube section
+          </Link>
+          , then{" "}
+          <Link to="/contact" className="text-emerald-700 font-bold hover:underline">
+            call us
+          </Link>{" "}
+          for a personal recommendation.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Link to="/jb-egg-incubator-order" className="btn-accent justify-center gap-2">
+            Get Price & Order
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link to="/products" className="btn-outline justify-center">
+            View All Models
+          </Link>
+        </div>
+      </div>
+    </div>
+  </section>
+);
 
 export default SeoIntroSection;

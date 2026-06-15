@@ -9,9 +9,6 @@ import eggsTray from "@/assets/eggs-tray.webp";
 import parcelBox from "@/assets/parcel-box.webp";
 import chickHatched from "@/assets/chicks-hatched.webp";
 
-
-
-
 const GallerySection = () => {
   const galleryItems = [
     { image: jbLogo, title: "JB Egg Incubator Brand" },
@@ -24,65 +21,64 @@ const GallerySection = () => {
     { image: chickHatched, title: "Chicks Hatched in Incubator" },
   ];
 
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollAmount = (220 + 24) * 3;
 
-  const scrollBy = (amount) => {
-    if (scrollRef.current) {
-      const newScrollLeft = scrollRef.current.scrollLeft + amount;
-      scrollRef.current.scrollTo({ left: newScrollLeft, behavior: 'smooth' });
-    }
+  const scrollBy = (amount: number) => {
+    scrollRef.current?.scrollTo({ left: scrollRef.current.scrollLeft + amount, behavior: "smooth" });
   };
 
-  const imageWidth = 220 + 24; // min-w-[220px] + gap-6 (24px)
-  const scrollAmount = imageWidth * 5;
-
   return (
-    <section id="gallery" className="pt-4 pb-0 px-4 bg-gray-50 mb-0">
+    <section id="gallery" className="py-10 sm:py-12 px-4 bg-slate-50">
       <div className="container mx-auto relative">
-        {/* Buttons before gallery */}
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Gallery</h2>
-          <p className="text-gray-600" style={{ fontFamily: 'Microsoft YaHei UI Light, Microsoft YaHei, Arial, sans-serif' }}>
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-3">Our Gallery</h2>
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
             Explore our JB incubator setups and success stories
           </p>
         </div>
+
         <div className="relative">
           <button
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 hover:bg-gray-100"
+            type="button"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 hover:bg-slate-50 hidden sm:block"
             onClick={() => scrollBy(-scrollAmount)}
-            aria-label="Scroll Left"
-            style={{ left: '-24px' }}
+            aria-label="Scroll gallery left"
           >
-            <ChevronLeft className="h-6 w-6 text-gray-600" />
+            <ChevronLeft className="h-5 w-5 text-slate-600" />
           </button>
-          <div
-            ref={scrollRef}
-            className="overflow-x-auto pb-4 scrollbar-hide scroll-smooth"
-          >
-            <div className="flex gap-6 min-w-max">
+
+          <div ref={scrollRef} className="overflow-x-auto pb-4 scrollbar-hide scroll-smooth -mx-1 px-1">
+            <div className="flex gap-4 sm:gap-6 min-w-max">
               {galleryItems.map((item, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col items-center min-w-[220px] max-w-xs">
+                <article
+                  key={item.title}
+                  className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden flex flex-col items-center w-[200px] sm:w-[220px]"
+                >
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-40 sm:h-56 object-cover rounded-t-lg"
+                    className="w-full h-36 sm:h-48 object-cover"
                     loading={index < 2 ? "eager" : "lazy"}
                     decoding="async"
+                    width={220}
+                    height={192}
                   />
-                  <div className="p-4 w-full text-center">
-                    <h3 className="font-semibold text-gray-600 text-base">{item.title}</h3>
+                  <div className="p-3 sm:p-4 w-full text-center">
+                    <h3 className="font-medium text-slate-700 text-sm sm:text-base">{item.title}</h3>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
+
           <button
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full p-2 hover:bg-gray-100"
+            type="button"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 hover:bg-slate-50 hidden sm:block"
             onClick={() => scrollBy(scrollAmount)}
-            aria-label="Scroll Right"
-            style={{ right: '-24px' }}
+            aria-label="Scroll gallery right"
           >
-            <ChevronRight className="h-6 w-6 text-gray-600" />
+            <ChevronRight className="h-5 w-5 text-slate-600" />
           </button>
         </div>
       </div>
