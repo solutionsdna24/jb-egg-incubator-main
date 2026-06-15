@@ -5,6 +5,7 @@ import StatsSection from "@/components/StatsSection";
 import SeoIntroSection from "@/components/SeoIntroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import ProductPreviewSection from "@/components/ProductPreviewSection";
+import InternalLinksSection from "@/components/InternalLinksSection";
 import Footer from "@/components/Footer";
 import PromoBar from "@/components/PromoBar";
 import PoultryContentSection from "@/components/PoultryContentSection";
@@ -26,6 +27,7 @@ const Index = () => (
       <PoultryContentSection />
       <FeaturesSection />
       <ProductPreviewSection />
+      <InternalLinksSection />
       <Suspense fallback={null}>
         <HomeBelowFold />
       </Suspense>

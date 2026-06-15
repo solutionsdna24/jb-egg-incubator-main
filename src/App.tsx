@@ -15,8 +15,10 @@ const HatchingGuide = lazy(() => import("./pages/HatchingGuide"));
 const IncubationCalculator = lazy(() => import("./pages/IncubationCalculator"));
 const Blogs = lazy(() => import("./pages/Blogs"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
+const KeywordLanding = lazy(() => import("./pages/KeywordLanding"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const WhatsAppFloat = lazy(() => import("@/components/WhatsAppFloat"));
+import { LANDING_PATHS } from "./lib/landingPages";
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-slate-50" aria-label="Loading page">
@@ -55,6 +57,9 @@ const App = () => {
             <Route path="/guides/poultry-incubation-training" element={<Training />} />
             <Route path="/guides/free-hatching-guide" element={<HatchingGuide />} />
             <Route path="/tools/incubation-capacity-calculator" element={<IncubationCalculator />} />
+            {LANDING_PATHS.map((path) => (
+              <Route key={path} path={path} element={<KeywordLanding />} />
+            ))}
             <Route path="/blog" element={<Blogs />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />

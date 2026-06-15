@@ -11,6 +11,14 @@ export const ROUTES = {
   training: "/guides/poultry-incubation-training",
   hatchingGuide: "/guides/free-hatching-guide",
   calculator: "/tools/incubation-capacity-calculator",
+  landing100Egg: "/100-egg-incubator",
+  landing120Egg: "/120-egg-incubator",
+  landingAutomatic: "/automatic-egg-incubator",
+  landingFullyAutomatic: "/fully-automatic-egg-incubator",
+  landingMaharashtra: "/egg-incubator-maharashtra",
+  landingHatchingMachine: "/egg-hatching-machine-india",
+  landingPrice: "/egg-incubator-price-india",
+  landingChicken: "/chicken-egg-incubator",
 } as const;
 
 export const PRODUCT_SLUGS: Record<string, string> = {

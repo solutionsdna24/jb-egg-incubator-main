@@ -7,6 +7,19 @@ export interface InternalLinkGroup {
 
 export const internalLinkGroups: InternalLinkGroup[] = [
   {
+    title: "Keyword Landing Pages",
+    links: [
+      { label: "100 Egg Incubator", to: ROUTES.landing100Egg, description: "JBW100 from ₹2,700" },
+      { label: "120 Egg Incubator", to: ROUTES.landing120Egg, description: "JBST100 semi-automatic" },
+      { label: "Automatic Egg Incubator", to: ROUTES.landingAutomatic },
+      { label: "Fully Automatic Egg Incubator", to: ROUTES.landingFullyAutomatic },
+      { label: "Egg Incubator Maharashtra", to: ROUTES.landingMaharashtra },
+      { label: "Egg Hatching Machine India", to: ROUTES.landingHatchingMachine },
+      { label: "Egg Incubator Price India", to: ROUTES.landingPrice },
+      { label: "Chicken Egg Incubator", to: ROUTES.landingChicken },
+    ],
+  },
+  {
     title: "Egg Incubator Products",
     links: [
       { label: "100 Egg Incubator — JBW100", to: ROUTES.product(PRODUCT_SLUGS.JBW100), description: "Manual egg hatching machine from ₹2,700" },
@@ -38,7 +51,7 @@ export const internalLinkGroups: InternalLinkGroup[] = [
   {
     title: "Local & Regional",
     links: [
-      { label: "Egg Incubator Maharashtra", to: `${ROUTES.blog}/egg-incubator-maharashtra` },
+      { label: "Egg Incubator Maharashtra", to: ROUTES.landingMaharashtra },
       { label: "Egg Incubator Nagpur & Bhandara", to: `${ROUTES.blog}/egg-incubator-vidarbha-nagpur-bhandara` },
       { label: "Poultry Incubator Maharashtra", to: `${ROUTES.blog}/commercial-poultry-incubator-supplier` },
       { label: "Contact — Bhandara Factory", to: ROUTES.contact },

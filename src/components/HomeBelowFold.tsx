@@ -9,7 +9,6 @@ import FaqSection from "@/components/FaqSection";
 import CtaSection from "@/components/CtaSection";
 
 import SeoActionCards from "@/components/SeoActionCards";
-import InternalLinksSection from "@/components/InternalLinksSection";
 
 const HomeBelowFold = () => (
   <>
@@ -22,7 +21,6 @@ const HomeBelowFold = () => (
     <GallerySection />
     <BlogSection />
     <FaqSection />
-    <InternalLinksSection />
     <CtaSection />
   </>
 );

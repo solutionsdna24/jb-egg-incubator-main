@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import BrandLogo from "@/components/BrandLogo";
 import SocialLinks from "@/components/SocialLinks";
 import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_REVIEWS_URL } from "@/lib/reviews";
-import { ROUTES, PRODUCT_SLUGS } from "@/lib/routes";
+import { ROUTES } from "@/lib/routes";
 
 const quickLinks = [
   { label: "Home", to: ROUTES.home },
@@ -19,9 +19,12 @@ const quickLinks = [
 ];
 
 const productLinks = [
-  { label: "JBW100 — 100 Egg Incubator", to: ROUTES.product(PRODUCT_SLUGS.JBW100) },
-  { label: "JBST100 — Automatic Egg Incubator", to: ROUTES.product(PRODUCT_SLUGS.JBST100) },
-  { label: "JBI80M — Fully Automatic", to: ROUTES.product(PRODUCT_SLUGS.JBI80M) },
+  { label: "100 Egg Incubator", to: ROUTES.landing100Egg },
+  { label: "120 Egg Incubator", to: ROUTES.landing120Egg },
+  { label: "Automatic Egg Incubator", to: ROUTES.landingAutomatic },
+  { label: "Fully Automatic", to: ROUTES.landingFullyAutomatic },
+  { label: "Chicken Egg Incubator", to: ROUTES.landingChicken },
+  { label: "Egg Incubator Maharashtra", to: ROUTES.landingMaharashtra },
 ];
 
 const Footer = () => (
