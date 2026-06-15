@@ -10,7 +10,7 @@ const PromoBar = () => (
       </span>
       <span className="text-stone-700">Bhandara, Vidarbha · Nagpur delivery · Pan-India shipping</span>
       <Link
-        to="/jb-egg-incubator-order"
+        to="/order-egg-incubator"
         className="inline-flex items-center gap-1 font-semibold text-orange-600 hover:text-orange-700"
       >
         Order Now

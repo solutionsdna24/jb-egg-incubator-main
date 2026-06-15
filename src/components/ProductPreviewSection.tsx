@@ -92,7 +92,7 @@ const ProductPreviewSection = () => (
               </ul>
 
               <div className="flex gap-2">
-                <Link to="/jb-egg-incubator-order" className="btn-accent flex-1 text-center text-sm py-2.5">
+                <Link to="/order-egg-incubator" className="btn-accent flex-1 text-center text-sm py-2.5">
                   Order Now
                 </Link>
                 <Link

@@ -8,8 +8,12 @@ import BlogSection from "@/components/BlogSection";
 import FaqSection from "@/components/FaqSection";
 import CtaSection from "@/components/CtaSection";
 
+import SeoActionCards from "@/components/SeoActionCards";
+import InternalLinksSection from "@/components/InternalLinksSection";
+
 const HomeBelowFold = () => (
   <>
+    <SeoActionCards />
     <GoogleReviewsSection />
     <YouTubeSection />
     <FarmerStoriesSection />
@@ -18,6 +22,7 @@ const HomeBelowFold = () => (
     <GallerySection />
     <BlogSection />
     <FaqSection />
+    <InternalLinksSection />
     <CtaSection />
   </>
 );

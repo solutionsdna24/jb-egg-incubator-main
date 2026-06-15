@@ -66,7 +66,7 @@ const Contact = () => (
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
               WhatsApp
             </a>
-            <Link to="/jb-egg-incubator-order" className="btn-outline">
+            <Link to="/order-egg-incubator" className="btn-outline">
               Order Enquiry Form
             </Link>
           </div>

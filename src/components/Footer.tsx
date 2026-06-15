@@ -3,15 +3,25 @@ import { Link } from "react-router-dom";
 import BrandLogo from "@/components/BrandLogo";
 import SocialLinks from "@/components/SocialLinks";
 import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_REVIEWS_URL } from "@/lib/reviews";
+import { ROUTES, PRODUCT_SLUGS } from "@/lib/routes";
 
 const quickLinks = [
-  { label: "Home", to: "/" },
-  { label: "Products", to: "/products" },
+  { label: "Home", to: ROUTES.home },
+  { label: "About JB", to: ROUTES.about },
+  { label: "Products", to: ROUTES.products },
+  { label: "Poultry Training", to: ROUTES.training },
+  { label: "Free Hatching Guide", to: ROUTES.hatchingGuide },
+  { label: "Capacity Calculator", to: ROUTES.calculator },
   { label: "Videos", to: "/#videos" },
-  { label: "Reviews", to: "/#reviews" },
-  { label: "Blog", to: "/blog" },
-  { label: "Order Enquiry", to: "/jb-egg-incubator-order" },
-  { label: "Contact", to: "/contact" },
+  { label: "Blog", to: ROUTES.blog },
+  { label: "Order Enquiry", to: ROUTES.order },
+  { label: "Contact", to: ROUTES.contact },
+];
+
+const productLinks = [
+  { label: "JBW100 — 100 Egg Incubator", to: ROUTES.product(PRODUCT_SLUGS.JBW100) },
+  { label: "JBST100 — Automatic Egg Incubator", to: ROUTES.product(PRODUCT_SLUGS.JBST100) },
+  { label: "JBI80M — Fully Automatic", to: ROUTES.product(PRODUCT_SLUGS.JBI80M) },
 ];
 
 const Footer = () => (
@@ -43,16 +53,29 @@ const Footer = () => (
     </div>
 
     <div className="container mx-auto px-4 py-10 sm:py-12">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
         <div>
           <h3 className="text-sm font-bold uppercase tracking-wider text-stone-600 mb-4">About JB</h3>
           <p className="text-stone-700 text-base leading-relaxed mb-4">
-            Leading manufacturer of egg incubators in Maharashtra. Reliable temperature control,
-            high hatch rates, and pan-India delivery for poultry farmers.
+            Egg incubator manufacturer in Maharashtra since 2022. Automatic egg incubator, 100 egg
+            incubator &amp; egg hatching machine supplier — Bhandara, Vidarbha.
           </p>
-          <Link to="/products" className="text-emerald-800 font-semibold hover:underline text-sm">
-            Browse all models →
+          <Link to={ROUTES.about} className="text-emerald-800 font-semibold hover:underline text-sm">
+            Our story since 2022 →
           </Link>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-bold uppercase tracking-wider text-stone-600 mb-4">Products</h3>
+          <ul className="space-y-2.5 text-base">
+            {productLinks.map((link) => (
+              <li key={link.to}>
+                <Link to={link.to} className="text-stone-700 hover:text-emerald-700 transition-colors">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div>
@@ -61,10 +84,6 @@ const Footer = () => (
             <a href="tel:+918767189437" className="flex items-center gap-3 text-stone-700 hover:text-emerald-700 transition-colors">
               <Phone className="h-5 w-5 text-emerald-600 shrink-0" aria-hidden="true" />
               +91 8767189437
-            </a>
-            <a href="tel:+918803625410" className="flex items-center gap-3 text-stone-700 hover:text-emerald-700 transition-colors">
-              <Phone className="h-5 w-5 text-emerald-600 shrink-0" aria-hidden="true" />
-              +91 8803625410
             </a>
             <a href="mailto:jbincubator5@gmail.com" className="flex items-center gap-3 text-stone-700 hover:text-emerald-700 transition-colors">
               <Mail className="h-5 w-5 text-emerald-600 shrink-0" aria-hidden="true" />
@@ -93,7 +112,7 @@ const Footer = () => (
 
       <div className="border-t border-stone-200 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-stone-600">
         <p>© {new Date().getFullYear()} JB Egg Incubator. All rights reserved.</p>
-        <p>Made in Maharashtra · Pan-India Delivery</p>
+        <p>Made in Bhandara, Vidarbha · Pan-India Delivery · Since 2022</p>
       </div>
     </div>
   </footer>

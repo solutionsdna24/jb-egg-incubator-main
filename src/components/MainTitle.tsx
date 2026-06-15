@@ -81,7 +81,7 @@ const MainTitle = () => {
 
             <div className="flex flex-col md:flex-row flex-wrap justify-center items-stretch md:items-center gap-2.5 sm:gap-3 md:gap-4 mb-5 sm:mb-6 w-full max-w-xl md:max-w-none mx-auto">
               <Link
-                to="/jb-egg-incubator-order"
+                to="/order-egg-incubator"
                 className="btn-accent w-full md:w-auto text-sm sm:text-base px-5 py-3 sm:px-8 sm:py-3.5 shadow-lg hover:scale-[1.02] transition-transform justify-center"
               >
                 Order Now — From ₹2,700

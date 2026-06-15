@@ -89,7 +89,7 @@ const BlogSection = () => {
         </div>
 
         <div className="mt-10 text-center">
-          <Link to="/jb-egg-incubator-order" className="btn-accent text-base px-8 py-3.5 shadow-lg">
+          <Link to="/order-egg-incubator" className="btn-accent text-base px-8 py-3.5 shadow-lg">
             Ready to Buy? Get a Quote Today
           </Link>
         </div>

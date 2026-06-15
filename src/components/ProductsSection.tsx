@@ -2,6 +2,7 @@ import { Thermometer, Droplets, Egg, Zap, Check } from "lucide-react";
 import { Link } from "react-router-dom";
 import { products } from "@/lib/products";
 import ProductImage from "@/components/ProductImage";
+import { ROUTES, PRODUCT_SLUGS } from "@/lib/routes";
 
 const specIcons = {
   control: Thermometer,
@@ -87,12 +88,15 @@ const ProductsSection = () => (
               </div>
 
               <div className="flex flex-col sm:flex-row gap-2 mt-auto">
-                <Link to="/jb-egg-incubator-order" className="btn-primary flex-1 text-center text-sm py-2.5">
+                <Link
+                  to={ROUTES.product(PRODUCT_SLUGS[product.id])}
+                  className="btn-outline flex-1 text-center text-sm py-2.5"
+                >
+                  Full Specs
+                </Link>
+                <Link to={ROUTES.order} className="btn-primary flex-1 text-center text-sm py-2.5">
                   Order Now
                 </Link>
-                <a href="tel:+918767189437" className="btn-outline flex-1 text-center text-sm py-2.5">
-                  Call Now
-                </a>
               </div>
             </div>
           </article>

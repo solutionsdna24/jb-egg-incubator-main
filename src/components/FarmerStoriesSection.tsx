@@ -72,7 +72,7 @@ const FarmerStoriesSection = () => (
       </div>
 
       <p className="text-center mt-10">
-        <Link to="/jb-egg-incubator-order" className="btn-accent text-base px-8 py-3.5">
+        <Link to="/order-egg-incubator" className="btn-accent text-base px-8 py-3.5">
           Join Happy JB Farmers — Order Today
         </Link>
       </p>

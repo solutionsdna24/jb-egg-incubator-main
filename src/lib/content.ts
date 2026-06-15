@@ -171,9 +171,44 @@ export const faqs = [
       "All models operate on standard 220V AC power at 120 Watts. A stable power connection is recommended; JBI80M includes fuse and battery backup features.",
   },
   {
+    question: "How do I hatch eggs in an incubator?",
+    answer:
+      "Set eggs at 37.5°C–37.8°C with 50–55% humidity for days 1–18, turn 3–5 times daily (or use JBI80M auto turner). On days 19–21, stop turning and raise humidity to 65–70%. Read our free poultry incubation training at jbincubators.in/guides/poultry-incubation-training or download the hatching guide.",
+  },
+  {
+    question: "What is the egg incubation temperature chart for chicken eggs?",
+    answer:
+      "Chicken eggs need 37.5°C–37.8°C throughout incubation. Humidity should be 50–55% for days 1–18 and 65–70% for lockdown (days 19–21). JB incubators are calibrated at our Bhandara factory for this range.",
+  },
+  {
+    question: "What is the 21 day hatching process?",
+    answer:
+      "Days 1–7: embryo forms. Days 8–14: organs develop. Days 15–18: pre-lockdown. Days 19–21: lockdown and hatch. Maintain stable temperature and increase humidity before chicks pip. JB provides free training and phone support for every order.",
+  },
+  {
+    question: "What humidity is needed for egg hatching?",
+    answer:
+      "Target 50–55% relative humidity for days 1–18 and 65–70% for the final three days. Low humidity during lockdown causes chicks to stick to the shell. JBST100 and JBI80M include digital hygrometers to track humidity for egg hatching accurately.",
+  },
+  {
+    question: "What are common incubation mistakes to avoid?",
+    answer:
+      "Opening the lid too often, wrong lockdown humidity, using eggs older than 7 days, uneven temperature, and skipping egg turns. Avoid these mistakes with JB training guides and WhatsApp consultation at +91 8767189437.",
+  },
+  {
+    question: "Which is the best 100 egg incubator in India?",
+    answer:
+      "JBW100 is our entry 100 egg incubator from ₹2,700. JBST100 adds digital humidity monitoring for repeat hatchers. JBI80M is the fully automatic egg incubator for commercial farms. Use our incubation capacity calculator to pick the right model.",
+  },
+  {
+    question: "Do you sell fully automatic egg incubators?",
+    answer:
+      "Yes. JBI80M is our fully automatic egg incubator with metal body, automatic egg rotation, digital monitor, and fuse backup — ideal for commercial hatcheries and egg incubator supplier buyers who need hands-free operation.",
+  },
+  {
     question: "How do I place an order?",
     answer:
-      "Call +91 8767189437, fill the order enquiry form on our website, or message us on WhatsApp. Share your model, quantity, and delivery address.",
+      "Call +91 8767189437, fill the order enquiry form at jbincubators.in/order-egg-incubator, or message us on WhatsApp. Share your model, quantity, and delivery address.",
   },
 ];
 

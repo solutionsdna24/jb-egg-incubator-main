@@ -72,7 +72,7 @@ const BlogPost = () => {
                 Order your JB Egg Incubator today. From ₹2,700 with pan-India delivery and setup support.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-3">
-                <Link to="/jb-egg-incubator-order" className="btn-accent">
+                <Link to="/order-egg-incubator" className="btn-accent">
                   Submit Order Enquiry
                 </Link>
                 <a href="tel:+918767189437" className="btn-outline inline-flex items-center justify-center gap-2">

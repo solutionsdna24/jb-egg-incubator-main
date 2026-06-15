@@ -37,7 +37,7 @@ const HowItWorksSection = () => (
 
       <div className="text-center mt-10">
         <Link
-          to="/jb-egg-incubator-order"
+          to="/order-egg-incubator"
           className="btn-accent"
         >
           Start Your Order

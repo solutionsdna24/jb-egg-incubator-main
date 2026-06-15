@@ -22,6 +22,61 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-hatch-eggs-in-incubator",
+    title: "How to Hatch Eggs in an Incubator — JB Step-by-Step Guide",
+    excerpt:
+      "Learn how to hatch eggs in an incubator with JB's poultry training guide — temperature, humidity, turning & lockdown for 85%+ results.",
+    date: "2026-06-14",
+    readTime: "6 min read",
+    category: "Training",
+    image: eggsTray,
+    tags: ["how to hatch eggs in incubator", "egg incubation temperature chart", "humidity for egg hatching"],
+    content: [
+      "Learning how to hatch eggs in an incubator starts with choosing the right egg incubator — JB offers 100 egg incubator (JBW100), semi-automatic (JBST100), and fully automatic egg incubator (JBI80M) models from our Bhandara factory.",
+      "Day 1: Set clean eggs at 37.5°C–37.8°C with 50–55% humidity. Mark eggs and turn 3–5 times daily unless you use JBI80M automatic egg rotation.",
+      "Days 1–18: Maintain steady temperature. Check humidity channels. Avoid opening the lid except for turning and water refills.",
+      "Days 19–21 (lockdown): Stop turning. Raise humidity to 65–70%. Chicks pip and hatch. Wait until chicks dry before moving to brooder.",
+      "JB provides free poultry incubation training, hatching guide download, and WhatsApp consultation. Call +91 8767189437 for model advice.",
+    ],
+  },
+  {
+    slug: "21-day-hatching-process",
+    title: "21 Day Hatching Process Explained — Chicken Egg Timeline",
+    excerpt:
+      "Complete 21 day hatching process for chicken eggs in a JB egg incubator — what happens each week and what farmers should do.",
+    date: "2026-06-14",
+    readTime: "5 min read",
+    category: "Training",
+    image: chicksHatched,
+    tags: ["21 day hatching process", "egg incubation temperature chart", "how to hatch eggs in incubator"],
+    content: [
+      "The 21 day hatching process for chicken eggs follows a predictable timeline when temperature and humidity stay stable in your egg hatching machine.",
+      "Week 1 (Days 1–7): Embryo begins forming. Keep 37.5°C–37.8°C and 50–55% humidity. Turn eggs regularly on manual models.",
+      "Week 2 (Days 8–14): Organs develop rapidly. Monitor humidity with JBST100 hygrometer or JBI80M digital display. Minimise lid opening.",
+      "Week 3 (Days 15–18): Pre-lockdown phase. Confirm stable readings before stopping turns on day 19.",
+      "Lockdown (Days 19–21): Increase humidity for egg hatching to 65–70%. Chicks hatch. JB support team helps first-time farmers through this critical phase.",
+    ],
+  },
+  {
+    slug: "common-incubation-mistakes",
+    title: "Common Incubation Mistakes — And How JB Farmers Avoid Them",
+    excerpt:
+      "Avoid common incubation mistakes: wrong humidity, poor turning, old eggs & temperature swings. Tips from JB egg incubator manufacturer.",
+    date: "2026-06-13",
+    readTime: "4 min read",
+    category: "Training",
+    image: interiorIncubator,
+    tags: ["common incubation mistakes", "humidity for egg hatching", "how to hatch eggs in incubator"],
+    content: [
+      "Common incubation mistakes cost farmers hatch rate and profit. JB training helps buyers avoid these errors from the first cycle.",
+      "Mistake 1: Opening the incubator too often — each opening drops heat and humidity. Plan checks in advance.",
+      "Mistake 2: Low lockdown humidity — chicks stick to shell. Target 65–70% on days 19–21.",
+      "Mistake 3: Setting old eggs — use eggs within 7 days of laying, stored point-down at 12–15°C.",
+      "Mistake 4: Skipping turns on manual models — turn 3–5 times daily or upgrade to fully automatic egg incubator JBI80M.",
+      "Download our free hatching guide or book a WhatsApp consultation for personalised poultry incubation training.",
+    ],
+  },
+  {
     slug: "egg-incubator-vidarbha-nagpur-bhandara",
     title: "Egg Incubator Vidarbha — Nagpur & Bhandara Delivery from JB Factory",
     excerpt:

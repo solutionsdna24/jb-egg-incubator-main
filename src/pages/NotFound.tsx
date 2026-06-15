@@ -21,7 +21,7 @@ const NotFound = () => {
           <Link to="/products" className="underline hover:text-blue-900">
             Products
           </Link>
-          <Link to="/details" className="underline hover:text-blue-900">
+          <Link to="/about" className="underline hover:text-blue-900">
             Details
           </Link>
           <Link to="/contact" className="underline hover:text-blue-900">

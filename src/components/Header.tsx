@@ -6,15 +6,17 @@ import BrandLogo from "@/components/BrandLogo";
 import LanguageToggle from "@/components/LanguageToggle";
 import { scrollToSection } from "@/lib/navigation";
 
+import { ROUTES } from "@/lib/routes";
+
 const navItems = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/details" },
-  { label: "Products", to: "/products" },
+  { label: "Home", to: ROUTES.home },
+  { label: "About", to: ROUTES.about },
+  { label: "Products", to: ROUTES.products },
+  { label: "Training", to: ROUTES.training },
   { label: "Videos", section: "videos" },
   { label: "Reviews", section: "reviews" },
-  { label: "Blog", to: "/blog" },
-
-  { label: "Contact", to: "/contact" },
+  { label: "Blog", to: ROUTES.blog },
+  { label: "Contact", to: ROUTES.contact },
 ] as const;
 
 const Header = () => {
@@ -77,7 +79,7 @@ const Header = () => {
               <Play className="h-4 w-4 text-red-600" aria-hidden="true" />
               <span className="hidden sm:inline">Videos</span>
             </button>
-            <Link to="/jb-egg-incubator-order" className="btn-accent text-sm px-4 sm:px-5 py-2.5 gap-2">
+            <Link to={ROUTES.order} className="btn-accent text-sm px-4 sm:px-5 py-2.5 gap-2">
               <ShoppingBag className="h-4 w-4 shrink-0" aria-hidden="true" />
               Order
             </Link>

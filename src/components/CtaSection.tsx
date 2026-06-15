@@ -16,7 +16,7 @@ const CtaSection = () => (
           and warranty on every unit.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-          <Link to="/jb-egg-incubator-order" className="btn-accent px-6 py-3.5">
+          <Link to="/order-egg-incubator" className="btn-accent px-6 py-3.5">
             Submit Order Enquiry
           </Link>
           <a

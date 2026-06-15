@@ -6,6 +6,10 @@ import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import SeoHead from "@/components/SeoHead";
 
+import ProductSpecificationsSection from "@/components/ProductSpecificationsSection";
+import InternalLinksSection from "@/components/InternalLinksSection";
+import SeoActionCards from "@/components/SeoActionCards";
+
 const Products = () => (
   <div className="page-shell">
     <SeoHead page="products" />
@@ -16,14 +20,17 @@ const Products = () => (
           <p className="section-eyebrow">Product Catalogue</p>
           <h1 className="page-hero-title">Egg Hatching Machine Maharashtra &amp; India — JB Models</h1>
           <p className="page-hero-subtitle">
-            Compare egg hatching machine price in Maharashtra &amp; India. Automatic egg incubator JBW100,
-            JBST100 &amp; JBI80M from poultry incubator supplier JB — factory in Bhandara, Vidarbha.
+            Compare 100 egg incubator, 120 egg layout &amp; fully automatic egg incubator specs.
+            Egg incubator manufacturer JB — factory in Bhandara, Vidarbha.
           </p>
         </div>
       </section>
       <ProductsSection />
+      <ProductSpecificationsSection />
       <ComparisonSection />
+      <SeoActionCards />
       <FaqSection />
+      <InternalLinksSection />
       <CtaSection />
     </main>
     <Footer />

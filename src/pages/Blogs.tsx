@@ -27,7 +27,7 @@ const Blogs = () => (
             supplier Vidarbha, and egg incubator Nagpur &amp; Bhandara — free guides for farmers nationwide.
           </p>
           <Link
-            to="/jb-egg-incubator-order"
+            to="/order-egg-incubator"
             className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg transition-colors"
           >
             Order Now — From ₹2,700
