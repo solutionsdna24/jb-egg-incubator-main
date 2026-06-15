@@ -36,7 +36,7 @@ const BrandLogo = ({
   const dims = imgDimensions[size] ?? { width: 260, height: 80 };
   const taglineClass =
     size === "hero"
-      ? "mt-2 sm:mt-3 text-xs sm:text-sm md:text-base font-semibold text-white/95 tracking-wide text-center"
+      ? "mt-1.5 sm:mt-2 text-xs sm:text-sm md:text-base font-semibold text-white/95 tracking-wide text-center"
       : "mt-2 text-xs sm:text-sm font-semibold text-emerald-900 tracking-wide";
 
   const img = (

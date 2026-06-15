@@ -1,5 +1,3 @@
-import { ROUTES } from "./routes";
-
 export const BRAND_FOUNDED_YEAR = 2022;
 
 export const brandStory = {
@@ -48,11 +46,4 @@ export const teamMembers: TeamMember[] = [
   { name: "Deepak Jambhulkar", role: "Marketing & Digital", department: "Marketing" },
 ];
 
-export const directoryListings = [
-  { name: "Justdial", description: "List JB Egg Incubator on Justdial for local egg incubator Bhandara and Nagpur searches.", url: "https://www.justdial.com" },
-  { name: "IndiaMART", description: "IndiaMART supplier profile for egg incubator manufacturer and poultry incubator Maharashtra leads.", url: "https://www.indiamart.com" },
-  { name: "TOOLSVILA", description: "Agricultural tools directory — egg hatching machine and automatic egg incubator listings.", url: "https://www.toolsvila.com" },
-  { name: "Flipkart", description: "Marketplace presence for egg incubator India buyers comparing prices online.", url: "https://www.flipkart.com" },
-  { name: "YouTube Creators", description: "Partner with poultry farming YouTube channels for customer testimonial videos.", url: "https://youtube.com/@jbeggincubator" },
-  { name: "Agriculture Blogs", description: "Guest posts on poultry and farming blogs for informational SEO backlinks.", url: ROUTES.blog },
-];
+export { directoryListings } from "./onlinePlatforms";

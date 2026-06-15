@@ -5,6 +5,7 @@ import HeroVideoBackground from "@/components/HeroVideoBackground";
 import BrandLogo from "@/components/BrandLogo";
 import { FEATURED_VIDEO_ID, CHANNEL_VIDEOS } from "@/lib/youtube";
 import chicksHatched from "@/assets/chicks-hatched.webp";
+import HeroOnlinePlatforms from "@/components/HeroOnlinePlatforms";
 
 const YouTubeModal = lazy(() => import("@/components/YouTubeModal"));
 
@@ -31,23 +32,18 @@ const MainTitle = () => {
     <>
       <section
         id="hero"
-        className="relative isolate w-full text-center overflow-hidden px-3 sm:px-4 py-8 sm:py-12 lg:py-16 min-h-[520px] sm:min-h-[580px] lg:min-h-[620px] flex flex-col justify-center"
+        className="relative isolate w-full text-center overflow-hidden px-3 sm:px-4 pt-2 sm:pt-3 pb-8 sm:pb-10 lg:pb-12 min-h-[640px] sm:min-h-[720px] lg:min-h-[760px] flex flex-col justify-start"
         aria-labelledby="main-page-heading"
       >
         <HeroVideoBackground />
 
-        <div className="relative z-10 w-full max-w-4xl mx-auto min-w-0">
-          <div className="px-4 py-6 sm:px-8 sm:py-10 lg:px-10 lg:py-12 w-full min-w-0">
-            <div className="mb-5 sm:mb-6 flex justify-center w-full">
+        <div className="relative z-10 w-full max-w-5xl mx-auto min-w-0">
+          <div className="px-4 pt-0 pb-6 sm:px-8 sm:pb-8 lg:px-10 w-full min-w-0">
+            <div className="mb-4 sm:mb-5 flex justify-center w-full">
               <BrandLogo size="hero" linked={false} showTagline align="center" className="w-full max-w-[460px]" />
             </div>
 
-            <div className="mb-4 sm:mb-5 px-1">
-              <span className="inline-flex max-w-full items-center justify-center gap-1.5 sm:gap-2 bg-yellow-500 text-white text-[11px] leading-snug sm:text-sm font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm text-balance">
-                <Star className="h-3 w-3 sm:h-3.5 sm:w-3.5 fill-white shrink-0" aria-hidden="true" />
-                {MARQUEE_TEXT[currentIndex]}
-              </span>
-            </div>
+           
 
             <h1
               id="main-page-heading"
@@ -58,20 +54,14 @@ const MainTitle = () => {
             <p className="text-sm sm:text-lg md:text-xl font-semibold text-white mb-3 sm:mb-4 leading-snug text-balance px-0.5">
               Automatic egg incubator &amp; egg hatching machine from ₹2,700 — Bhandara, Vidarbha
             </p>
-            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl max-w-2xl mx-auto mb-6 sm:mb-8 border border-emerald-200/80 shadow-inner">
-              <img
-                src={chicksHatched}
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 h-full w-full object-cover object-center scale-105 opacity-40"
-                loading="eager"
-                decoding="async"
-              />
+            <HeroOnlinePlatforms variant="hero" />
+            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl max-w-2xl mx-auto mb-6 sm:mb-8 ">
+              
               <div
-                className="absolute inset-0 bg-gradient-to-r from-emerald-50/95 via-white/92 to-emerald-50/95"
+                className="absolute inset-0 "
                 aria-hidden="true"
               />
-              <p className="relative z-10 text-sm sm:text-base md:text-lg text-stone-800 font-medium max-w-2xl mx-auto leading-relaxed text-pretty px-4 py-5 sm:px-6 sm:py-6">
+              <p className=" font-semibold text-white/80 text-sm sm:text-base mt-2 sm:mt-3 leading-relaxed px-2 max-w-xl mx-auto">
                 JB is an egg incubator manufacturer in Maharashtra and India — a poultry incubator
                 supplier based in Lakhandur, Bhandara, Vidarbha. We build automatic egg incubator
                 machines and egg hatching machines for Nagpur, statewide Maharashtra, and pan-India
@@ -117,6 +107,8 @@ const MainTitle = () => {
                 </div>
               ))}
             </div>
+
+           
           </div>
         </div>
       </section>
