@@ -54,13 +54,17 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks(id) {
           if (!id.includes("node_modules")) return;
-          if (id.includes("react-dom") || id.includes("react-router") || id.includes("/react/")) {
+          if (
+            id.includes("react-dom") ||
+            id.includes("react-router") ||
+            id.includes("react-helmet-async") ||
+            id.includes("/react/") ||
+            id.includes("scheduler")
+          ) {
             return "react";
           }
           if (id.includes("lucide-react")) return "icons";
           if (id.includes("@radix-ui")) return "radix";
-          if (id.includes("react-helmet-async")) return "helmet";
-          if (id.includes("sonner")) return "sonner";
         },
       },
     },
