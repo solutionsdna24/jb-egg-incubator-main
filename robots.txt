@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Block build artifacts if accidentally exposed
+Disallow: /assets/*.map
+
 Sitemap: https://www.jbincubators.in/sitemap.xml
+Host: www.jbincubators.in
