@@ -80,7 +80,7 @@ const BlogSection = () => {
                   className="inline-flex items-center gap-1 text-sm font-bold text-emerald-800 hover:text-emerald-900"
                   aria-label={`Read more: ${post.title}`}
                 >
-                  Read more
+                  Read more  ${post.title}
                   <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
                 </Link>
               </div>

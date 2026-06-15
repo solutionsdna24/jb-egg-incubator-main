@@ -8,7 +8,7 @@ const PromoBar = () => (
         <Flame className="h-4 w-4 text-orange-500 shrink-0" aria-hidden="true" />
         Limited Stock — Selling Fast
       </span>
-      <span className="text-stone-700">Free setup guidance · 1 Year warranty</span>
+      <span className="text-stone-700">Bhandara, Vidarbha · Nagpur delivery · Pan-India shipping</span>
       <Link
         to="/jb-egg-incubator-order"
         className="inline-flex items-center gap-1 font-semibold text-orange-600 hover:text-orange-700"

@@ -20,11 +20,11 @@ const Blogs = () => (
             JB Incubator Blog
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-            Egg Incubator Guides & Egg Hatching Machine Price Tips
+            Egg Incubator Blog — Maharashtra &amp; India Guides
           </h1>
           <p className="text-emerald-100 text-sm sm:text-base leading-relaxed mb-6">
-            Articles on automatic egg incubator machines, commercial poultry incubators, and choosing
-            the best egg incubator company in India — free guides for Maharashtra & nationwide farmers.
+            Articles on automatic egg incubator Maharashtra, egg hatching machine price, poultry incubator
+            supplier Vidarbha, and egg incubator Nagpur &amp; Bhandara — free guides for farmers nationwide.
           </p>
           <Link
             to="/jb-egg-incubator-order"

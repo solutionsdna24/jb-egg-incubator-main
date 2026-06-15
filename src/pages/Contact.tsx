@@ -47,10 +47,10 @@ const Contact = () => (
       <section className="page-hero bg-gradient-to-br from-blue-50 via-white to-slate-50">
         <div className="container mx-auto max-w-4xl text-center px-4">
           <p className="section-eyebrow">Get in Touch</p>
-          <h1 className="page-hero-title">Contact JB Egg Incubator</h1>
+          <h1 className="page-hero-title">Egg Incubator Nagpur &amp; Bhandara — Contact JB</h1>
           <p className="page-hero-subtitle mb-8">
-            Our team is ready to help you choose the right incubator, confirm pricing, and arrange
-            delivery anywhere in India. Reach out by phone, email, or WhatsApp.
+            Contact JB Egg Incubator — poultry incubator supplier in Bhandara, Vidarbha. Order automatic
+            egg incubator machines and egg hatching machines for Nagpur, Maharashtra &amp; all India.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3">
             <a href="tel:+918767189437" className="btn-primary inline-flex items-center justify-center gap-2">

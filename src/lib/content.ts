@@ -106,14 +106,34 @@ export const howItWorks = [
 
 export const faqs = [
   {
-    question: "Is JB an egg incubator manufacturer in India?",
+    question: "Where can I buy an egg incubator in Maharashtra and India?",
     answer:
-      "Yes. JB Egg Incubator is an egg incubator manufacturer in India based in Lakhandur, Bhandara, Maharashtra. We build manual, semi-automatic, and automatic egg incubator machines for poultry farmers nationwide.",
+      "JB Egg Incubator is an egg incubator manufacturer in Maharashtra and India based in Lakhandur, Bhandara, Vidarbha. We supply automatic egg incubator machines and egg hatching machines to Nagpur, statewide Maharashtra, and all Indian states with pan-India delivery.",
+  },
+  {
+    question: "Is JB an egg incubator manufacturer in Vidarbha?",
+    answer:
+      "Yes. Our factory is in Lakhandur, Bhandara — in the Vidarbha region of Maharashtra. Farmers from Nagpur, Bhandara, Wardha, and nearby districts buy direct from us as a local poultry incubator supplier with Marathi and English phone support.",
+  },
+  {
+    question: "What is the egg hatching machine price in Maharashtra?",
+    answer:
+      "JB egg hatching machine price in Maharashtra starts from ₹2,700 for the JBW100 model. JBST100 and JBI80M automatic egg incubator machines are priced higher based on capacity and features. Call +91 8767189437 for today's egg hatching machine price and ready stock.",
+  },
+  {
+    question: "Do you sell automatic egg incubator machines in Nagpur and Bhandara?",
+    answer:
+      "Yes. JB supplies automatic egg incubator machines across Nagpur, Bhandara, and all Maharashtra districts. JBI80M is our fully automatic model with auto egg turning and digital controls. We deliver from our Bhandara factory with setup guidance.",
+  },
+  {
+    question: "Is JB a poultry incubator supplier in Maharashtra and India?",
+    answer:
+      "Yes. JB is a poultry incubator supplier for backyard farms, village hatcheries, and commercial setups in Maharashtra and across India. Models include manual JBW100, semi-automatic JBST100, and automatic JBI80M egg hatching machines.",
   },
   {
     question: "What is the egg hatching machine price in India?",
     answer:
-      "JB egg hatching machine price starts from ₹2,700 for the JBW100 model. JBST100 and JBI80M automatic egg incubator machines are priced higher based on capacity and features. Call +91 8767189437 for the latest egg hatching machine price and ready stock.",
+      "JB egg hatching machine price in India starts from ₹2,700 for the JBW100 model. JBST100 and JBI80M automatic egg incubator machines are priced higher based on capacity and features. Call +91 8767189437 for the latest pricing and ready stock.",
   },
   {
     question: "Do you supply commercial egg incubators?",
@@ -123,7 +143,7 @@ export const faqs = [
   {
     question: "Can I buy an egg incubator in Maharashtra?",
     answer:
-      "Yes. JB manufactures egg incubators in Maharashtra and delivers across the state — Nagpur, Pune, Mumbai, Wardha, and all districts. We also ship pan-India from our Bhandara facility with phone support in Marathi and English.",
+      "Yes. JB manufactures egg incubators in Maharashtra and delivers across the state — Nagpur, Bhandara, Pune, Mumbai, Wardha, and all districts. We also ship pan-India from our Vidarbha facility with phone support in Marathi and English.",
   },
   {
     question: "Which JB incubator is best for beginners?",
@@ -158,9 +178,10 @@ export const faqs = [
 ];
 
 export const companyHighlights = [
-  "Manufactured in Maharashtra with quality-tested components",
+  "Egg incubator manufacturer in Maharashtra & India — factory in Bhandara, Vidarbha",
   "Models for 80 to 100 egg capacity per cycle",
-  "Manual, semi-automatic, and fully automatic options",
+  "Manual, semi-automatic, and automatic egg hatching machines",
+  "Poultry incubator supplier for Nagpur, Maharashtra & pan-India delivery",
   "Training and setup support for first-time users",
   "Spare parts and controller replacement assistance",
   "Suitable for chicken, duck, quail, and other poultry eggs",

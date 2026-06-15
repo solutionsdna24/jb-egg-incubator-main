@@ -14,12 +14,13 @@ const CompanyStorySection = ({ showImage = true }: CompanyStorySectionProps) => 
         <div>
           <p className="section-eyebrow">Our Story</p>
           <h2 id="company-story-heading" className="section-title">
-            Trusted Poultry Incubator Manufacturer
+            Egg Incubator Manufacturer — Bhandara, Vidarbha
           </h2>
           <p className="text-slate-600 leading-relaxed mb-4">
-            JB Egg Incubator is a Maharashtra-based manufacturer serving poultry farmers across
-            India. We build incubators that balance affordability with dependable performance —
-            because every hatch cycle matters to your livelihood.
+            JB Egg Incubator is an egg incubator manufacturer in Maharashtra and India, based in
+            Lakhandur, Bhandara, Vidarbha. We serve poultry farmers across Nagpur, statewide
+            Maharashtra, and pan-India with egg hatching machines that balance affordability and
+            dependable performance.
           </p>
           <p className="text-slate-600 leading-relaxed mb-6">
             From backyard chicken keepers to commercial hatchery operators, our customers rely on

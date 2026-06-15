@@ -11,14 +11,14 @@ const SeoIntroSection = () => (
       <div className="flex flex-col items-center text-center mb-12">
         <p className="section-eyebrow">About JB</p>
         <h2 id="about-jb-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-900 tracking-tight mb-4">
-          Best Egg Incubator Company in India — Built in Maharashtra
+          Egg Incubator Manufacturer in Maharashtra &amp; India — Vidarbha Factory
         </h2>
         <p className="text-base sm:text-lg text-stone-700 max-w-3xl leading-relaxed">
-          JB is an <strong>egg incubator manufacturer in India</strong> and trusted{" "}
-          <strong>poultry incubator supplier</strong> from <strong>Lakhandur, Bhandara, Maharashtra</strong>.
-          Whether you need a budget manual unit or a <strong>commercial egg incubator</strong> with
-          automatic controls, we offer clear <strong>egg hatching machine price</strong> tiers and
-          honest support for Indian farms.
+          JB is an <strong>egg incubator manufacturer in Maharashtra and India</strong> and trusted{" "}
+          <strong>poultry incubator supplier</strong> from <strong>Lakhandur, Bhandara, Vidarbha</strong>.
+          We serve farmers in <strong>Nagpur</strong>, across Maharashtra, and nationwide with manual and{" "}
+          <strong>automatic egg incubator</strong> machines, clear <strong>egg hatching machine price</strong>{" "}
+          tiers, and honest support for Indian farms.
         </p>
       </div>
 
@@ -27,17 +27,17 @@ const SeoIntroSection = () => (
           {
             icon: Egg,
             title: "50–100 Eggs Per Cycle",
-            text: "Pick the right size for your farm — no need to overpay for capacity you don't use yet.",
+            text: "Pick the right egg hatching machine size for your farm — no need to overpay for capacity you don't use yet.",
           },
           {
             icon: MapPin,
-            title: "Egg Incubator in Maharashtra",
-            text: "Factory in Bhandara with fast delivery across Maharashtra and all India — local Marathi support available.",
+            title: "Egg Incubator Nagpur & Bhandara",
+            text: "Factory in Bhandara, Vidarbha with fast delivery across Maharashtra and all India — local Marathi support available.",
           },
           {
             icon: Clock,
             title: "21-Day Hatch Cycle",
-            text: "Stable heat & humidity for chicken eggs. Duck and quail farmers also use JB with great results.",
+            text: "Stable heat & humidity for chicken eggs. Duck and quail farmers across Vidarbha and India use JB with great results.",
           },
         ].map(({ icon: Icon, title, text }) => (
           <article
@@ -54,24 +54,30 @@ const SeoIntroSection = () => (
       </div>
 
       <div className="rounded-2xl border-2 border-emerald-100 bg-emerald-50/50 p-6 sm:p-10 max-w-4xl mx-auto">
-        <h3 className="text-xl font-bold text-stone-900 mb-4">Automatic Egg Incubator Machine — Pick Your Model</h3>
+        <h3 className="text-xl font-bold text-stone-900 mb-4">
+          Automatic Egg Incubator Maharashtra — Pick Your Model
+        </h3>
         <ul className="space-y-4 text-base text-stone-800 leading-relaxed mb-6">
           <li>
             <strong className="text-emerald-800">JBW100 (from ₹2,700)</strong> — Best for beginners.
-            Manual control, thermocol body, up to 100 eggs. Simple and affordable.
+            Manual egg hatching machine, thermocol body, up to 100 eggs. Simple and affordable.
           </li>
           <li>
-            <strong className="text-emerald-800">JBST100</strong> — Most popular. Fiber body + digital
+            <strong className="text-emerald-800">JBST100</strong> — Most popular in Vidarbha. Fiber body + digital
             hygrometer for better humidity control and stronger build.
           </li>
           <li>
-            <strong className="text-emerald-800">JBI80M</strong> — Premium automatic. Metal body, auto egg
-            turning, digital monitor — for serious hatcheries.
+            <strong className="text-emerald-800">JBI80M</strong> — Premium automatic egg incubator. Metal body, auto egg
+            turning, digital monitor — for serious hatcheries in Maharashtra &amp; India.
           </li>
         </ul>
         <p className="text-base text-stone-700 leading-relaxed mb-6">
-          All models use just <strong>120W power</strong>, include setup guidance, and ship across India.
-          Watch real customer videos on our{" "}
+          All models use just <strong>120W power</strong>, include setup guidance, and ship across Maharashtra and India.
+          Read our guides on{" "}
+          <Link to="/blog/egg-incubator-vidarbha-nagpur-bhandara" className="text-emerald-700 font-bold hover:underline">
+            egg incubator Vidarbha
+          </Link>
+          , watch real customer videos on our{" "}
           <Link to="/" onClick={(e) => { e.preventDefault(); document.getElementById("videos")?.scrollIntoView({ behavior: "smooth" }); }} className="text-emerald-700 font-bold hover:underline">
             YouTube section
           </Link>

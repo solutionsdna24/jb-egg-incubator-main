@@ -14,10 +14,10 @@ const Products = () => (
       <section className="page-hero bg-gradient-to-br from-blue-50 via-white to-slate-50">
         <div className="container mx-auto max-w-4xl px-4">
           <p className="section-eyebrow">Product Catalogue</p>
-          <h1 className="page-hero-title">Egg Hatching Machine Price & Commercial Incubators</h1>
+          <h1 className="page-hero-title">Egg Hatching Machine Maharashtra &amp; India — JB Models</h1>
           <p className="page-hero-subtitle">
-            Compare automatic egg incubator machines from a leading poultry incubator supplier in India.
-            JBW100, JBST100 & JBI80M — clear egg hatching machine price, features & pan-India delivery.
+            Compare egg hatching machine price in Maharashtra &amp; India. Automatic egg incubator JBW100,
+            JBST100 &amp; JBI80M from poultry incubator supplier JB — factory in Bhandara, Vidarbha.
           </p>
         </div>
       </section>

@@ -5,15 +5,23 @@ export const SITE_NAME = "JB Egg Incubator";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.webp`;
 export const DEFAULT_PHONE = "+91 8767189437";
 
-/** Primary search phrases for Google & on-page SEO */
+/** Primary + secondary search phrases for Google & on-page SEO */
 export const TARGET_KEYWORDS = [
-  "Egg incubator manufacturer in India",
-  "Automatic egg incubator machine",
-  "Poultry incubator supplier",
-  "Commercial egg incubator",
-  "Egg hatching machine price",
-  "Egg incubator in Maharashtra",
-  "Best egg incubator company in India",
+  "egg incubator maharashtra",
+  "egg incubator india",
+  "egg incubator manufacturer in maharashtra",
+  "egg incubator manufacturer in india",
+  "egg incubator manufacturer vidarbha",
+  "automatic egg incubator maharashtra",
+  "automatic egg incubator nagpur",
+  "automatic egg incubator bhandara",
+  "poultry incubator supplier maharashtra",
+  "poultry incubator supplier india",
+  "egg hatching machine maharashtra",
+  "egg hatching machine india",
+  "egg incubator nagpur",
+  "egg incubator bhandara",
+  "egg incubator vidarbha",
 ] as const;
 
 export const KEYWORDS_META = [
@@ -22,9 +30,10 @@ export const KEYWORDS_META = [
   "JBW100",
   "JBST100",
   "JBI80M",
-  "egg hatching machine India",
-  "poultry incubator price",
-  "buy egg incubator online",
+  "commercial egg incubator",
+  "egg hatching machine price",
+  "poultry incubator nagpur",
+  "poultry incubator bhandara",
 ].join(", ");
 
 export type PageKey =
@@ -46,51 +55,51 @@ export interface PageSeo {
 
 export const PAGE_SEO: Record<PageKey, PageSeo> = {
   home: {
-    title: "Egg Incubator Manufacturer in India | JB Poultry Incubators",
+    title: "Egg Incubator Maharashtra & India | JB Manufacturer Bhandara",
     description:
-      "JB is a leading egg incubator manufacturer in India & the best egg incubator company for farmers. Automatic egg incubator machines from ₹2,700. Commercial poultry incubator supplier with pan-India delivery.",
+      "Buy egg incubator in Maharashtra & India from JB — egg incubator manufacturer in Vidarbha (Bhandara, Nagpur). Automatic egg incubator, poultry incubator supplier & egg hatching machine from ₹2,700 with pan-India delivery.",
     path: "/egg-incubators",
     keywords: KEYWORDS_META,
   },
   products: {
-    title: "Egg Hatching Machine Price & Models | Commercial Egg Incubator",
+    title: "Egg Hatching Machine Maharashtra & India | JB Incubator Models",
     description:
-      "Compare egg hatching machine price for JBW100, JBST100 & JBI80M. Automatic egg incubator machine & commercial egg incubator options from a trusted poultry incubator supplier in India.",
+      "Compare egg hatching machine price in Maharashtra & India. Automatic egg incubator JBW100, JBST100, JBI80M from poultry incubator supplier JB — factory in Bhandara, Vidarbha.",
     path: "/products",
     keywords:
-      "egg hatching machine price, commercial egg incubator, automatic egg incubator machine, JBW100 price, JBST100, JBI80M, poultry incubator supplier India",
+      "egg hatching machine maharashtra, egg hatching machine india, automatic egg incubator maharashtra, automatic egg incubator nagpur, JBW100, JBST100, JBI80M, poultry incubator supplier",
   },
   details: {
-    title: "Best Egg Incubator Company in India | About JB Manufacturer",
+    title: "Egg Incubator Manufacturer Maharashtra & India | About JB",
     description:
-      "Learn why JB is rated among the best egg incubator companies in India. Egg incubator manufacturer in Maharashtra with 85%+ hatch rates, warranty & expert poultry support.",
+      "JB is an egg incubator manufacturer in Maharashtra & India — factory at Lakhandur, Bhandara, Vidarbha. Trusted poultry incubator supplier with 85%+ hatch rates & warranty.",
     path: "/details",
     keywords:
-      "best egg incubator company in India, egg incubator manufacturer in India, egg incubator in Maharashtra, poultry incubator quality, incubator warranty",
+      "egg incubator manufacturer in maharashtra, egg incubator manufacturer in india, egg incubator manufacturer vidarbha, egg incubator bhandara, poultry incubator quality",
   },
   contact: {
-    title: "Egg Incubator in Maharashtra | Contact Poultry Incubator Supplier",
+    title: "Egg Incubator Nagpur & Bhandara | Contact JB Maharashtra",
     description:
-      "Contact JB Egg Incubator — poultry incubator supplier based in Bhandara, Maharashtra. Call +91 8767189437 for egg hatching machine price, orders & pan-India delivery.",
+      "Contact JB Egg Incubator — poultry incubator supplier in Bhandara, Vidarbha. Egg hatching machine & automatic egg incubator orders for Nagpur, Maharashtra & all India. Call +91 8767189437.",
     path: "/contact",
     keywords:
-      "egg incubator in Maharashtra, contact JB incubator, poultry incubator supplier, egg hatching machine price enquiry, incubator dealer Bhandara",
+      "egg incubator nagpur, egg incubator bhandara, egg incubator maharashtra, poultry incubator supplier maharashtra, contact JB incubator vidarbha",
   },
   order: {
-    title: "Order Automatic Egg Incubator | Egg Hatching Machine Price Quote",
+    title: "Order Egg Incubator Maharashtra & India | Price Quote",
     description:
-      "Request egg hatching machine price & order your automatic egg incubator machine online. Commercial egg incubator enquiries with fast response from JB manufacturer in India.",
+      "Request egg hatching machine price & order automatic egg incubator online. JB manufacturer in Bhandara, Maharashtra — fast response for Nagpur, Vidarbha & pan-India delivery.",
     path: "/jb-egg-incubator-order",
     keywords:
-      "order egg incubator, egg hatching machine price quote, automatic egg incubator machine, commercial egg incubator order India",
+      "order egg incubator maharashtra, egg hatching machine maharashtra, automatic egg incubator india, poultry incubator supplier india",
   },
   blogs: {
-    title: "Egg Incubator Blog | Buying Guides & Hatching Tips India",
+    title: "Egg Incubator Blog Maharashtra & India | JB Guides",
     description:
-      "Read guides on automatic egg incubator machines, commercial poultry incubators, egg hatching machine price & choosing the best egg incubator company in India.",
+      "Guides on egg incubator Maharashtra & India, automatic egg incubator Nagpur & Bhandara, poultry incubator supplier Vidarbha, and egg hatching machine pricing.",
     path: "/blog",
     keywords:
-      "egg incubator blog, automatic egg incubator guide, egg hatching machine price India, commercial egg incubator tips, poultry incubator supplier",
+      "egg incubator blog maharashtra, automatic egg incubator guide, egg hatching machine india, poultry incubator supplier vidarbha, egg incubator nagpur",
   },
   notFound: {
     title: "Page Not Found | JB Egg Incubator",
@@ -112,19 +121,22 @@ export const organizationJsonLd = {
   logo: DEFAULT_OG_IMAGE,
   image: DEFAULT_OG_IMAGE,
   description:
-    "Egg incubator manufacturer in India. Automatic egg incubator machines, commercial poultry incubators, and egg hatching machines from ₹2,700 with pan-India delivery.",
+    "Egg incubator manufacturer in Maharashtra and India. Automatic egg incubator, poultry incubator supplier, and egg hatching machine from Bhandara, Vidarbha — serving Nagpur and pan-India.",
   telephone: "+91-8767189437",
   email: "jbincubator5@gmail.com",
   priceRange: "₹2700-₹15000",
-  areaServed: {
-    "@type": "Country",
-    name: "India",
-  },
+  areaServed: [
+    { "@type": "State", name: "Maharashtra" },
+    { "@type": "City", name: "Nagpur" },
+    { "@type": "City", name: "Bhandara" },
+    { "@type": "AdministrativeArea", name: "Vidarbha" },
+    { "@type": "Country", name: "India" },
+  ],
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+91-8767189437",
     contactType: "sales",
-    areaServed: "IN",
+    areaServed: ["IN", "Maharashtra", "Vidarbha"],
     availableLanguage: ["English", "Marathi"],
   },
   address: {
@@ -137,9 +149,17 @@ export const organizationJsonLd = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 20.8833,
-    longitude: 79.6833,
+    latitude: 21.1702,
+    longitude: 79.655,
   },
+  knowsAbout: [
+    "egg incubator maharashtra",
+    "egg incubator india",
+    "automatic egg incubator",
+    "poultry incubator supplier",
+    "egg hatching machine",
+    "vidarbha poultry farming",
+  ],
   sameAs: [
     "https://youtube.com/@jbeggincubator",
     "https://www.instagram.com/jb_eggs_incubators",
@@ -153,7 +173,7 @@ export const websiteJsonLd = {
   name: SITE_NAME,
   url: SITE_URL,
   description:
-    "Best egg incubator company in India — automatic & commercial poultry incubator supplier.",
+    "Egg incubator Maharashtra & India — automatic egg incubator manufacturer and poultry incubator supplier from Bhandara, Vidarbha.",
   potentialAction: {
     "@type": "SearchAction",
     target: `${SITE_URL}/products?q={search_term_string}`,
@@ -197,5 +217,5 @@ export const blogPostingJsonLd = (post: BlogPost) => ({
     "@type": "WebPage",
     "@id": canonicalUrl(`/blog/${post.slug}`),
   },
-  keywords: KEYWORDS_META,
+  keywords: post.tags?.join(", ") ?? KEYWORDS_META,
 });

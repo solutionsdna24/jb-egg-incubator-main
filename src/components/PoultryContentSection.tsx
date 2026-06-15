@@ -15,12 +15,12 @@ const PoultryContentSection = () => (
       <div className="text-center mb-12">
         <p className="section-eyebrow">Poultry & Eggs</p>
         <h2 id="poultry-heading" className="text-2xl sm:text-3xl md:text-4xl font-bold text-stone-900 tracking-tight mb-4">
-          Poultry Incubator Supplier — Farm & Hatchery Guides
+          Poultry Incubator Supplier Maharashtra &amp; India
         </h2>
         <p className="text-base sm:text-lg text-stone-700 max-w-3xl mx-auto leading-relaxed">
-          As an egg incubator manufacturer in India, JB helps farmers turn eggs into income with
-          affordable automatic egg incubator machines, clear egg hatching machine price, and support
-          in Marathi & English.
+          As an egg incubator manufacturer in Maharashtra and India, JB helps farmers in Vidarbha,
+          Nagpur, and nationwide turn eggs into income with affordable automatic egg incubator machines,
+          clear egg hatching machine price, and support in Marathi &amp; English.
         </p>
       </div>
 

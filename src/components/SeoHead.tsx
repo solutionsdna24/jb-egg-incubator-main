@@ -41,7 +41,7 @@ const SeoHead = ({
       <meta name="robots" content={robots} />
       <meta name="author" content={SITE_NAME} />
       <meta name="geo.region" content="IN-MH" />
-      <meta name="geo.placename" content="Bhandara, Maharashtra, India" />
+      <meta name="geo.placename" content="Lakhandur, Bhandara, Vidarbha, Maharashtra, India" />
       <link rel="canonical" href={canonical} />
 
       <meta property="og:site_name" content={SITE_NAME} />

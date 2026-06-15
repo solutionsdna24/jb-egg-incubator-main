@@ -5,7 +5,6 @@ import HeroVideoBackground from "@/components/HeroVideoBackground";
 import BrandLogo from "@/components/BrandLogo";
 import { FEATURED_VIDEO_ID, CHANNEL_VIDEOS } from "@/lib/youtube";
 import chicksHatched from "@/assets/chicks-hatched.webp";
-import chickBackground from "@/assets/chick-background.webp";
 
 const YouTubeModal = lazy(() => import("@/components/YouTubeModal"));
 
@@ -54,34 +53,18 @@ const MainTitle = () => {
               id="main-page-heading"
               className="text-[1.35rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 tracking-tight text-balance px-0.5"
             >
-              Egg Incubator Manufacturer in India — Trusted by 1,000+ Farmers
+              Egg Incubator Maharashtra &amp; India — Trusted by 1,000+ Farmers
             </h1>
             <p className="text-sm sm:text-lg md:text-xl font-semibold text-white mb-3 sm:mb-4 leading-snug text-balance px-0.5">
-              Automatic egg incubator machines & commercial poultry incubators from ₹2,700
+              Automatic egg incubator &amp; egg hatching machine from ₹2,700 — Bhandara, Vidarbha
             </p>
             <div className="relative overflow-hidden rounded-xl sm:rounded-2xl max-w-2xl mx-auto mb-6 sm:mb-8 border border-emerald-200/80 shadow-inner">
               <img
-                src={chickBackground}
+                src={chicksHatched}
                 alt=""
                 aria-hidden="true"
-                className="absolute inset-0 h-full w-full object-cover object-center scale-105 opacity-50"
+                className="absolute inset-0 h-full w-full object-cover object-center scale-105 opacity-40"
                 loading="eager"
-                decoding="async"
-              />
-              <img
-                src={chicksHatched}
-                alt=""
-                aria-hidden="true"
-                className="absolute -bottom-2 -left-4 w-28 sm:w-36 opacity-35 object-contain pointer-events-none sm:opacity-45"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                src={chicksHatched}
-                alt=""
-                aria-hidden="true"
-                className="absolute -bottom-2 -right-4 w-28 sm:w-36 opacity-35 object-contain pointer-events-none scale-x-[-1] sm:opacity-45 hidden sm:block"
-                loading="lazy"
                 decoding="async"
               />
               <div
@@ -89,9 +72,10 @@ const MainTitle = () => {
                 aria-hidden="true"
               />
               <p className="relative z-10 text-sm sm:text-base md:text-lg text-stone-800 font-medium max-w-2xl mx-auto leading-relaxed text-pretty px-4 py-5 sm:px-6 sm:py-6">
-                JB is among the best egg incubator companies in India — a poultry incubator supplier
-                based in Maharashtra with manual & automatic egg hatching machines, 85–90% hatch rates,
-                pan-India delivery, and expert phone support on every order.
+                JB is an egg incubator manufacturer in Maharashtra and India — a poultry incubator
+                supplier based in Lakhandur, Bhandara, Vidarbha. We build automatic egg incubator
+                machines and egg hatching machines for Nagpur, statewide Maharashtra, and pan-India
+                delivery with 85–90% hatch rates and expert phone support on every order.
               </p>
             </div>
 
