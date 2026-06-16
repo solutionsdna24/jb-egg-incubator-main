@@ -1,0 +1,4 @@
+# Netlify / compatible static hosts — SPA fallback + apex → www
+https://jbincubators.in/* https://www.jbincubators.in/:splat 301!
+http://jbincubators.in/* https://www.jbincubators.in/:splat 301!
+/*    /index.html   200
