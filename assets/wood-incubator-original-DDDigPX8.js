@@ -1,1 +1,0 @@
-const s="/assets/interior-incubator-BKlhBwSX.webp",o="/assets/chicks-hatched-R8Bv47UQ.webp",t="/assets/red-incubator-original-7AcXkLoZ.webp",a="/assets/wood-incubator-original-Bsi84xWN.webp";export{o as c,s as i,t as r,a as w};

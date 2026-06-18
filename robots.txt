@@ -4,5 +4,5 @@ Allow: /
 # Block build artifacts if accidentally exposed
 Disallow: /assets/*.map
 
-Sitemap: https://www.jbincubators.in/sitemap.xml
-Host: www.jbincubators.in
+Sitemap: https://jbincubators.in/sitemap.xml
+Host: jbincubators.in
