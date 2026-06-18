@@ -13,6 +13,8 @@ export const internalLinkGroups: InternalLinkGroup[] = [
       { label: "120 Egg Incubator", to: ROUTES.landing120Egg, description: "JBST100 semi-automatic" },
       { label: "Automatic Egg Incubator", to: ROUTES.landingAutomatic },
       { label: "Fully Automatic Egg Incubator", to: ROUTES.landingFullyAutomatic },
+      { label: "Egg Incubator Vidarbha", to: ROUTES.landingVidarbha },
+      { label: "Egg Incubator Nagpur", to: ROUTES.landingNagpur },
       { label: "Egg Incubator Maharashtra", to: ROUTES.landingMaharashtra },
       { label: "Egg Hatching Machine India", to: ROUTES.landingHatchingMachine },
       { label: "Egg Incubator Price India", to: ROUTES.landingPrice },
@@ -51,8 +53,10 @@ export const internalLinkGroups: InternalLinkGroup[] = [
   {
     title: "Local & Regional",
     links: [
+      { label: "Egg Incubator Vidarbha", to: ROUTES.landingVidarbha },
+      { label: "Egg Incubator Nagpur", to: ROUTES.landingNagpur },
       { label: "Egg Incubator Maharashtra", to: ROUTES.landingMaharashtra },
-      { label: "Egg Incubator Nagpur & Bhandara", to: `${ROUTES.blog}/egg-incubator-vidarbha-nagpur-bhandara` },
+      { label: "Vidarbha Guide (Blog)", to: `${ROUTES.blog}/egg-incubator-vidarbha-nagpur-bhandara` },
       { label: "Poultry Incubator Maharashtra", to: `${ROUTES.blog}/commercial-poultry-incubator-supplier` },
       { label: "Contact — Bhandara Factory", to: ROUTES.contact },
     ],
@@ -72,10 +76,14 @@ export const seoKeywords = {
     "egg incubator supplier India",
   ],
   local: [
+    "egg incubator vidarbha",
+    "egg incubator nagpur",
+    "egg incubator maharashtra",
+    "vidarbha egg incubator",
+    "nagpur egg incubator",
     "egg incubator Bhandara",
-    "egg incubator Nagpur",
-    "egg incubator Maharashtra",
-    "poultry incubator Maharashtra",
+    "poultry incubator vidarbha",
+    "poultry incubator nagpur",
   ],
   informational: [
     "how to hatch eggs in incubator",

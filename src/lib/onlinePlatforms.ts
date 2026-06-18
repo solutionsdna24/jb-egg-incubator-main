@@ -22,7 +22,7 @@ export const onlinePlatforms: OnlinePlatform[] = [
   {
     name: "Justdial",
     shortLabel: "Justdial",
-    url: "https://www.justdial.com",
+    url: "https://jsdl.in/DT-99QLBNPLSPD",
     external: true,
     icon: Phone,
     brandColor: "hover:bg-[#0f8fef]/20 hover:border-[#0f8fef]/40",

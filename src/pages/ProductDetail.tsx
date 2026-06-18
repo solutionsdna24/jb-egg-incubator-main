@@ -8,6 +8,11 @@ import InternalLinksSection from "@/components/InternalLinksSection";
 import { getSpecBySlug } from "@/lib/specifications";
 import { products } from "@/lib/products";
 import { ROUTES } from "@/lib/routes";
+import {
+  getProductPageSeo,
+  productJsonLd,
+  breadcrumbJsonLd,
+} from "@/lib/seo";
 import { CheckCircle2 } from "lucide-react";
 
 const ProductDetail = () => {
@@ -19,13 +24,29 @@ const ProductDetail = () => {
     return <Navigate to={ROUTES.products} replace />;
   }
 
+  const pageSeo = getProductPageSeo(spec.model);
+  const productPath = ROUTES.product(slug!);
+
   return (
     <div className="page-shell">
       <SeoHead
         page="product"
-        titleOverride={`${spec.model} ${spec.type} — ${spec.capacity}`}
-        descriptionOverride={`${spec.model} egg incubator specifications: ${spec.type}, ${spec.capacity}, ${spec.power}. Egg incubator manufacturer JB — Bhandara, Maharashtra.`}
-        pathOverride={ROUTES.product(slug!)}
+        titleOverride={pageSeo?.title ?? `${spec.model} ${spec.type} — ${spec.capacity}`}
+        descriptionOverride={
+          pageSeo?.description ??
+          `${spec.model} egg incubator: ${spec.type}, ${spec.capacity}, ${spec.power}. Egg incubator manufacturer JB — Bhandara, Maharashtra, India.`
+        }
+        keywordsOverride={pageSeo?.keywords}
+        pathOverride={productPath}
+        ogType="product"
+        extraJsonLd={[
+          productJsonLd(product, spec),
+          breadcrumbJsonLd([
+            { name: "Home", path: ROUTES.home },
+            { name: "Products", path: ROUTES.products },
+            { name: spec.model, path: productPath },
+          ]),
+        ]}
       />
       <Header />
       <main>

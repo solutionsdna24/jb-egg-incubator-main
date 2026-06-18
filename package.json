@@ -2,7 +2,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://www.jbincubators.in",
+  "homepage": "https://jbincubators.in",
   "scripts": {
     "dev": "vite",
     "server": "node server/index.js",
@@ -10,7 +10,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build && echo 'www.jbincubators.in' > dist/CNAME",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

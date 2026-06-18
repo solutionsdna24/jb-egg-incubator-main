@@ -49,10 +49,10 @@ const MainTitle = () => {
               id="main-page-heading"
               className="text-[1.35rem] leading-tight sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 tracking-tight text-balance px-0.5"
             >
-              Egg Incubator Maharashtra &amp; India — Trusted by 1,000+ Farmers
+              Egg Incubator Vidarbha, Nagpur &amp; Maharashtra — Trusted by 1,000+ Farmers
             </h1>
             <p className="text-sm sm:text-lg md:text-xl font-semibold text-white mb-3 sm:mb-4 leading-snug text-balance px-0.5">
-              Automatic egg incubator &amp; egg hatching machine from ₹2,700 — Bhandara, Vidarbha
+              Egg incubator manufacturer in Bhandara, Vidarbha — automatic egg hatching machine from ₹2,700
             </p>
             <HeroOnlinePlatforms variant="hero" />
             <div className="relative overflow-hidden rounded-xl sm:rounded-2xl max-w-2xl mx-auto mb-6 sm:mb-8 ">

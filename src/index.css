@@ -166,7 +166,9 @@ html {
   #reviews,
   #hero,
   #farmers,
-  #poultry-farm {
+  #poultry-farm,
+  #products,
+  #blog-list {
     scroll-margin-top: 9rem;
   }
 
@@ -175,7 +177,9 @@ html {
     #reviews,
     #hero,
     #farmers,
-    #poultry-farm {
+    #poultry-farm,
+    #products,
+    #blog-list {
       scroll-margin-top: 10.5rem;
     }
   }

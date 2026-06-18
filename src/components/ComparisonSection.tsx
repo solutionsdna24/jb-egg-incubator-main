@@ -11,6 +11,8 @@ const rows = [
   { label: "Warranty", values: ["6 months*", "6 months*", "6 months*"] },
 ];
 
+const comparisonProducts = products.filter((p) => p.featured);
+
 const ComparisonSection = () => (
   <section className="section-padding bg-slate-50" aria-labelledby="comparison-heading">
     <div className="container mx-auto max-w-5xl px-4">
@@ -29,7 +31,7 @@ const ComparisonSection = () => (
           <thead>
             <tr className="border-b border-slate-200 bg-slate-50">
               <th className="text-left p-4 font-semibold text-slate-700">Feature</th>
-              {products.map((p) => (
+              {comparisonProducts.map((p) => (
                 <th key={p.id} className="p-4 font-bold text-blue-700 text-center">
                   {p.name}
                 </th>
@@ -40,7 +42,7 @@ const ComparisonSection = () => (
             {rows.map((row) => (
               <tr key={row.label} className="border-b border-slate-100 last:border-0">
                 <td className="p-4 font-medium text-slate-700">{row.label}</td>
-                {products.map((p, i) => {
+                {comparisonProducts.map((p, i) => {
                   let value: string;
                   if (row.key === "price") value = p.price;
                   else if (row.fromFeatures) value = p.features.capacity;

@@ -40,7 +40,7 @@ const ProductPreviewSection = () => (
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) => (
+        {products.filter((p) => p.featured).map((product) => (
           <article
             key={product.id}
             className="modern-card overflow-hidden border border-stone-200 bg-white group hover:shadow-md transition-all duration-200 notranslate"

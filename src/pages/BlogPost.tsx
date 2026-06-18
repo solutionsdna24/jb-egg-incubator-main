@@ -19,7 +19,9 @@ const BlogPost = () => {
         page="blogs"
         titleOverride={post.title}
         descriptionOverride={post.excerpt}
+        keywordsOverride={post.tags?.join(", ")}
         pathOverride={`/blog/${post.slug}`}
+        ogType="article"
         extraJsonLd={[blogPostingJsonLd(post)]}
       />
       <Header />

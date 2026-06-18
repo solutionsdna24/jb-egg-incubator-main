@@ -24,6 +24,8 @@ const productLinks = [
   { label: "Automatic Egg Incubator", to: ROUTES.landingAutomatic },
   { label: "Fully Automatic", to: ROUTES.landingFullyAutomatic },
   { label: "Chicken Egg Incubator", to: ROUTES.landingChicken },
+  { label: "Egg Incubator Vidarbha", to: ROUTES.landingVidarbha },
+  { label: "Egg Incubator Nagpur", to: ROUTES.landingNagpur },
   { label: "Egg Incubator Maharashtra", to: ROUTES.landingMaharashtra },
 ];
 

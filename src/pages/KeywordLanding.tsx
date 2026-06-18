@@ -24,6 +24,7 @@ const KeywordLanding = () => {
         page="home"
         titleOverride={page.title.replace(/ \| JB$/, "").replace(/ — JB$/, "")}
         descriptionOverride={page.description}
+        keywordsOverride={page.keywords}
         pathOverride={page.path}
         extraJsonLd={[faqPageJsonLd(page.faqs)]}
       />

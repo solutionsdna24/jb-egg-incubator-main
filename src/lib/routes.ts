@@ -16,6 +16,8 @@ export const ROUTES = {
   landingAutomatic: "/automatic-egg-incubator",
   landingFullyAutomatic: "/fully-automatic-egg-incubator",
   landingMaharashtra: "/egg-incubator-maharashtra",
+  landingVidarbha: "/egg-incubator-vidarbha",
+  landingNagpur: "/egg-incubator-nagpur",
   landingHatchingMachine: "/egg-hatching-machine-india",
   landingPrice: "/egg-incubator-price-india",
   landingChicken: "/chicken-egg-incubator",
@@ -25,6 +27,11 @@ export const PRODUCT_SLUGS: Record<string, string> = {
   JBW100: "jbw100-100-egg-incubator",
   JBST100: "jbst100-automatic-egg-incubator",
   JBI80M: "jbi80m-fully-automatic-egg-incubator",
+  JB528C: "jb528-528-104-combine-incubator",
+  JB160A: "jb160-160-egg-automatic-incubator",
+  JB240C: "jb240-240-80-combine-incubator",
+  JB612C: "jb612-612-204-combine-incubator",
+  JB816C: "jb816-816-272-combine-incubator",
 };
 
 export const slugToProductId = (slug: string) =>

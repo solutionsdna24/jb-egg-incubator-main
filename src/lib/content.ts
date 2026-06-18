@@ -106,6 +106,16 @@ export const howItWorks = [
 
 export const faqs = [
   {
+    question: "Where can I buy egg incubator in Vidarbha?",
+    answer:
+      "Buy egg incubator in Vidarbha directly from JB Egg Incubator — the leading egg incubator manufacturer in Bhandara, Vidarbha. Models from ₹2,700 with delivery to Nagpur, Wardha, Gondia, Chandrapur, and all Vidarbha districts. Call +91 8767189437.",
+  },
+  {
+    question: "Which is the best egg incubator in Nagpur?",
+    answer:
+      "JB Egg Incubator is the nearest manufacturer to Nagpur (~60 km, Bhandara factory). JBST100 is most popular in Nagpur for digital humidity monitoring; JBW100 for beginners from ₹2,700; JBI80M for fully automatic hatching. Factory pickup and fast Nagpur courier delivery available.",
+  },
+  {
     question: "Where can I buy an egg incubator in Maharashtra and India?",
     answer:
       "JB Egg Incubator is an egg incubator manufacturer in Maharashtra and India based in Lakhandur, Bhandara, Vidarbha. We supply automatic egg incubator machines and egg hatching machines to Nagpur, statewide Maharashtra, and all Indian states with pan-India delivery.",

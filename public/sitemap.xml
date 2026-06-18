@@ -1,217 +1,259 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.jbincubators.in/egg-incubators</loc>
+    <loc>https://jbincubators.in/egg-incubators</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/100-egg-incubator</loc>
+    <loc>https://jbincubators.in/100-egg-incubator</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/120-egg-incubator</loc>
+    <loc>https://jbincubators.in/120-egg-incubator</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/automatic-egg-incubator</loc>
+    <loc>https://jbincubators.in/automatic-egg-incubator</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/fully-automatic-egg-incubator</loc>
+    <loc>https://jbincubators.in/fully-automatic-egg-incubator</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/egg-incubator-maharashtra</loc>
+    <loc>https://jbincubators.in/egg-incubator-maharashtra</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://jbincubators.in/egg-incubator-vidarbha</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://jbincubators.in/egg-incubator-nagpur</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://jbincubators.in/egg-hatching-machine-india</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/egg-hatching-machine-india</loc>
+    <loc>https://jbincubators.in/egg-incubator-price-india</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/egg-incubator-price-india</loc>
+    <loc>https://jbincubators.in/chicken-egg-incubator</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/chicken-egg-incubator</loc>
+    <loc>https://jbincubators.in/about</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/about</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.jbincubators.in/products</loc>
+    <loc>https://jbincubators.in/products</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/products/jbw100-100-egg-incubator</loc>
+    <loc>https://jbincubators.in/products/jbw100-100-egg-incubator</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/products/jbst100-automatic-egg-incubator</loc>
+    <loc>https://jbincubators.in/products/jbst100-automatic-egg-incubator</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/products/jbi80m-fully-automatic-egg-incubator</loc>
+    <loc>https://jbincubators.in/products/jbi80m-fully-automatic-egg-incubator</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/guides/poultry-incubation-training</loc>
+    <loc>https://jbincubators.in/products/jb528-528-104-combine-incubator</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://jbincubators.in/products/jb160-160-egg-automatic-incubator</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://jbincubators.in/products/jb240-240-80-combine-incubator</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://jbincubators.in/products/jb612-612-204-combine-incubator</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://jbincubators.in/products/jb816-816-272-combine-incubator</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://jbincubators.in/guides/poultry-incubation-training</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/guides/free-hatching-guide</loc>
+    <loc>https://jbincubators.in/guides/free-hatching-guide</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/tools/incubation-capacity-calculator</loc>
+    <loc>https://jbincubators.in/tools/incubation-capacity-calculator</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/order-egg-incubator</loc>
+    <loc>https://jbincubators.in/order-egg-incubator</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog</loc>
+    <loc>https://jbincubators.in/blog</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/how-to-hatch-eggs-in-incubator</loc>
+    <loc>https://jbincubators.in/blog/how-to-hatch-eggs-in-incubator</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/21-day-hatching-process</loc>
+    <loc>https://jbincubators.in/blog/21-day-hatching-process</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/common-incubation-mistakes</loc>
+    <loc>https://jbincubators.in/blog/common-incubation-mistakes</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/egg-incubator-vidarbha-nagpur-bhandara</loc>
+    <loc>https://jbincubators.in/blog/egg-incubator-vidarbha-nagpur-bhandara</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/automatic-egg-incubator-maharashtra</loc>
+    <loc>https://jbincubators.in/blog/automatic-egg-incubator-maharashtra</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/egg-hatching-machine-maharashtra-india</loc>
+    <loc>https://jbincubators.in/blog/egg-hatching-machine-maharashtra-india</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/egg-incubator-manufacturer-india</loc>
+    <loc>https://jbincubators.in/blog/egg-incubator-manufacturer-india</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/automatic-egg-incubator-machine-guide</loc>
+    <loc>https://jbincubators.in/blog/automatic-egg-incubator-machine-guide</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/egg-hatching-machine-price-india</loc>
+    <loc>https://jbincubators.in/blog/egg-hatching-machine-price-india</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/commercial-poultry-incubator-supplier</loc>
+    <loc>https://jbincubators.in/blog/commercial-poultry-incubator-supplier</loc>
     <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/egg-incubator-maharashtra</loc>
+    <loc>https://jbincubators.in/blog/egg-incubator-maharashtra</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/best-egg-incubator-company-india</loc>
+    <loc>https://jbincubators.in/blog/best-egg-incubator-company-india</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/choose-right-egg-incubator</loc>
+    <loc>https://jbincubators.in/blog/choose-right-egg-incubator</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/85-percent-hatch-rate-tips</loc>
+    <loc>https://jbincubators.in/blog/85-percent-hatch-rate-tips</loc>
     <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/manual-vs-automatic-incubator</loc>
+    <loc>https://jbincubators.in/blog/manual-vs-automatic-incubator</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/blog/why-farmers-trust-jb-incubators</loc>
+    <loc>https://jbincubators.in/blog/why-farmers-trust-jb-incubators</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.jbincubators.in/contact</loc>
+    <loc>https://jbincubators.in/contact</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
+import { SPA_STATIC_ROUTES } from "./src/lib/spaRoutes";
 
 export default defineConfig(({ mode }) => ({
   base: "/",
@@ -26,9 +27,18 @@ export default defineConfig(({ mode }) => ({
       closeBundle() {
         const distDir = path.resolve(__dirname, "dist");
         const indexHtml = path.join(distDir, "index.html");
-        if (fs.existsSync(indexHtml)) {
-          fs.copyFileSync(indexHtml, path.join(distDir, "404.html"));
+        if (!fs.existsSync(indexHtml)) return;
+
+        // GitHub Pages / static hosts: 404.html fallback for unknown paths
+        fs.copyFileSync(indexHtml, path.join(distDir, "404.html"));
+
+        // Real index.html per route so crawlers get HTTP 200 (not 404)
+        for (const route of SPA_STATIC_ROUTES) {
+          const routeDir = path.join(distDir, ...route.split("/"));
+          fs.mkdirSync(routeDir, { recursive: true });
+          fs.copyFileSync(indexHtml, path.join(routeDir, "index.html"));
         }
+
         const ogSource = path.resolve(__dirname, "public/og-image.webp");
         const ogDest = path.join(distDir, "og-image.webp");
         if (fs.existsSync(ogSource)) {

@@ -11,8 +11,8 @@ const ProductSpecificationsSection = () => (
           Detailed Egg Incubator Specifications
         </h2>
         <p className="section-subtitle mx-auto">
-          Compare 100 egg incubator, 120 egg layout, and fully automatic egg incubator specs — power,
-          humidity, warranty, and capacity for every JB model.
+          Compare capacity, automation, power, humidity, warranty, and batch output for every JB model —
+          from 100-egg starters to 816+272 commercial combine incubators.
         </p>
       </div>
       <div className="space-y-8">

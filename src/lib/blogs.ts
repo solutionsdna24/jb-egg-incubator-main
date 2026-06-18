@@ -309,6 +309,80 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
+export type BlogSortId = "newest" | "oldest" | "title";
+
+export const BLOG_SORT_OPTIONS: { id: BlogSortId; label: string }[] = [
+  { id: "newest", label: "Newest first" },
+  { id: "oldest", label: "Oldest first" },
+  { id: "title", label: "Title: A to Z" },
+];
+
+const categoryOrder = [
+  "Local",
+  "Training",
+  "Buying Guide",
+  "Pricing",
+  "Hatching Tips",
+  "Product Comparison",
+  "Commercial",
+  "About JB",
+];
+
+export const BLOG_CATEGORIES = [...new Set(blogPosts.map((p) => p.category))].sort(
+  (a, b) => categoryOrder.indexOf(a) - categoryOrder.indexOf(b) || a.localeCompare(b),
+);
+
+export const BLOG_FILTER_OPTIONS: { id: string; label: string; description?: string }[] = [
+  { id: "all", label: "All Articles", description: "Full blog catalogue" },
+  ...BLOG_CATEGORIES.map((category) => ({
+    id: category,
+    label: category,
+    description:
+      category === "Local"
+        ? "Vidarbha, Nagpur & Maharashtra"
+        : category === "Training"
+          ? "Hatching guides & how-to"
+          : undefined,
+  })),
+];
+
+export const countBlogsByCategory = (category: string) =>
+  category === "all"
+    ? blogPosts.length
+    : blogPosts.filter((p) => p.category === category).length;
+
+export const filterAndSortBlogs = (
+  list: BlogPost[],
+  category: string,
+  search: string,
+  sort: BlogSortId,
+): BlogPost[] => {
+  const query = search.trim().toLowerCase();
+  let result = list.filter((post) => {
+    const matchesCategory = category === "all" || post.category === category;
+    const matchesSearch =
+      !query ||
+      post.title.toLowerCase().includes(query) ||
+      post.excerpt.toLowerCase().includes(query) ||
+      post.category.toLowerCase().includes(query) ||
+      post.tags?.some((tag) => tag.toLowerCase().includes(query));
+    return matchesCategory && matchesSearch;
+  });
+
+  result = [...result].sort((a, b) => {
+    switch (sort) {
+      case "oldest":
+        return new Date(a.date).getTime() - new Date(b.date).getTime();
+      case "title":
+        return a.title.localeCompare(b.title);
+      default:
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    }
+  });
+
+  return result;
+};
+
 export const getBlogBySlug = (slug: string) =>
   blogPosts.find((post) => post.slug === slug);
 

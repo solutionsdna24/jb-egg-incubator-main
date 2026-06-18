@@ -40,6 +40,11 @@ const incubatorOptions = [
   "JBW100",
   "JBST100",
   "JBI80M",
+  "JB528C (528+104 Combine)",
+  "JB160A (160 Egg Automatic)",
+  "JB240C (240+80 Combine)",
+  "JB612C (612+204 Combine)",
+  "JB816C (816+272 Combine)",
   "Custom Requirement",
 ];
 

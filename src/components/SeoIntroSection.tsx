@@ -74,8 +74,12 @@ const SeoIntroSection = () => (
         <p className="text-base text-stone-700 leading-relaxed mb-6">
           All models use just <strong>120W power</strong>, include setup guidance, and ship across Maharashtra and India.
           Read our guides on{" "}
-          <Link to="/blog/egg-incubator-vidarbha-nagpur-bhandara" className="text-emerald-700 font-bold hover:underline">
+          <Link to="/egg-incubator-vidarbha" className="text-emerald-700 font-bold hover:underline">
             egg incubator Vidarbha
+          </Link>
+          ,{" "}
+          <Link to="/egg-incubator-nagpur" className="text-emerald-700 font-bold hover:underline">
+            Nagpur
           </Link>
           , watch real customer videos on our{" "}
           <Link to="/" onClick={(e) => { e.preventDefault(); document.getElementById("videos")?.scrollIntoView({ behavior: "smooth" }); }} className="text-emerald-700 font-bold hover:underline">
