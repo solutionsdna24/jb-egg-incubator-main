@@ -43,6 +43,4 @@ export const SPA_STATIC_ROUTES = [
   "egg-hatching-machine-india",
   "egg-incubator-price-india",
   "chicken-egg-incubator",
-  "details",
-  "jb-egg-incubator-order",
 ];

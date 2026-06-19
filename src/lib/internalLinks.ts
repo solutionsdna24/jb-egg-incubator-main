@@ -1,4 +1,5 @@
 import { ROUTES, PRODUCT_SLUGS } from "./routes";
+import { blogPosts } from "./blogs";
 
 export interface InternalLinkGroup {
   title: string;
@@ -24,11 +25,24 @@ export const internalLinkGroups: InternalLinkGroup[] = [
   {
     title: "Egg Incubator Products",
     links: [
-      { label: "100 Egg Incubator — JBW100", to: ROUTES.product(PRODUCT_SLUGS.JBW100), description: "Manual egg hatching machine from ₹2,700" },
-      { label: "120 Egg Incubator — JBST100", to: ROUTES.product(PRODUCT_SLUGS.JBST100), description: "Semi-automatic 100 egg incubator" },
-      { label: "Fully Automatic — JBI80M", to: ROUTES.product(PRODUCT_SLUGS.JBI80M), description: "Premium automatic egg incubator" },
+      { label: "JBW100 — 100 Egg Incubator", to: ROUTES.product(PRODUCT_SLUGS.JBW100), description: "From ₹2,700" },
+      { label: "JBST100 — Semi-Automatic", to: ROUTES.product(PRODUCT_SLUGS.JBST100), description: "Digital hygrometer" },
+      { label: "JBI80M — Fully Automatic", to: ROUTES.product(PRODUCT_SLUGS.JBI80M), description: "Premium 80 egg" },
+      { label: "JB528C — 528+104 Combine", to: ROUTES.product(PRODUCT_SLUGS.JB528C) },
+      { label: "JB160A — 160 Egg Automatic", to: ROUTES.product(PRODUCT_SLUGS.JB160A) },
+      { label: "JB240C — 240+80 Combine", to: ROUTES.product(PRODUCT_SLUGS.JB240C) },
+      { label: "JB612C — 612+204 Commercial", to: ROUTES.product(PRODUCT_SLUGS.JB612C) },
+      { label: "JB816C — 816+272 Commercial", to: ROUTES.product(PRODUCT_SLUGS.JB816C) },
       { label: "Compare All Models", to: ROUTES.products },
     ],
+  },
+  {
+    title: "Blog Articles",
+    links: blogPosts.map((post) => ({
+      label: post.title,
+      to: ROUTES.blogPost(post.slug),
+      description: post.category,
+    })),
   },
   {
     title: "Guides & Training",

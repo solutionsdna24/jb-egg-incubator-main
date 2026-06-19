@@ -4,6 +4,7 @@ import path from "path";
 import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 import { SPA_STATIC_ROUTES } from "./src/lib/spaRoutes";
+import { injectStaticPrerender } from "./src/lib/staticPageHtml";
 
 export default defineConfig(({ mode }) => ({
   base: "/",
@@ -26,17 +27,22 @@ export default defineConfig(({ mode }) => ({
       name: "spa-fallback-and-og-image",
       closeBundle() {
         const distDir = path.resolve(__dirname, "dist");
-        const indexHtml = path.join(distDir, "index.html");
-        if (!fs.existsSync(indexHtml)) return;
+        const indexHtmlPath = path.join(distDir, "index.html");
+        if (!fs.existsSync(indexHtmlPath)) return;
+
+        const baseHtml = fs.readFileSync(indexHtmlPath, "utf-8");
+        const rootHtml = injectStaticPrerender(baseHtml, "egg-incubators");
+        fs.writeFileSync(indexHtmlPath, rootHtml);
 
         // GitHub Pages / static hosts: 404.html fallback for unknown paths
-        fs.copyFileSync(indexHtml, path.join(distDir, "404.html"));
+        fs.writeFileSync(path.join(distDir, "404.html"), rootHtml);
 
-        // Real index.html per route so crawlers get HTTP 200 (not 404)
+        // Per-route index.html with unique meta + prerendered body for crawlers
         for (const route of SPA_STATIC_ROUTES) {
           const routeDir = path.join(distDir, ...route.split("/"));
           fs.mkdirSync(routeDir, { recursive: true });
-          fs.copyFileSync(indexHtml, path.join(routeDir, "index.html"));
+          const routeHtml = injectStaticPrerender(baseHtml, route);
+          fs.writeFileSync(path.join(routeDir, "index.html"), routeHtml);
         }
 
         const ogSource = path.resolve(__dirname, "public/og-image.webp");

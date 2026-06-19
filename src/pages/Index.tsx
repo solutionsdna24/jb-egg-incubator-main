@@ -4,6 +4,7 @@ import MainTitle from "@/components/MainTitle";
 import StatsSection from "@/components/StatsSection";
 import SeoIntroSection from "@/components/SeoIntroSection";
 import LocalAreasSection from "@/components/LocalAreasSection";
+import HomeDiscoverLinks from "@/components/HomeDiscoverLinks";
 import FeaturesSection from "@/components/FeaturesSection";
 import ProductPreviewSection from "@/components/ProductPreviewSection";
 import InternalLinksSection from "@/components/InternalLinksSection";
@@ -29,6 +30,7 @@ const Index = () => (
       <MainTitle />
       <StatsSection />
       <LocalAreasSection />
+      <HomeDiscoverLinks />
       <SeoIntroSection />
       <PoultryContentSection />
       <FeaturesSection />

@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 import {
   PAGE_SEO,
   PageKey,
@@ -33,10 +34,14 @@ const SeoHead = ({
   includeWebsiteSchema = false,
   extraJsonLd = [],
 }: SeoHeadProps) => {
+  const location = useLocation();
   const seo = PAGE_SEO[page];
   const title = titleOverride ? `${titleOverride} | ${SITE_NAME}` : seo.title;
   const description = descriptionOverride ?? seo.description;
-  const canonical = canonicalUrl(pathOverride ?? seo.path);
+  const canonicalPath =
+    pathOverride ??
+    (location.pathname === "/" ? "/egg-incubators" : location.pathname);
+  const canonical = canonicalUrl(canonicalPath);
   const robots = seo.noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large";
   const keywords = keywordsOverride ?? seo.keywords ?? KEYWORDS_META;
 

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Thermometer, Droplets, Egg, Zap, ArrowRight, Check } from "lucide-react";
 import { products } from "@/lib/products";
 import ProductImage from "@/components/ProductImage";
+import { ROUTES, PRODUCT_SLUGS } from "@/lib/routes";
 
 const specIcons = {
   control: Thermometer,
@@ -96,10 +97,10 @@ const ProductPreviewSection = () => (
                   Order Now
                 </Link>
                 <Link
-                  to="/products"
+                  to={ROUTES.product(PRODUCT_SLUGS[product.id])}
                   className="btn-outline flex-1 text-center text-sm py-2.5"
                 >
-                  Details
+                  Full Specs
                 </Link>
               </div>
             </div>
