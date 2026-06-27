@@ -1,7 +1,7 @@
 import { productSpecifications } from "./specifications";
 import { landingPages } from "./landingPages";
 
-const SITE_URL = "https://jbincubators.in";
+const SITE_URL = "https://www.jbincubators.in";
 const SITE_NAME = "JB Egg Incubator";
 
 const canonicalUrl = (path: string) =>

@@ -4,13 +4,14 @@ import Footer from "@/components/Footer";
 import SeoHead from "@/components/SeoHead";
 import CtaSection from "@/components/CtaSection";
 import { landingPagesByPath, getLandingRelated } from "@/lib/landingPages";
+import { normalizePathname } from "@/lib/navigation";
 import { faqPageJsonLd } from "@/lib/seo";
 import { ROUTES } from "@/lib/routes";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 const KeywordLanding = () => {
   const { pathname } = useLocation();
-  const page = landingPagesByPath[pathname];
+  const page = landingPagesByPath[normalizePathname(pathname)];
 
   if (!page) {
     return <Navigate to={ROUTES.home} replace />;

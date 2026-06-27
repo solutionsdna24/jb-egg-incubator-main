@@ -1,7 +1,7 @@
 import type { BlogPost } from "@/lib/blogs";
-import { GOOGLE_RATING } from "@/lib/reviews";
+import { GOOGLE_RATING, googleReviews } from "@/lib/reviews";
 
-export const SITE_URL = "https://jbincubators.in";
+export const SITE_URL = "https://www.jbincubators.in";
 export const SITE_NAME = "JB Egg Incubator";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.webp`;
 export const DEFAULT_PHONE = "+91 8767189437";
@@ -184,6 +184,9 @@ export const PAGE_SEO: Record<PageKey, PageSeo> = {
 
 export const canonicalUrl = (path: string) =>
   path === "/" ? `${SITE_URL}/egg-incubators` : `${SITE_URL}${path}`;
+
+const absoluteAssetUrl = (src: string) =>
+  src.startsWith("http") ? src : `${SITE_URL}${src.startsWith("/") ? src : `/${src}`}`;
 
 export const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -384,7 +387,7 @@ export const PRODUCT_PAGE_SEO: Record<string, ProductPageSeo> = {
     description:
       "JBW100 100 egg incubator — manual egg hatching machine from ₹2,700. Thermocol body, 120W, 80%+ hatch rate. Egg incubator manufacturer JB, Bhandara, Maharashtra. Pan-India delivery.",
     keywords:
-      "100 egg incubator, JBW100, 100 egg incubator price, manual egg incubator, egg hatching machine maharashtra, chicken egg incubator india",
+      "100 egg incubator, 100 eggs incubator, JBW100, manual egg incubator, chicken egg incubator, poultry egg incubator, digital egg incubator, egg incubator machine, egg incubator manufacturer in India, egg incubator Maharashtra, egg hatching machine maharashtra, hatchery incubator, automatic egg incubator",
   },
   JBST100: {
     title: "120 Egg Incubator JBST100 ₹4,999 | Semi-Automatic with Hygrometer",
@@ -464,19 +467,34 @@ export const productJsonLd = (
   "@type": "Product",
   name: `${product.name} — ${spec.type}`,
   description: `${spec.capacity}. ${product.tagline}. Egg incubator by JB — manufacturer in Bhandara, Maharashtra, India.`,
-  image: product.image.startsWith("http") ? product.image : `${SITE_URL}${product.image}`,
+  image: absoluteAssetUrl(product.image),
   sku: product.id,
+  mpn: product.id,
   brand: { "@type": "Brand", name: SITE_NAME },
   manufacturer: {
     "@type": "Organization",
     name: SITE_NAME,
     url: SITE_URL,
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: GOOGLE_RATING,
+    reviewCount: 120,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  review: googleReviews.slice(0, 3).map((r) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: r.name },
+    reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: 5 },
+    reviewBody: r.text,
+  })),
   offers: {
     "@type": "Offer",
     url: canonicalUrl(`/products/${spec.slug}`),
     priceCurrency: "INR",
     availability: "https://schema.org/InStock",
+    itemCondition: "https://schema.org/NewCondition",
     seller: { "@type": "Organization", name: SITE_NAME },
     ...(product.price.includes("₹") && /\d/.test(product.price)
       ? { price: product.price.replace(/[^\d]/g, "") }

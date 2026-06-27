@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SeoHead from "@/components/SeoHead";
 import ProductImage from "@/components/ProductImage";
+import ProductDetailRichContent, { getProductFaqs } from "@/components/ProductDetailRichContent";
 import CtaSection from "@/components/CtaSection";
 import InternalLinksSection from "@/components/InternalLinksSection";
 import { getSpecBySlug } from "@/lib/specifications";
@@ -12,8 +13,12 @@ import {
   getProductPageSeo,
   productJsonLd,
   breadcrumbJsonLd,
+  faqPageJsonLd,
 } from "@/lib/seo";
 import { CheckCircle2 } from "lucide-react";
+
+const productImageAlt = (model: string, type: string, capacity: string) =>
+  `${model} ${type} — ${capacity} poultry egg incubator by JB Egg Incubator manufacturer Bhandara Maharashtra`;
 
 const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -26,6 +31,8 @@ const ProductDetail = () => {
 
   const pageSeo = getProductPageSeo(spec.model);
   const productPath = ROUTES.product(slug!);
+  const faqs = getProductFaqs(spec.model);
+  const imageAlt = productImageAlt(spec.model, spec.type, spec.capacity);
 
   return (
     <div className="page-shell">
@@ -46,6 +53,7 @@ const ProductDetail = () => {
             { name: "Products", path: ROUTES.products },
             { name: spec.model, path: productPath },
           ]),
+          ...(faqs.length ? [faqPageJsonLd(faqs)] : []),
         ]}
       />
       <Header />
@@ -60,14 +68,23 @@ const ProductDetail = () => {
               <span className="text-stone-900 font-medium">{spec.model}</span>
             </nav>
             <div className="grid lg:grid-cols-2 gap-10 items-start">
-              <ProductImage src={product.image} alt={`${spec.model} egg incubator`} heightClass="h-80 sm:h-96" className="rounded-2xl border border-stone-200" />
+              <ProductImage
+                src={product.image}
+                alt={imageAlt}
+                heightClass="h-80 sm:h-96"
+                className="rounded-2xl border border-stone-200"
+                priority
+              />
               <div>
                 <p className="text-emerald-700 font-semibold text-sm uppercase tracking-wide">{spec.type}</p>
                 <h1 className="text-3xl sm:text-4xl font-bold text-stone-900 mt-2 mb-2">
-                  {spec.model} — {spec.capacity}
+                  {spec.model} — {spec.capacity} Egg Incubator
                 </h1>
                 <p className="text-2xl font-bold text-emerald-700 mb-4">{product.price}</p>
-                <p className="text-stone-600 leading-relaxed mb-6">{product.tagline}. {spec.idealFor}.</p>
+                <p className="text-stone-600 leading-relaxed mb-6">
+                  {product.tagline}. {spec.idealFor}. Built by an egg incubator manufacturer in India at Bhandara,
+                  Maharashtra — factory-direct with pan-India delivery.
+                </p>
                 <ul className="space-y-2 mb-8">
                   {product.keyFeatures.map((f) => (
                     <li key={f} className="flex items-start gap-2 text-stone-700 text-sm">
@@ -111,10 +128,13 @@ const ProductDetail = () => {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to={ROUTES.training} className="text-emerald-700 font-semibold hover:underline">Poultry training →</Link>
               <Link to={ROUTES.hatchingGuide} className="text-emerald-700 font-semibold hover:underline">Free hatching guide →</Link>
+              <Link to={ROUTES.landing100Egg} className="text-emerald-700 font-semibold hover:underline">100 egg incubator guide →</Link>
               <Link to={ROUTES.about} className="text-emerald-700 font-semibold hover:underline">About JB →</Link>
             </div>
           </div>
         </section>
+
+        <ProductDetailRichContent spec={spec} />
 
         <InternalLinksSection />
         <CtaSection />

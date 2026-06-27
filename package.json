@@ -2,7 +2,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jbincubators.in",
+  "homepage": "https://www.jbincubators.in",
   "scripts": {
     "dev": "vite",
     "server": "node server/index.js",

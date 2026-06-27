@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import BrandLogo from "@/components/BrandLogo";
 import SocialLinks from "@/components/SocialLinks";
 import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_REVIEWS_URL } from "@/lib/reviews";
-import { ROUTES } from "@/lib/routes";
+import { ROUTES, PRODUCT_SLUGS } from "@/lib/routes";
+import { products } from "@/lib/products";
 
 const quickLinks = [
   { label: "Home", to: ROUTES.home },
@@ -17,6 +18,13 @@ const quickLinks = [
   { label: "Order Enquiry", to: ROUTES.order },
   { label: "Contact", to: ROUTES.contact },
 ];
+
+const productDetailLinks = products
+  .map((p) => {
+    const slug = PRODUCT_SLUGS[p.id];
+    return slug ? { label: `${p.id} — ${p.features.capacity}`, to: ROUTES.product(slug) } : null;
+  })
+  .filter(Boolean) as { label: string; to: string }[];
 
 const productLinks = [
   { label: "100 Egg Incubator", to: ROUTES.landing100Egg },
@@ -71,7 +79,17 @@ const Footer = () => (
         </div>
 
         <div>
-          <h3 className="text-sm font-bold uppercase tracking-wider text-stone-600 mb-4">Products</h3>
+          <h3 className="text-sm font-bold uppercase tracking-wider text-stone-600 mb-4">Product Pages</h3>
+          <ul className="space-y-2.5 text-base mb-6">
+            {productDetailLinks.map((link) => (
+              <li key={link.to}>
+                <Link to={link.to} className="text-stone-700 hover:text-emerald-700 transition-colors">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <h3 className="text-sm font-bold uppercase tracking-wider text-stone-600 mb-4">Buying Guides</h3>
           <ul className="space-y-2.5 text-base">
             {productLinks.map((link) => (
               <li key={link.to}>

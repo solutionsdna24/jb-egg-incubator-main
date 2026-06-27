@@ -11,6 +11,7 @@ import {
   organizationJsonLd,
   websiteJsonLd,
 } from "@/lib/seo";
+import { normalizePathname } from "@/lib/navigation";
 
 interface SeoHeadProps {
   page: PageKey;
@@ -38,9 +39,9 @@ const SeoHead = ({
   const seo = PAGE_SEO[page];
   const title = titleOverride ? `${titleOverride} | ${SITE_NAME}` : seo.title;
   const description = descriptionOverride ?? seo.description;
+  const normalizedPath = normalizePathname(location.pathname);
   const canonicalPath =
-    pathOverride ??
-    (location.pathname === "/" ? "/egg-incubators" : location.pathname);
+    pathOverride ?? (normalizedPath === "/" ? "/egg-incubators" : normalizedPath);
   const canonical = canonicalUrl(canonicalPath);
   const robots = seo.noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large";
   const keywords = keywordsOverride ?? seo.keywords ?? KEYWORDS_META;

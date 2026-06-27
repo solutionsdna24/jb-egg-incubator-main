@@ -1,10 +1,11 @@
 import { landingPages, landingPagesByPath, type LandingPage } from "./landingPages";
 import { productSpecifications, type ProductSpecification } from "./specifications";
 import { getRouteMeta, injectRouteMetaIntoHtml } from "./routeMeta";
+import { getProductPageContent, BLOG_SLUG_TITLES, getRelatedProductLinks } from "./productPageContent";
 import { brandStory } from "./about";
 import { trainingModules, hatchingGuideSections } from "./training";
 
-const SITE_URL = "https://jbincubators.in";
+const SITE_URL = "https://www.jbincubators.in";
 
 const escapeHtml = (value: string) =>
   value
@@ -57,42 +58,45 @@ ${renderRelatedLinks(page.relatedPaths)}
 
 const renderProductPage = (spec: ProductSpecification) => {
   const path = `/products/${spec.slug}`;
+  const content = getProductPageContent(spec.model);
   const specRows = spec.specs
     .map((row) => `<tr><th>${escapeHtml(row.label)}</th><td>${escapeHtml(row.value)}</td></tr>`)
     .join("");
-  const paragraphs = [
-    `${spec.model} is a ${spec.type.toLowerCase()} from JB Egg Incubator — an egg incubator manufacturer in Lakhandur, Bhandara, Vidarbha, Maharashtra. Capacity: ${spec.capacity}. Ideal for ${spec.idealFor.toLowerCase()}.`,
-    `Body material: ${spec.body}. Dimensions ${spec.dimensions}, weight ${spec.weight}. Power ${spec.power} at ${spec.voltage}. Temperature range ${spec.temperatureRange}. Humidity ${spec.humidityRange}. Turning: ${spec.turning}.`,
-    `JB supplies ${spec.model} across Nagpur, Vidarbha, Maharashtra, and all India with phone setup support and ${spec.warranty}. Compare models at our products page or call +91 8767189437 for today's price and delivery time.`,
-    `Farmers searching for egg incubator Maharashtra, automatic egg incubator Nagpur, or egg hatching machine India choose JB for factory-direct pricing since 2022. Over 1,000 farmers report 80–90% hatch rates when following our poultry incubation training and free hatching guide.`,
+
+  const intro = content?.intro ?? [
+    `${spec.model} is a ${spec.type.toLowerCase()} from JB Egg Incubator — egg incubator manufacturer in Bhandara, Maharashtra.`,
   ];
-  const faqs = [
+  const sections = content?.sections ?? [];
+  const faqs = content?.faqs ?? [
     {
-      question: `What is the ${spec.model} egg incubator capacity?`,
-      answer: `${spec.model} holds ${spec.capacity}. ${spec.type} with ${spec.body} body.`,
-    },
-    {
-      question: `Does JB deliver ${spec.model} to Nagpur and Maharashtra?`,
-      answer: `Yes. JB delivers ${spec.model} statewide from our Bhandara factory — typically 1–5 days in Vidarbha and Nagpur region, longer for other states.`,
-    },
-    {
-      question: `What warranty comes with ${spec.model}?`,
-      answer: spec.warranty,
+      question: `What is the ${spec.model} capacity?`,
+      answer: spec.capacity,
     },
   ];
+  const related = getRelatedProductLinks(spec.model);
+  const relatedLinks = related
+    .map((r) => `<li><a href="${SITE_URL}${r.path}">${escapeHtml(r.id)} specs</a></li>`)
+    .join("");
+
   return `<main id="static-prerender"><article>
-<h1>${escapeHtml(spec.model)} — ${escapeHtml(spec.type)}</h1>
-${paragraphs.map((text) => p(text)).join("")}
-<h2>Specifications</h2>
+<h1>${escapeHtml(spec.model)} — ${escapeHtml(spec.capacity)} Egg Incubator</h1>
+${intro.map((text) => p(text)).join("")}
+${renderSections(sections)}
+<h2>Specifications — ${escapeHtml(spec.model)}</h2>
 <table><tbody>
 <tr><th>Model</th><td>${escapeHtml(spec.model)}</td></tr>
 <tr><th>Capacity</th><td>${escapeHtml(spec.capacity)}</td></tr>
 <tr><th>Body</th><td>${escapeHtml(spec.body)}</td></tr>
 <tr><th>Power</th><td>${escapeHtml(spec.power)}</td></tr>
+<tr><th>Temperature</th><td>${escapeHtml(spec.temperatureRange)}</td></tr>
+<tr><th>Humidity</th><td>${escapeHtml(spec.humidityRange)}</td></tr>
+<tr><th>Turning</th><td>${escapeHtml(spec.turning)}</td></tr>
+<tr><th>Warranty</th><td>${escapeHtml(spec.warranty)}</td></tr>
 ${specRows}
 </tbody></table>
 ${renderFaqs(faqs)}
-<p><a href="${SITE_URL}${path}">View full product page</a> · <a href="${SITE_URL}/order-egg-incubator">Order enquiry</a></p>
+<nav aria-label="Related models"><h2>Related Egg Incubator Models</h2><ul>${relatedLinks}<li><a href="${SITE_URL}/products">All products</a></li></ul></nav>
+<p><a href="${SITE_URL}${path}">View full product page</a> · <a href="${SITE_URL}/order-egg-incubator">Order enquiry</a> · <a href="tel:+918767189437">+91 8767189437</a></p>
 </article></main>`;
 };
 
