@@ -5,7 +5,7 @@ import { ROUTES } from "@/lib/routes";
 
 const LocalAreasSection = () => (
   <section
-    id="egg-incubator-vidarbha-nagpur"
+    id="local-service-areas"
     className="section-padding bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-900 text-white"
     aria-labelledby="local-areas-heading"
   >

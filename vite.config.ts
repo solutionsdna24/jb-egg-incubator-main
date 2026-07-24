@@ -5,6 +5,7 @@ import fs from "fs";
 import { componentTagger } from "lovable-tagger";
 import { SPA_STATIC_ROUTES } from "./src/lib/spaRoutes";
 import { injectStaticPrerender } from "./src/lib/staticPageHtml";
+import { generateSitemapXml } from "./src/lib/generateSitemap";
 
 export default defineConfig(({ mode }) => ({
   base: "/",
@@ -50,6 +51,11 @@ export default defineConfig(({ mode }) => ({
         if (fs.existsSync(ogSource)) {
           fs.copyFileSync(ogSource, ogDest);
         }
+
+        // Sitemap: apex domain + trailing slashes (matches GitHub Pages 200 OK URLs)
+        const sitemapXml = generateSitemapXml();
+        fs.writeFileSync(path.join(distDir, "sitemap.xml"), sitemapXml);
+        fs.writeFileSync(path.resolve(__dirname, "public/sitemap.xml"), sitemapXml);
       },
     },
   ],

@@ -1,7 +1,8 @@
 import type { BlogPost } from "@/lib/blogs";
 import { GOOGLE_RATING, googleReviews } from "@/lib/reviews";
+import { SITE_URL, canonicalUrl } from "@/lib/canonical";
 
-export const SITE_URL = "https://www.jbincubators.in";
+export { SITE_URL, canonicalUrl };
 export const SITE_NAME = "JB Egg Incubator";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.webp`;
 export const DEFAULT_PHONE = "+91 8767189437";
@@ -87,12 +88,12 @@ export interface PageSeo {
 
 export const PAGE_SEO: Record<PageKey, PageSeo> = {
   home: {
-    title: "Egg Incubator Vidarbha, Nagpur & Maharashtra | JB Bhandara",
+    title: "JB Egg Incubator — All Models from ₹2,700 | Manufacturer Bhandara",
     description:
-      "Buy egg incubator in Vidarbha, Nagpur & Maharashtra from JB — egg incubator manufacturer in Bhandara. Automatic egg incubator & egg hatching machine from ₹2,700. Fast Vidarbha delivery. Call +91 8767189437.",
+      "Official JB Egg Incubator homepage — compare 8 models from ₹2,700: JBW100, JBST100, JBI80M & commercial combine incubators. Factory-direct from Lakhandur, Bhandara. Pan-India delivery. Call +91 8767189437.",
     path: "/egg-incubators",
     keywords:
-      "egg incubator vidarbha, egg incubator nagpur, egg incubator maharashtra, vidarbha egg incubator, nagpur egg incubator, egg incubator bhandara, automatic egg incubator nagpur, poultry incubator vidarbha, egg hatching machine maharashtra",
+      "JB egg incubator, egg incubator manufacturer bhandara, egg hatching machine price, JBW100, JBST100, JBI80M, automatic egg incubator, 100 egg incubator, poultry incubator maharashtra, egg incubator india",
   },
   products: {
     title: "Egg Incubator Models Maharashtra & India | JBW100 to JB816C",
@@ -182,9 +183,6 @@ export const PAGE_SEO: Record<PageKey, PageSeo> = {
   },
 };
 
-export const canonicalUrl = (path: string) =>
-  path === "/" ? `${SITE_URL}/egg-incubators` : `${SITE_URL}${path}`;
-
 const absoluteAssetUrl = (src: string) =>
   src.startsWith("http") ? src : `${SITE_URL}${src.startsWith("/") ? src : `/${src}`}`;
 
@@ -265,16 +263,37 @@ export const organizationJsonLd = {
 export const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
   name: SITE_NAME,
   url: SITE_URL,
   description:
-    "Egg incubator Vidarbha, Nagpur & Maharashtra — JB automatic egg incubator manufacturer from Bhandara factory.",
+    "Egg incubator Vidarbha, Nagpur & Maharashtra — JB automatic egg incubator manufacturer from Bhandara factory. Compare all models from ₹2,700.",
   potentialAction: {
     "@type": "SearchAction",
     target: `${SITE_URL}/products?q={search_term_string}`,
     "query-input": "required name=search_term_string",
   },
 };
+
+/** Homepage WebPage schema — tells Google this URL is the primary site entry, not a regional blog duplicate */
+export const homeWebPageJsonLd = () => ({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": canonicalUrl("/egg-incubators"),
+  url: canonicalUrl("/egg-incubators"),
+  name: PAGE_SEO.home.title,
+  description: PAGE_SEO.home.description,
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+  },
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: DEFAULT_OG_IMAGE,
+  },
+});
 
 export const faqPageJsonLd = (faqs: { question: string; answer: string }[]) => ({
   "@context": "https://schema.org",
@@ -292,6 +311,7 @@ export const faqPageJsonLd = (faqs: { question: string; answer: string }[]) => (
 export const blogPostingJsonLd = (post: BlogPost) => ({
   "@context": "https://schema.org",
   "@type": "BlogPosting",
+  "@id": canonicalUrl(`/blog/${post.slug}`),
   headline: post.title,
   description: post.excerpt,
   datePublished: post.date,
@@ -311,6 +331,11 @@ export const blogPostingJsonLd = (post: BlogPost) => ({
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": canonicalUrl(`/blog/${post.slug}`),
+  },
+  isPartOf: {
+    "@type": "Blog",
+    "@id": canonicalUrl("/blog"),
+    name: "JB Egg Incubator Blog",
   },
   keywords: post.tags?.join(", ") ?? KEYWORDS_META,
 });

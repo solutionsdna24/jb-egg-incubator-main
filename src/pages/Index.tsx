@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 import PromoBar from "@/components/PromoBar";
 import PoultryContentSection from "@/components/PoultryContentSection";
 import SeoHead from "@/components/SeoHead";
-import { faqPageJsonLd, localBusinessJsonLd, localAreasItemListJsonLd } from "@/lib/seo";
+import { faqPageJsonLd, localBusinessJsonLd, localAreasItemListJsonLd, homeWebPageJsonLd } from "@/lib/seo";
 import { faqs } from "@/lib/content";
 
 const HomeBelowFold = lazy(() => import("@/components/HomeBelowFold"));
@@ -21,8 +21,14 @@ const Index = () => (
   <div className="page-shell pt-0 relative">
     <SeoHead
       page="home"
+      pathOverride="/egg-incubators"
       includeWebsiteSchema
-      extraJsonLd={[faqPageJsonLd(faqs), localBusinessJsonLd(), localAreasItemListJsonLd()]}
+      extraJsonLd={[
+        homeWebPageJsonLd(),
+        faqPageJsonLd(faqs),
+        localBusinessJsonLd(),
+        localAreasItemListJsonLd(),
+      ]}
     />
     <Header />
     <PromoBar />

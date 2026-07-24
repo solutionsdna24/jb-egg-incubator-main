@@ -17,6 +17,8 @@ export const SPA_STATIC_ROUTES = [
   "guides/free-hatching-guide",
   "tools/incubation-capacity-calculator",
   "blog",
+  "blog/smart-egg-incubator-technologies-2026-hatch-rates",
+  "blog/future-poultry-incubation-smart-farms-automation",
   "blog/how-to-hatch-eggs-in-incubator",
   "blog/21-day-hatching-process",
   "blog/common-incubation-mistakes",

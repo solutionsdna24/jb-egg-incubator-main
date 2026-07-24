@@ -2,8 +2,8 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "jbincubators.in" }],
-      "destination": "https://www.jbincubators.in/:path*",
+      "has": [{ "type": "host", "value": "www.jbincubators.in" }],
+      "destination": "https://jbincubators.in/:path*",
       "permanent": true
     }
   ],

@@ -483,5 +483,7 @@ export const BLOG_SLUG_TITLES: Record<string, string> = {
   "egg-incubator-manufacturer-india": "Egg Incubator Manufacturer India",
   "egg-hatching-machine-price-india": "Egg Hatching Machine Price India",
   "why-farmers-trust-jb-incubators": "Why Farmers Trust JB Incubators",
+  "smart-egg-incubator-technologies-2026-hatch-rates": "Smart Egg Incubator Technologies 2026",
+  "future-poultry-incubation-smart-farms-automation": "Future of Poultry Incubation & Automation",
   "best-egg-incubator-company-india": "Best Egg Incubator Company India",
 };

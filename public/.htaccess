@@ -1,21 +1,20 @@
-# Apache / cPanel — SPA routing + redirect non-www to www
+# Apache / cPanel — SPA routing (if not on GitHub Pages)
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Force HTTPS and www
+  # Force HTTPS
   RewriteCond %{HTTPS} off
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-  RewriteCond %{HTTP_HOST} ^jbincubators\.in$ [NC]
-  RewriteRule ^(.*)$ https://www.jbincubators.in/$1 [L,R=301]
+  # Prefer apex canonical (matches GitHub Pages CNAME jbincubators.in)
+  RewriteCond %{HTTP_HOST} ^www\.jbincubators\.in$ [NC]
+  RewriteRule ^(.*)$ https://jbincubators.in/$1 [L,R=301]
 
-  # Serve existing files/directories
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # SPA fallback
   RewriteRule ^ index.html [L]
 </IfModule>

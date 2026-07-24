@@ -1,17 +1,14 @@
 import { productSpecifications } from "./specifications";
 import { landingPages } from "./landingPages";
+import { SITE_URL, canonicalUrl } from "./canonical";
 
-const SITE_URL = "https://www.jbincubators.in";
 const SITE_NAME = "JB Egg Incubator";
-
-const canonicalUrl = (path: string) =>
-  path === "/" ? `${SITE_URL}/egg-incubators` : `${SITE_URL}${path}`;
 
 const PAGE_META: Record<string, { title: string; description: string }> = {
   "/egg-incubators": {
-    title: "Egg Incubator Vidarbha, Nagpur & Maharashtra | JB Bhandara",
+    title: "JB Egg Incubator — All Models from ₹2,700 | Manufacturer Bhandara",
     description:
-      "Buy egg incubator in Vidarbha, Nagpur & Maharashtra from JB — egg incubator manufacturer in Bhandara. Automatic egg incubator & egg hatching machine from ₹2,700.",
+      "Official JB Egg Incubator homepage — compare 8 models from ₹2,700. Factory-direct from Lakhandur, Bhandara. Pan-India delivery. Call +91 8767189437.",
   },
   "/products": {
     title: "Egg Incubator Models Maharashtra & India | JBW100 to JB816C",
@@ -116,9 +113,9 @@ const BLOG_ROUTE_META: Record<string, { title: string; description: string }> = 
       "Avoid common incubation mistakes: wrong humidity, poor turning, old eggs & temperature swings. Tips from JB egg incubator manufacturer.",
   },
   "egg-incubator-vidarbha-nagpur-bhandara": {
-    title: "Egg Incubator Vidarbha — Nagpur & Bhandara Delivery from JB Factory",
+    title: "Vidarbha, Nagpur & Bhandara Egg Incubator Delivery — Blog Guide",
     description:
-      "Buy egg incubator in Vidarbha direct from JB's Bhandara factory. Fast delivery to Nagpur, Bhandara & nearby districts.",
+      "Blog guide for egg incubator delivery in Vidarbha from JB's Bhandara factory. For full regional pages see /egg-incubator-vidarbha/ and /egg-incubator-nagpur/.",
   },
   "automatic-egg-incubator-maharashtra": {
     title: "Automatic Egg Incubator Maharashtra — JB Models & Buyer Guide",
@@ -179,6 +176,16 @@ const BLOG_ROUTE_META: Record<string, { title: string; description: string }> = 
     title: "Why Farmers Across India Trust JB Egg Incubators",
     description:
       "Affordable pricing, proven hatch results, and real after-sales support — what sets JB apart for poultry farmers.",
+  },
+  "smart-egg-incubator-technologies-2026-hatch-rates": {
+    title: "Latest Egg Hatching Technologies in 2026: Smart Incubators & Hatch Rates",
+    description:
+      "How smart egg incubator technology, automatic egg incubator machines, and digital humidity control improve hatch rates for poultry, broiler & layer farming in India.",
+  },
+  "future-poultry-incubation-smart-farms-automation": {
+    title: "Future of Poultry Incubation: Smart Farms and Automation",
+    description:
+      "AI monitoring, cloud-connected incubators, predictive maintenance, automated hatch reports & remote management — the future of egg incubator technology in India.",
   },
 };
 

@@ -5,7 +5,7 @@ import { getProductPageContent, BLOG_SLUG_TITLES, getRelatedProductLinks } from 
 import { brandStory } from "./about";
 import { trainingModules, hatchingGuideSections } from "./training";
 
-const SITE_URL = "https://www.jbincubators.in";
+import { SITE_URL, canonicalUrl } from "./canonical";
 
 const escapeHtml = (value: string) =>
   value
@@ -160,11 +160,11 @@ const BLOG_STATIC: Record<
     ],
   },
   "egg-incubator-vidarbha-nagpur-bhandara": {
-    h1: "Egg Incubator Vidarbha — Nagpur & Bhandara Delivery from JB Factory",
+    h1: "Vidarbha, Nagpur & Bhandara Egg Incubator Delivery — Blog Guide",
     paragraphs: [
-      "JB Egg Incubator manufactures at Lakhandur, Bhandara — the heart of Vidarbha and roughly 60 km from Nagpur. Buying direct from our factory means no importer markup, faster spare parts, and support that understands local power and climate.",
-      "We deliver automatic egg incubator and 100 egg incubator models across Nagpur division, Bhandara district, Wardha, Gondia, Chandrapur, and every Vidarbha taluka. Many customers collect units same-day from the factory after a live demo.",
-      "Popular models for Vidarbha include JBW100 from ₹2,700, JBST100 with digital hygrometer, and JBI80M for commercial hatcheries. Search egg incubator Vidarbha or egg incubator Nagpur — JB is the regional manufacturer with 1,000+ farmers since 2022.",
+      "This blog article supplements our dedicated regional landing pages. For full Vidarbha, Nagpur, and Maharashtra guides with 800+ words and FAQs, visit /egg-incubator-vidarbha/, /egg-incubator-nagpur/, and /egg-incubator-maharashtra/ — not this homepage at /egg-incubators/.",
+      "JB Egg Incubator manufactures at Lakhandur, Bhandara — roughly 60 km from Nagpur. Buying direct from our factory means no importer markup, faster spare parts, and support that understands local power and climate.",
+      "Popular models for Vidarbha include JBW100 from ₹2,700, JBST100 with digital hygrometer, and JBI80M for commercial hatcheries. Call +91 8767189437 for delivery estimates across Nagpur division and all Vidarbha districts.",
     ],
     faqs: [
       {
@@ -393,6 +393,31 @@ const BLOG_STATIC: Record<
       },
     ],
   },
+  "smart-egg-incubator-technologies-2026-hatch-rates": {
+    h1: "Latest Egg Hatching Technologies in 2026: How Smart Incubators Are Improving Hatch Rates",
+    paragraphs: [
+      "In 2026, smart egg incubator technology — digital humidity control, automatic egg turning, and stable temperature monitoring — helps poultry farmers across India push hatch rates above 85%.",
+      "Automatic egg incubator machines reduce human error during egg incubation. Digital hygrometers on JBST100 and auto turning on JBI80M improve lockdown results for chicken egg incubator, quail incubator, and duck egg incubator projects.",
+      "JB manufactures egg incubator in India at Bhandara — serving egg incubator Maharashtra, egg incubator Nagpur, and nationwide broiler farming and layer farming operations.",
+      "Compare 100 egg incubator JBW100, 120 egg incubator JBST100, and automatic egg incubator JBI80M on our products page.",
+    ],
+    faqs: [
+      { question: "What improves hatch rate in 2026?", answer: "Digital humidity control, automatic egg turning, fresh hatching eggs, and lockdown humidity 65–70%." },
+      { question: "What is a smart egg incubator?", answer: "An egg hatching machine with digital monitoring and auto turning — like JBST100 or JBI80M from JB Bhandara." },
+    ],
+  },
+  "future-poultry-incubation-smart-farms-automation": {
+    h1: "Future of Poultry Incubation: Smart Farms and Automation",
+    paragraphs: [
+      "The future of poultry incubation includes AI monitoring, cloud-connected incubators, predictive maintenance, automated hatch reports, and remote management.",
+      "Cloud-connected poultry incubator systems let farmers check temperature, humidity control, and egg turning remotely. JB stocks spare parts in Bhandara for egg incubator Maharashtra and Nagpur buyers.",
+      "Start with JB automatic egg incubator models from ₹2,700 — explore products, 100 egg incubator guides, or contact JB for recommendations.",
+    ],
+    faqs: [
+      { question: "What is the future of egg incubation?", answer: "Smarter sensors, automation, remote alerts, and hatch rate tracking on reliable egg incubator hardware." },
+      { question: "Which JB model for automation?", answer: "JBST100 semi-automatic or JBI80M fully automatic — see our automatic egg incubator page." },
+    ],
+  },
 };
 
 const MAIN_PAGE_CONTENT: Record<
@@ -400,17 +425,22 @@ const MAIN_PAGE_CONTENT: Record<
   { h1: string; paragraphs: string[]; faqs: { question: string; answer: string }[] }
 > = {
   "/egg-incubators": {
-    h1: "Egg Incubator Vidarbha, Nagpur & Maharashtra — JB Manufacturer Bhandara",
+    h1: "JB Egg Incubator — Manufacturer in Bhandara | All Models from ₹2,700",
     paragraphs: [
-      "JB Egg Incubator is an egg incubator manufacturer in Lakhandur, Bhandara, Vidarbha — serving Nagpur, all Maharashtra, and pan-India since 2022. We build manual, semi-automatic, and fully automatic egg hatching machines from ₹2,700 with factory-direct pricing and phone support in Marathi and English.",
-      "Farmers searching egg incubator Vidarbha, egg incubator Nagpur, or egg incubator Maharashtra find JB as the nearest major manufacturer — roughly 60 km from Nagpur with same-week delivery across the region. Models include JBW100 100 egg incubator, JBST100 with digital hygrometer, JBI80M fully automatic, and commercial combine units JB528C through JB816C.",
-      "The Maharashtra poultry industry and Vidarbha farm economy drive strong demand for reliable incubators built for local 220V power and summer heat. JB calibrates every unit at the factory for 37.5°C–37.8°C and publishes free poultry incubation training, a hatching guide PDF, and an incubation capacity calculator.",
-      "Over 1,000 farmers trust JB with 80–90% hatch rates when following our process. Order online, call +91 8767189437, WhatsApp, or visit our Bhandara factory for pickup and live demo. Explore regional pages for Nagpur delivery times, Vidarbha climate guidance, and statewide Maharashtra distribution.",
+      "JB Egg Incubator is the official product hub for India's factory-direct egg hatching machines — manual, semi-automatic, and fully automatic models built in Lakhandur, Bhandara since 2022. Browse JBW100 100 egg incubator from ₹2,700, JBST100 with digital hygrometer, JBI80M fully automatic, and commercial combine incubators JB528C through JB816C.",
+      "This homepage is the main catalogue entry for jbincubators.in — compare all 8 models, read specifications, watch farmer hatch videos, and order with pan-India delivery. For district-specific delivery times and local FAQs, use our dedicated regional pages (linked below) rather than blog articles.",
+      "Regional landing pages with full guides: Egg Incubator Vidarbha (/egg-incubator-vidarbha/), Egg Incubator Nagpur (/egg-incubator-nagpur/), and Egg Incubator Maharashtra (/egg-incubator-maharashtra/). Each regional page has 800+ words, unique FAQs, and local delivery information — separate from this product homepage.",
+      "JB calibrates every poultry incubator at the factory for 37.5°C–37.8°C Indian heat. Free poultry incubation training, hatching guide PDF, and incubation capacity calculator help you choose the right egg incubator machine. Over 1,000 farmers report 80–90% hatch rates with JB support.",
+      "Order online, call +91 8767189437, WhatsApp, or visit our Bhandara factory for pickup. Explore products, compare automatic egg incubator options, or submit an order enquiry for today's price and stock.",
     ],
     faqs: [
       {
-        question: "Where is JB egg incubator manufacturer located?",
-        answer: "Lakhandur, Bhandara, Maharashtra 441803 — Vidarbha, near Nagpur.",
+        question: "Is this the main JB Egg Incubator website?",
+        answer: "Yes — jbincubators.in/egg-incubators/ is the primary homepage and product hub. Regional blogs are supplementary guides.",
+      },
+      {
+        question: "Where are the Vidarbha and Nagpur guides?",
+        answer: "Use /egg-incubator-vidarbha/ and /egg-incubator-nagpur/ — dedicated landing pages with full local content, not blog posts.",
       },
       {
         question: "What is the starting price of JB egg incubator?",

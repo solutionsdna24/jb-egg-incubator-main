@@ -62,11 +62,54 @@ const BlogPost = () => {
               {post.title}
             </h1>
 
+            {post.category === "Local" && (
+              <aside className="mb-6 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-950 leading-relaxed">
+                <strong>Regional guides:</strong> This is a blog article. For full Vidarbha, Nagpur, and Maharashtra
+                landing pages with detailed FAQs, visit{" "}
+                <Link to="/egg-incubator-vidarbha" className="font-semibold text-emerald-800 hover:underline">
+                  Egg Incubator Vidarbha
+                </Link>
+                ,{" "}
+                <Link to="/egg-incubator-nagpur" className="font-semibold text-emerald-800 hover:underline">
+                  Nagpur
+                </Link>
+                , and{" "}
+                <Link to="/egg-incubator-maharashtra" className="font-semibold text-emerald-800 hover:underline">
+                  Maharashtra
+                </Link>
+                . The main product homepage is{" "}
+                <Link to="/egg-incubators" className="font-semibold text-emerald-800 hover:underline">
+                  /egg-incubators/
+                </Link>
+                .
+              </aside>
+            )}
+
             <div className="prose prose-stone max-w-none space-y-4 text-stone-600 leading-relaxed">
               {post.content.map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
             </div>
+
+            {post.internalLinks && post.internalLinks.length > 0 && (
+              <nav className="mt-10 p-6 rounded-2xl border-2 border-emerald-100 bg-emerald-50/40" aria-labelledby="blog-internal-links">
+                <h2 id="blog-internal-links" className="text-lg font-bold text-stone-900 mb-4">
+                  Explore JB Egg Incubators
+                </h2>
+                <ul className="grid sm:grid-cols-2 gap-2">
+                  {post.internalLinks.map((link) => (
+                    <li key={link.to}>
+                      <Link
+                        to={link.to}
+                        className="text-emerald-800 font-semibold hover:underline text-sm"
+                      >
+                        {link.label} →
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
 
             <div className="mt-10 p-6 rounded-2xl bg-orange-50 border border-orange-100 text-center">
               <p className="font-semibold text-stone-800 mb-2">Limited Stock — Selling Fast</p>
