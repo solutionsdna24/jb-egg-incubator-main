@@ -42,6 +42,8 @@ export const SPA_STATIC_ROUTES = [
   "egg-incubator-maharashtra",
   "egg-incubator-vidarbha",
   "egg-incubator-nagpur",
+  "egg-incubator-bhandara",
+  "egg-incubator-near-me",
   "egg-hatching-machine-india",
   "egg-incubator-price-india",
   "chicken-egg-incubator",

@@ -5,13 +5,15 @@ import Footer from "@/components/Footer";
 import SeoHead from "@/components/SeoHead";
 import { getBlogBySlug, getRelatedBlogs } from "@/lib/blogs";
 import { blogPostingJsonLd } from "@/lib/seo";
+import { ROUTES } from "@/lib/routes";
+import { publicPath } from "@/lib/canonical";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getBlogBySlug(slug) : undefined;
   const related = slug ? getRelatedBlogs(slug, 3) : [];
 
-  if (!post) return <Navigate to="/blog" replace />;
+  if (!post) return <Navigate to={ROUTES.blog} replace />;
 
   return (
     <div className="page-shell">
@@ -66,19 +68,19 @@ const BlogPost = () => {
               <aside className="mb-6 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-950 leading-relaxed">
                 <strong>Regional guides:</strong> This is a blog article. For full Vidarbha, Nagpur, and Maharashtra
                 landing pages with detailed FAQs, visit{" "}
-                <Link to="/egg-incubator-vidarbha" className="font-semibold text-emerald-800 hover:underline">
+                <Link to={ROUTES.landingVidarbha} className="font-semibold text-emerald-800 hover:underline">
                   Egg Incubator Vidarbha
                 </Link>
                 ,{" "}
-                <Link to="/egg-incubator-nagpur" className="font-semibold text-emerald-800 hover:underline">
+                <Link to={ROUTES.landingNagpur} className="font-semibold text-emerald-800 hover:underline">
                   Nagpur
                 </Link>
                 , and{" "}
-                <Link to="/egg-incubator-maharashtra" className="font-semibold text-emerald-800 hover:underline">
+                <Link to={ROUTES.landingMaharashtra} className="font-semibold text-emerald-800 hover:underline">
                   Maharashtra
                 </Link>
                 . The main product homepage is{" "}
-                <Link to="/egg-incubators" className="font-semibold text-emerald-800 hover:underline">
+                <Link to={ROUTES.home} className="font-semibold text-emerald-800 hover:underline">
                   /egg-incubators/
                 </Link>
                 .
@@ -100,7 +102,7 @@ const BlogPost = () => {
                   {post.internalLinks.map((link) => (
                     <li key={link.to}>
                       <Link
-                        to={link.to}
+                        to={publicPath(link.to)}
                         className="text-emerald-800 font-semibold hover:underline text-sm"
                       >
                         {link.label} →
@@ -117,7 +119,7 @@ const BlogPost = () => {
                 Order your JB Egg Incubator today. From ₹2,700 with pan-India delivery and setup support.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-3">
-                <Link to="/order-egg-incubator" className="btn-accent">
+                <Link to={ROUTES.order} className="btn-accent">
                   Submit Order Enquiry
                 </Link>
                 <a href="tel:+918767189437" className="btn-outline inline-flex items-center justify-center gap-2">
@@ -136,7 +138,7 @@ const BlogPost = () => {
                   {related.map((item) => (
                     <li key={item.slug}>
                       <Link
-                        to={`/blog/${item.slug}`}
+                        to={ROUTES.blogPost(item.slug)}
                         className="group flex items-start justify-between gap-3 rounded-xl border border-stone-200 bg-stone-50 p-4 hover:border-emerald-300 hover:bg-emerald-50/50 transition-colors"
                       >
                         <span>

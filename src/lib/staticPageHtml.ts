@@ -40,10 +40,27 @@ const renderRelatedLinks = (paths: string[]) => {
     .map((path) => {
       const page = landingPagesByPath[path];
       if (!page) return "";
-      return `<li><a href="${SITE_URL}${path}">${escapeHtml(page.h1.split("—")[0].trim())}</a></li>`;
+      return `<li><a href="${canonicalUrl(path)}">${escapeHtml(page.h1.split("—")[0].trim())}</a></li>`;
     })
     .filter(Boolean);
-  return `<nav aria-label="Related pages"><h2>Related Pages</h2><ul>${links.join("")}<li><a href="${SITE_URL}/products">All Products &amp; Prices</a></li><li><a href="${SITE_URL}/contact">Contact JB</a></li></ul></nav>`;
+  return `<nav aria-label="Related pages"><h2>Related Pages</h2><ul>${links.join("")}<li><a href="${canonicalUrl("/products")}">All Products &amp; Prices</a></li><li><a href="${canonicalUrl("/contact")}">Contact JB</a></li></ul></nav>`;
+};
+
+const renderDeliveryExamples = (examples: LandingPage["deliveryExamples"]) => {
+  if (!examples?.length) return "";
+  return `<section aria-labelledby="delivery-examples"><h2 id="delivery-examples">Customer Delivery Examples</h2><ul>${examples
+    .map(
+      (ex) =>
+        `<li><strong>${escapeHtml(ex.location)}</strong> — ${escapeHtml(ex.story)}</li>`,
+    )
+    .join("")}</ul></section>`;
+};
+
+const renderProductLinks = (links: LandingPage["productLinks"]) => {
+  if (!links?.length) return "";
+  return `<nav aria-labelledby="product-links"><h2 id="product-links">Recommended JB Products</h2><ul>${links
+    .map((link) => `<li><a href="${canonicalUrl(link.path)}">${escapeHtml(link.label)}</a></li>`)
+    .join("")}</ul></nav>`;
 };
 
 const renderLandingPage = (page: LandingPage) =>
@@ -51,9 +68,11 @@ const renderLandingPage = (page: LandingPage) =>
 <header><p>${escapeHtml(page.eyebrow)}</p><h1>${escapeHtml(page.h1)}</h1>${p(page.subtitle)}</header>
 ${renderHighlights(page.highlights)}
 ${renderSections(page.sections)}
+${renderDeliveryExamples(page.deliveryExamples)}
+${renderProductLinks(page.productLinks)}
 ${renderFaqs(page.faqs)}
 ${renderRelatedLinks(page.relatedPaths)}
-<p><a href="${SITE_URL}/order-egg-incubator">Get price quote</a> · <a href="tel:+918767189437">Call +91 8767189437</a></p>
+<p><strong>Contact:</strong> Lakhandur, Bhandara, Maharashtra 441803 · <a href="tel:+918767189437">+91 8767189437</a> · <a href="${canonicalUrl("/order-egg-incubator")}">Get price quote</a> · <a href="${canonicalUrl("/contact")}">Contact page</a></p>
 </article></main>`;
 
 const renderProductPage = (spec: ProductSpecification) => {
@@ -75,7 +94,7 @@ const renderProductPage = (spec: ProductSpecification) => {
   ];
   const related = getRelatedProductLinks(spec.model);
   const relatedLinks = related
-    .map((r) => `<li><a href="${SITE_URL}${r.path}">${escapeHtml(r.id)} specs</a></li>`)
+    .map((r) => `<li><a href="${canonicalUrl(r.path)}">${escapeHtml(r.id)} specs</a></li>`)
     .join("");
 
   return `<main id="static-prerender"><article>
@@ -95,8 +114,8 @@ ${renderSections(sections)}
 ${specRows}
 </tbody></table>
 ${renderFaqs(faqs)}
-<nav aria-label="Related models"><h2>Related Egg Incubator Models</h2><ul>${relatedLinks}<li><a href="${SITE_URL}/products">All products</a></li></ul></nav>
-<p><a href="${SITE_URL}${path}">View full product page</a> · <a href="${SITE_URL}/order-egg-incubator">Order enquiry</a> · <a href="tel:+918767189437">+91 8767189437</a></p>
+<nav aria-label="Related models"><h2>Related Egg Incubator Models</h2><ul>${relatedLinks}<li><a href="${canonicalUrl("/products")}">All products</a></li></ul></nav>
+<p><a href="${canonicalUrl(path)}">View full product page</a> · <a href="${canonicalUrl("/order-egg-incubator")}">Order enquiry</a> · <a href="tel:+918767189437">+91 8767189437</a></p>
 </article></main>`;
 };
 
@@ -596,7 +615,7 @@ const renderBlogPage = (slug: string) => {
 <h1>${escapeHtml(body.h1)}</h1>
 ${body.paragraphs.map((text) => p(text)).join("")}
 ${renderFaqs(body.faqs)}
-<p><a href="${SITE_URL}/blog/${slug}">Read full article</a> · <a href="${SITE_URL}/blog">All blog posts</a></p>
+<p><a href="${canonicalUrl(`/blog/${slug}`)}">Read full article</a> · <a href="${canonicalUrl("/blog")}">All blog posts</a></p>
 </article></main>`;
 };
 
@@ -609,9 +628,11 @@ const renderMainPage = (path: string) => {
   const regionalNav =
     path === "/egg-incubators"
       ? `<nav aria-label="Regional pages"><ul>
-<li><a href="${SITE_URL}/egg-incubator-nagpur">Egg Incubator Nagpur</a></li>
-<li><a href="${SITE_URL}/egg-incubator-vidarbha">Egg Incubator Vidarbha</a></li>
-<li><a href="${SITE_URL}/egg-incubator-maharashtra">Egg Incubator Maharashtra</a></li>
+<li><a href="${canonicalUrl("/egg-incubator-nagpur")}">Egg Incubator Nagpur</a></li>
+<li><a href="${canonicalUrl("/egg-incubator-vidarbha")}">Egg Incubator Vidarbha</a></li>
+<li><a href="${canonicalUrl("/egg-incubator-maharashtra")}">Egg Incubator Maharashtra</a></li>
+<li><a href="${canonicalUrl("/egg-incubator-bhandara")}">Egg Incubator Bhandara</a></li>
+<li><a href="${canonicalUrl("/egg-incubator-near-me")}">Egg Incubator Near Me</a></li>
 </ul></nav>`
       : "";
   return `<main id="static-prerender"><article>

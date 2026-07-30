@@ -15,3 +15,6 @@ export const toCanonicalPath = (path: string): string => {
 /** Absolute canonical URL with trailing slash (matches GitHub Pages final URL). */
 export const canonicalUrl = (path: string): string =>
   `${SITE_URL}${toCanonicalPath(path)}/`;
+
+/** Same-origin path with trailing slash — use in Link href and static HTML anchors. */
+export const publicPath = (path: string): string => `${toCanonicalPath(path)}/`;

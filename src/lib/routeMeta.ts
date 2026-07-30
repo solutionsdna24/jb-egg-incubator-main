@@ -6,9 +6,9 @@ const SITE_NAME = "JB Egg Incubator";
 
 const PAGE_META: Record<string, { title: string; description: string }> = {
   "/egg-incubators": {
-    title: "JB Egg Incubator — All Models from ₹2,700 | Manufacturer Bhandara",
+    title: "Egg Incubator Maharashtra | Automatic Egg Hatching Machine | JB Incubators",
     description:
-      "Official JB Egg Incubator homepage — compare 8 models from ₹2,700. Factory-direct from Lakhandur, Bhandara. Pan-India delivery. Call +91 8767189437.",
+      "JB automatic egg incubator manufacturer in Bhandara, Maharashtra — egg hatching machines from ₹2,700. Fast delivery to Nagpur, Vidarbha & pan-India. JBW100, JBST100, JBI80M. Call +91 8767189437.",
   },
   "/products": {
     title: "Egg Incubator Models Maharashtra & India | JBW100 to JB816C",
@@ -270,7 +270,8 @@ const escapeHtml = (value: string) =>
 
 export const injectRouteMetaIntoHtml = (html: string, route: string): string => {
   const meta = getRouteMeta(route);
-  const title = `${meta.title} | ${SITE_NAME}`;
+  const title =
+    meta.path === "/egg-incubators" ? meta.title : `${meta.title} | ${SITE_NAME}`;
 
   return html
     .replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`)

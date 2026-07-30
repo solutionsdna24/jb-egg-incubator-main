@@ -6,6 +6,8 @@ const ROUTE_PRIORITY: Record<string, number> = {
   "egg-incubator-maharashtra": 0.95,
   "egg-incubator-vidarbha": 0.95,
   "egg-incubator-nagpur": 0.95,
+  "egg-incubator-bhandara": 0.95,
+  "egg-incubator-near-me": 0.9,
   products: 0.9,
   blog: 0.85,
 };

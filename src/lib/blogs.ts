@@ -22,15 +22,17 @@ export interface BlogPost {
   internalLinks?: { label: string; to: string }[];
 }
 
+import { ROUTES } from "./routes";
+
 /** Standard product links appended to technology & buying-guide blogs */
 export const BLOG_PRODUCT_LINKS: { label: string; to: string }[] = [
-  { label: "All Egg Incubator Models", to: "/products" },
-  { label: "Egg Incubators — Home", to: "/egg-incubators" },
-  { label: "100 Egg Incubator", to: "/100-egg-incubator" },
-  { label: "120 Egg Incubator", to: "/120-egg-incubator" },
-  { label: "Automatic Egg Incubator", to: "/automatic-egg-incubator" },
-  { label: "Order Enquiry", to: "/order-egg-incubator" },
-  { label: "Contact JB", to: "/contact" },
+  { label: "All Egg Incubator Models", to: ROUTES.products },
+  { label: "Egg Incubators — Home", to: ROUTES.home },
+  { label: "100 Egg Incubator", to: ROUTES.landing100Egg },
+  { label: "120 Egg Incubator", to: ROUTES.landing120Egg },
+  { label: "Automatic Egg Incubator", to: ROUTES.landingAutomatic },
+  { label: "Order Enquiry", to: ROUTES.order },
+  { label: "Contact JB", to: ROUTES.contact },
 ];
 
 export const blogPosts: BlogPost[] = [

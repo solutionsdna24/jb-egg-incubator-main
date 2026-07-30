@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, type ReactNode } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 import { ScrollToTop } from "./pages/ScrollToTop";
@@ -19,6 +19,18 @@ const KeywordLanding = lazy(() => import("./pages/KeywordLanding"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const WhatsAppFloat = lazy(() => import("@/components/WhatsAppFloat"));
 import { LANDING_PATHS } from "./lib/landingPages";
+
+/** GitHub Pages serves folder URLs with a trailing slash — register both path forms. */
+const routePair = (path: string, element: ReactNode) => {
+  const base = path.replace(/\/+$/, "") || "/";
+  if (base === "/") {
+    return [<Route key="/" path="/" element={element} />];
+  }
+  return [
+    <Route key={base} path={base} element={element} />,
+    <Route key={`${base}/`} path={`${base}/`} element={element} />,
+  ];
+};
 
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-slate-50" aria-label="Loading page">
@@ -45,23 +57,25 @@ const App = () => {
         <ScrollToTop />
         <Suspense fallback={<PageLoader />}>
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/egg-incubators" element={<Index />} />
-            <Route path="/products" element={<Products />} />
+            {routePair("/", <Index />)}
+            {routePair("/egg-incubators", <Index />)}
+            {routePair("/products", <Products />)}
             <Route path="/products/:slug" element={<ProductDetail />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/details" element={<Navigate to="/about" replace />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/order-egg-incubator" element={<JbEggIncubatorOrder />} />
-            <Route path="/jb-egg-incubator-order" element={<Navigate to="/order-egg-incubator" replace />} />
-            <Route path="/guides/poultry-incubation-training" element={<Training />} />
-            <Route path="/guides/free-hatching-guide" element={<HatchingGuide />} />
-            <Route path="/tools/incubation-capacity-calculator" element={<IncubationCalculator />} />
-            {LANDING_PATHS.map((path) => (
-              <Route key={path} path={path} element={<KeywordLanding />} />
-            ))}
-            <Route path="/blog" element={<Blogs />} />
+            <Route path="/products/:slug/" element={<ProductDetail />} />
+            {routePair("/about", <About />)}
+            <Route path="/details" element={<Navigate to="/about/" replace />} />
+            <Route path="/details/" element={<Navigate to="/about/" replace />} />
+            {routePair("/contact", <Contact />)}
+            {routePair("/order-egg-incubator", <JbEggIncubatorOrder />)}
+            <Route path="/jb-egg-incubator-order" element={<Navigate to="/order-egg-incubator/" replace />} />
+            <Route path="/jb-egg-incubator-order/" element={<Navigate to="/order-egg-incubator/" replace />} />
+            {routePair("/guides/poultry-incubation-training", <Training />)}
+            {routePair("/guides/free-hatching-guide", <HatchingGuide />)}
+            {routePair("/tools/incubation-capacity-calculator", <IncubationCalculator />)}
+            {LANDING_PATHS.flatMap((path) => routePair(path, <KeywordLanding />))}
+            {routePair("/blog", <Blogs />)}
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/blog/:slug/" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

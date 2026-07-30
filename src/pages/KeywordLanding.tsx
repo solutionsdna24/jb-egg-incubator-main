@@ -7,7 +7,9 @@ import { landingPagesByPath, getLandingRelated } from "@/lib/landingPages";
 import { normalizePathname } from "@/lib/navigation";
 import { faqPageJsonLd } from "@/lib/seo";
 import { ROUTES } from "@/lib/routes";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { publicPath } from "@/lib/canonical";
+import { CheckCircle2, ArrowRight, MapPin, Phone, MessageCircle } from "lucide-react";
+import { DEFAULT_PHONE } from "@/lib/seo";
 
 const KeywordLanding = () => {
   const { pathname } = useLocation();
@@ -79,13 +81,92 @@ const KeywordLanding = () => {
               </article>
             ))}
 
+            {page.deliveryExamples && page.deliveryExamples.length > 0 && (
+              <section className="mb-10" aria-labelledby="delivery-examples-heading">
+                <h2 id="delivery-examples-heading" className="text-xl sm:text-2xl font-bold text-stone-900 mb-4">
+                  Customer Delivery Examples
+                </h2>
+                <ul className="space-y-4">
+                  {page.deliveryExamples.map((ex) => (
+                    <li
+                      key={ex.location}
+                      className="rounded-xl border border-stone-200 bg-stone-50 p-5 text-stone-700 leading-relaxed"
+                    >
+                      <p className="font-semibold text-stone-900 mb-2">{ex.location}</p>
+                      <p className="text-sm sm:text-base">{ex.story}</p>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {page.productLinks && page.productLinks.length > 0 && (
+              <nav className="mb-10 rounded-2xl border-2 border-stone-200 bg-white p-6 sm:p-8" aria-labelledby="product-links-heading">
+                <h2 id="product-links-heading" className="text-lg font-bold text-stone-900 mb-4">
+                  Recommended JB Products
+                </h2>
+                <ul className="grid sm:grid-cols-2 gap-2">
+                  {page.productLinks.map((link) => (
+                    <li key={link.path}>
+                      <Link
+                        to={link.path}
+                        className="text-emerald-800 font-semibold hover:underline text-sm sm:text-base"
+                      >
+                        {link.label} →
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
+
+            {page.deliveryExamples && page.deliveryExamples.length > 0 && (
+              <section
+                className="mb-10 rounded-2xl bg-emerald-900 text-white p-6 sm:p-8"
+                aria-labelledby="regional-contact-heading"
+              >
+              <h2 id="regional-contact-heading" className="text-xl font-bold mb-3">
+                Contact JB Egg Incubator
+              </h2>
+              <p className="text-emerald-100 text-sm sm:text-base leading-relaxed mb-4">
+                Factory: Lakhandur, Bhandara, Maharashtra 441803 · Egg incubator manufacturer since 2022 · Marathi &amp;
+                English support
+              </p>
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+                <a href={`tel:${DEFAULT_PHONE.replace(/\s/g, "")}`} className="btn-accent justify-center gap-2">
+                  <Phone className="h-4 w-4" aria-hidden="true" />
+                  Call {DEFAULT_PHONE}
+                </a>
+                <Link to={ROUTES.order} className="btn-outline border-white text-white hover:bg-white/10 justify-center">
+                  Get Price Quote
+                </Link>
+                <a
+                  href="https://wa.me/918767189437"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/15 hover:bg-white/25 font-semibold px-5 py-3 transition-colors"
+                >
+                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                  WhatsApp
+                </a>
+                <Link
+                  to={ROUTES.contact}
+                  className="inline-flex items-center justify-center gap-2 text-emerald-100 hover:text-white font-semibold px-2 py-3"
+                >
+                  <MapPin className="h-4 w-4" aria-hidden="true" />
+                  Contact page
+                </Link>
+              </div>
+            </section>
+            )}
+
             <div className="rounded-2xl border-2 border-emerald-100 bg-emerald-50/50 p-6 sm:p-8">
               <h2 className="text-lg font-bold text-stone-900 mb-4">Related Egg Incubator Pages</h2>
               <ul className="grid sm:grid-cols-2 gap-3">
                 {related.map((rel) => (
                   <li key={rel.path}>
                     <Link
-                      to={rel.path}
+                      to={publicPath(rel.path)}
                       className="group flex items-center gap-2 text-emerald-800 font-semibold hover:text-emerald-900"
                     >
                       <ArrowRight className="h-4 w-4 shrink-0 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />

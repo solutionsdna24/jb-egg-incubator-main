@@ -88,12 +88,12 @@ export interface PageSeo {
 
 export const PAGE_SEO: Record<PageKey, PageSeo> = {
   home: {
-    title: "JB Egg Incubator — All Models from ₹2,700 | Manufacturer Bhandara",
+    title: "Egg Incubator Maharashtra | Automatic Egg Hatching Machine | JB Incubators",
     description:
-      "Official JB Egg Incubator homepage — compare 8 models from ₹2,700: JBW100, JBST100, JBI80M & commercial combine incubators. Factory-direct from Lakhandur, Bhandara. Pan-India delivery. Call +91 8767189437.",
+      "JB automatic egg incubator manufacturer in Bhandara, Maharashtra — egg hatching machines from ₹2,700. Fast delivery to Nagpur, Vidarbha & pan-India. JBW100, JBST100, JBI80M. Call +91 8767189437.",
     path: "/egg-incubators",
     keywords:
-      "JB egg incubator, egg incubator manufacturer bhandara, egg hatching machine price, JBW100, JBST100, JBI80M, automatic egg incubator, 100 egg incubator, poultry incubator maharashtra, egg incubator india",
+      "egg incubator maharashtra, automatic egg incubator, egg hatching machine, egg incubator nagpur, egg incubator bhandara, automatic egg incubator maharashtra, poultry incubator nagpur, JBW100, JBST100, JBI80M, egg incubator vidarbha",
   },
   products: {
     title: "Egg Incubator Models Maharashtra & India | JBW100 to JB816C",
@@ -359,6 +359,18 @@ export const LOCAL_SERVICE_AREAS = [
     path: "/egg-incubator-maharashtra",
     headline: "Egg Incubator Maharashtra",
     blurb: "Statewide delivery — Pune, Mumbai, Nashik & rural talukas.",
+  },
+  {
+    name: "Bhandara",
+    path: "/egg-incubator-bhandara",
+    headline: "Egg Incubator Bhandara",
+    blurb: "Factory at Lakhandur — walk-in demo & same-day pickup.",
+  },
+  {
+    name: "Near Me",
+    path: "/egg-incubator-near-me",
+    headline: "Egg Incubator Near Me",
+    blurb: "Find JB factory & delivery from Bhandara to your pin code.",
   },
 ] as const;
 

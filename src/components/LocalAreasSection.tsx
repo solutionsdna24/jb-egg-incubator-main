@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { MapPin, ArrowRight, Phone } from "lucide-react";
 import { LOCAL_SERVICE_AREAS } from "@/lib/seo";
 import { ROUTES } from "@/lib/routes";
+import { publicPath } from "@/lib/canonical";
 
 const LocalAreasSection = () => (
   <section
@@ -38,7 +39,7 @@ const LocalAreasSection = () => (
             <h3 className="text-xl font-bold text-white mb-2">{area.headline}</h3>
             <p className="text-emerald-100 text-sm leading-relaxed mb-5 flex-1">{area.blurb}</p>
             <Link
-              to={area.path}
+              to={publicPath(area.path)}
               className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-white/20 hover:bg-white/30 rounded-xl px-4 py-2.5 transition-colors w-fit"
             >
               Explore {area.name}
